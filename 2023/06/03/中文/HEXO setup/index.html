@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hexo Blog Setup - Hexo</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="John Doe">
+<meta name="description" content="Setting up this Hexo blog i...">
+<meta name="keywords" content="">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?36262087">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="http://example.com">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Hexo
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Hexo</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Shangtong Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="http://example.com">Hexo</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Hexo Blog Setup
+                    <div class="post-meta">
+                        <time datetime="2023-06-02T16:00:00.000Z" itemprop="datePublished">
+                            2023-06-03 00:00
+                        </time>&nbsp;
+                        
+    
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <p>Setting up this Hexo blog is quite difficult. There are many
+unexpected problems that are solved and I will record them in this
+entry.</p>
+<ol type="1">
+<li><p>Install Node.js and Git</p></li>
+<li><p>Install Hexo https://hexo.io/</p></li>
+<li><p>Install Hexo Theme Journal
+https://github.com/SumiMakito/hexo-theme-journal/</p></li>
+<li><p>Install Pandoc for LaTeX
+https://blog.csdn.net/qq_52466006/article/details/126924064</p></li>
+</ol>
+<blockquote>
+<p>At this step, many problems occur. The major issue is the theme does
+not support LaTeX. I tried changing to
+<code>$npm install hexo-renderer-kramed</code> and
+<code>$npm install hexo-renderer-mathjax</code> but it doesn't work. The
+reason is likely because that these two plugins are too old. On the
+otherhand, <code>$npm install hexo-renderer-pandoc</code> is a safer
+choice because it needs less modifications and more robust.</p>
+</blockquote>
+<blockquote>
+<p>From my research, this solution is more likely to work and should
+work for all themes on Hexo.</p>
+</blockquote>
+<p>Write this in Powershell <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$npm un hexo-math</span><br><span class="line">$npm un hexo-renderer-marked</span><br><span class="line">$npm i hexo-renderer-pandoc</span><br></pre></td></tr></table></figure></p>
+<ol type="1">
+<li>Add the following to <code>_config.yml</code> in <code>themes</code>
+folder.</li>
+</ol>
+<blockquote>
+<p>Here a problem that I encountered is that all <code>$$</code> symbol
+in LaTeX is replaced by <code>\[</code>. The solution is to refer to a
+javascript in your HTML file. I tried
+<code>http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</code>
+but it does not work. This should be because this cdn is already down so
+a later one should be used instead.</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br><span class="line">  per_page: true</span><br><span class="line">  cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span><br></pre></td></tr></table></figure>
+<p>Its also worth trying to add this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>in all MarkDown files that needs LaTeX.</p>
+<ol start="6" type="1">
+<li><p>Enter <code>pandoc -v</code> and see if Pandoc is successfully
+installed.</p></li>
+<li><p>Build the static website</p></li>
+</ol>
+<blockquote>
+<p>There are some general requirements for Hexo MarkDown files, such as
+no three slashes together, and the MarkDown files should be placed under
+<code>_posts</code> folder.</p>
+</blockquote>
+<blockquote>
+<p>I added a profile page for my Blog. To do this, change the
+<code>_config.yml</code> in the themes folder and change the
+<code>menu</code> section. The format is
+<code>&lt;Name&gt;: &lt;Path&gt;</code>, for my Blog its
+<code>About Me: /About.html</code>.</p>
+</blockquote>
+<p>Write this in Powershell <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$npx hexo generate</span><br><span class="line">$npx hexo server</span><br></pre></td></tr></table></figure></p>
+<ol start="8" type="1">
+<li>If successful, deploy the static website on Github Page!
+https://hexo.io/docs/one-command-deployment</li>
+</ol>
+<p>Write this in Powershell <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>Change the <code>_config.yml</code> in the root folder:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt; # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io</span><br><span class="line">  branch: gh-pages</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
+<p>And try</p>
+<blockquote>
+<p>Here my connections was very unstable. The solution is to do
+<code>git config --global --unset http.proxy</code> then do
+<code>git config --global --unset https.proxy</code>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npx hexo deploy</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>And my Hexo blog is successfully initialised on Github Page!</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/AIIO%20%E5%92%8C%20AIME%20%E6%B8%B8%E8%AE%B0/">
+        Next post<br>AIIO 和 AIME 游记
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="http://example.com">Hexo</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?9107136"></script>
+
+
+
+
+
+
+</body>
+</html>
