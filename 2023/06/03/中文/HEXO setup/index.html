@@ -4,11 +4,13 @@
 <html lang="en">
 
 <head>
-    <title>Hexo Blog Setup - KarL05&#39;s Blog</title>
+    <title>HEXO Blog Setup - KarL05&#39;s Blog</title>
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Tony Wu">
-<meta name="description" content="Setting up this Hexo blog i...">
+<meta name="description" content="
+
+Setting up this Hexo bl...">
 <meta name="keywords" content="">
 
 <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
@@ -22,7 +24,7 @@
     
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?35238958">
+<link rel="stylesheet" href="/css/journal.css?88273021">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -55,8 +57,13 @@
                     </a>
                 
                     <a class="a-block drawer-menu-item false"
-                       href="/Tag.html">
-                        Catagory
+                       href="/tags.html">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories.html">
+                        Category
                     </a>
                 
                     <a class="a-block drawer-menu-item false"
@@ -98,7 +105,7 @@
             Blog
         </div>
         <div class="nav-subtitle">
-            Shangtong Wu
+            Tony Wu
         </div>
     </a>
 
@@ -116,8 +123,13 @@
                 </a>
             
                 <a class="a-block nav-link-item false"
-                   href="/Tag.html">
-                    Catagory
+                   href="/tags.html">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories.html">
+                    Category
                 </a>
             
                 <a class="a-block nav-link-item false"
@@ -158,13 +170,27 @@
             <div class="post-head-wrapper-text-only"
                  style="background-image: url('')">
                 <div class="post-title">
-                    Hexo Blog Setup
+                    HEXO Blog Setup
                     <div class="post-meta">
-                        <time datetime="2023-06-02T16:00:00.000Z" itemprop="datePublished">
-                            2023-06-03 00:00
+                        <time datetime="2023-06-03T07:18:00.000Z" itemprop="datePublished">
+                            2023-06-03 15:18
                         </time>&nbsp;
                         
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/教程Tutorial/'>教程Tutorial</a>
+                        
+                        
     
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/英文English/'>英文English</a>, 
+                        
+                        <a href='/tags/开发Development/'>开发Development</a>
+                        
                         
                     </div>
                 </div>
@@ -173,7 +199,10 @@
             <div class="post-body-wrapper">
                 <div class="post-body">
                     
-                    <p>Setting up this Hexo blog is quite difficult. There are many
+                    <script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<p>Setting up this Hexo blog is quite difficult. There are many
 unexpected problems that are solved and I will record them in this
 entry.</p>
 <ol type="1">
@@ -198,26 +227,25 @@ choice because it needs less modifications and more robust.</p>
 work for all themes on Hexo.</p>
 </blockquote>
 <p>Write this in Powershell <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$npm un hexo-math</span><br><span class="line">$npm un hexo-renderer-marked</span><br><span class="line">$npm i hexo-renderer-pandoc</span><br></pre></td></tr></table></figure></p>
-<ol type="1">
-<li>Add the following to <code>_config.yml</code> in <code>themes</code>
-folder.</li>
+<ol start="5" type="1">
+<li>Add the following to <code>_config.yml</code> in themes folder.</li>
 </ol>
 <blockquote>
-<p>Here a problem that I encountered is that all <code>$$</code> symbol
-in LaTeX is replaced by <code>\[</code>. The solution is to refer to a
-javascript in your HTML file. I tried
+<p>Here a problem that I encountered is that all $$ symbol in LaTeX is
+replaced by <code>\[</code>. The solution is to refer to a javascript in
+your HTML file. I tried
 <code>http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</code>
 but it does not work. This should be because this cdn is already down so
 a later one should be used instead.</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br><span class="line">  per_page: true</span><br><span class="line">  cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span><br></pre></td></tr></table></figure>
 <p>Its also worth trying to add this:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;</span><br><span class="line">src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>in all MarkDown files that needs LaTeX.</p>
 <ol start="6" type="1">
 <li><p>Enter <code>pandoc -v</code> and see if Pandoc is successfully
 installed.</p></li>
-<li><p>Build the static website</p></li>
+<li><p>Build the static website.</p></li>
 </ol>
 <blockquote>
 <p>There are some general requirements for Hexo MarkDown files, such as
@@ -226,24 +254,25 @@ no three slashes together, and the MarkDown files should be placed under
 </blockquote>
 <blockquote>
 <p>I added a profile page for my Blog. To do this, change the
-<code>_config.yml</code> in the themes folder and change the
-<code>menu</code> section. The format is
-<code>&lt;Name&gt;: &lt;Path&gt;</code>, for my Blog its
-<code>About Me: /About.html</code>.</p>
+_config.yml in the themes folder and change the menu section. The format
+is <code>&lt;Name&gt;: &lt;Path&gt;</code>, for my Blog its About Me:
+/About.html.</p>
 </blockquote>
-<p>Write this in Powershell <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$npx hexo generate</span><br><span class="line">$npx hexo server</span><br></pre></td></tr></table></figure></p>
+<p>Write this in Powershell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$npx hexo generate</span><br><span class="line">$npx hexo server</span><br></pre></td></tr></table></figure>
 <ol start="8" type="1">
 <li>If successful, deploy the static website on Github Page!
 https://hexo.io/docs/one-command-deployment</li>
 </ol>
-<p>Write this in Powershell <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>Write this in Powershell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>Change the <code>_config.yml</code> in the root folder:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt; # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io</span><br><span class="line">  branch: gh-pages</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
 <p>And try</p>
 <blockquote>
-<p>Here my connections was very unstable. The solution is to do
-<code>git config --global --unset http.proxy</code> then do
-<code>git config --global --unset https.proxy</code>.</p>
+<p>Here my connections was very unstable. The solution is to do git
+config <code>--global --unset http.proxy</code> then do git config
+<code>--global --unset https.proxy</code></p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npx hexo deploy</span><br></pre></td></tr></table></figure>
 <p>And my Hexo blog is successfully initialised on Github Page!</p>
@@ -254,14 +283,14 @@ https://hexo.io/docs/one-command-deployment</li>
             
 <nav class="post-pagination">
     
-    <a class="newer-posts" href="/2023/06/03/%E4%B8%AD%E6%96%87/AIIO%20%E5%92%8C%20AIME%20%E6%B8%B8%E8%AE%B0/">
-        Previous post<br>AIIO 和 AIME 游记
+    <a class="newer-posts" href="/2023/06/08/%E4%B8%AD%E6%96%87/Poetry/">
+        Previous post<br>Some Random Poetry
     </a>
     
     <span class="page-number"></span>
     
-    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/2-SAT%20%E6%A8%A1%E6%9D%BF/">
-        Next post<br>2-SAT 学习笔记
+    <a class="older-posts" href="/2023/06/03/%E4%B8%AD%E6%96%87/AIIO%20%E5%92%8C%20AIME%20%E6%B8%B8%E8%AE%B0/">
+        Next post<br>AIIO 和 AIME 游记
     </a>
     
 </nav>
@@ -295,7 +324,7 @@ https://hexo.io/docs/one-command-deployment</li>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?7191070"></script>
+<script src="/js/journal.min.js?6670791"></script>
 
 
 
