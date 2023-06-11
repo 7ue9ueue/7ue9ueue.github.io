@@ -4,14 +4,12 @@
 <html lang="en">
 
 <head>
-    <title>闲题解答 1 - KarL05&#39;s Blog</title>
+    <title>Inequality Revision 2 - KarL05&#39;s Blog</title>
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Tony Wu">
-<meta name="description" content="
-
-闲题解答 | 营业日记
-有朋友问我一道题： ...">
+<meta name="description" content="Inequalitys with one
+varia...">
 <meta name="keywords" content="Blog">
 
 <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
@@ -31,7 +29,7 @@
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?6530563">
+<link rel="stylesheet" href="/css/journal.css?40662022">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -187,16 +185,16 @@
             <div class="post-head-wrapper-text-only"
                  style="background-image: url('')">
                 <div class="post-title">
-                    闲题解答 1
+                    Inequality Revision 2
                     <div class="post-meta">
-                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
-                            2023-01-01 00:00
+                        <time datetime="2023-06-11T11:18:00.000Z" itemprop="datePublished">
+                            2023-06-11 19:18
                         </time>&nbsp;
                         
                         
                         <i class="material-icons" style="">folder</i>
                         
-                        <a href='/categories/随笔Prose/'>随笔Prose</a>
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
                         
                         
     
@@ -204,11 +202,9 @@
                         
                         <i class="material-icons" style="">label</i>
                         
-                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        <a href='/tags/英文English/'>英文English</a>, 
                         
-                        <a href='/tags/归档Archived/'>归档Archived</a>, 
-                        
-                        <a href='/tags/生成函数Generating-Function/'>生成函数Generating Function</a>
+                        <a href='/tags/数学Math/'>数学Math</a>
                         
                         
                     </div>
@@ -218,84 +214,18 @@
             <div class="post-body-wrapper">
                 <div class="post-body">
                     
-                    <script type="text/javascript"
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-<h1 id="闲题解答-营业日记">闲题解答 | 营业日记</h1>
-<p>有朋友问我一道题： 对于一个集合{1，2，3，4.....,N},
-求有多少子集使得子集内元素和是N的倍数。</p>
-<p>很久没做题了，就做做试试。感觉是一道纯数学题，但我数学不好，可是数数说不定能数出来，感觉形式很生成函数。因此，先把问题具体化，即求</p>
-<p><span class="math display">\[
-A = \sum_k [x^{kN}]\prod_{i=1}^N (x^i+1)
+                    <h1 id="inequalitys-with-one-variable">Inequalitys with one
+variable</h1>
+<h4 id="log">Log</h4>
+<p><span class="math display">\[\frac{x}{1+x} \leq \ln(1+x) \leq x
 \]</span></p>
-<p>然后看起来可能是单位根反演，那就试试：令 <span
-class="math display">\[ w = \cos(2\pi/n)+i\sin(2\pi/n)\]</span></p>
-<p>套用单位根反演去掉第一个符号可以得到：</p>
-<p><span class="math display">\[
-A = \frac{1}{N}\sum_{k=1}^N \prod_{i=1}^N (w^{ki}+1)
-\]</span></p>
-<p>首先这是数学竞赛题，肯定不能直接开始死算。敏锐的</p>
-<p>观察到：</p>
-<p><span class="math display">\[
-1-z^n = \prod_k (-w^{k}+z)
-\]</span></p>
-<p>带入 <span class="math inline">\(z=-1\)</span> 得到</p>
-<p><span class="math display">\[
-1-(-1)^n = \prod_k (-w^k-1) = (-1)^n\prod_k (w^k+1)
-\]</span></p>
-<p>所以</p>
-<p><span class="math display">\[
-f(n) = \frac{1-(-1)^n}{(-1)^n} = \prod_k (w^k+1)
-\]</span></p>
-<p>观察到如果 n 是奇数 <span class="math inline">\(f(n) = 2\)</span>,
-要不然就是 0. 特殊情况 <span class="math inline">\(f(1) = 2^N\)</span>.
-(因为没有复数了)</p>
-<p>可以直接带入吗？不能。因为这里似乎默认了 <span
-class="math inline">\(N\)</span> 是质数。如果 <span
-class="math inline">\(N\)</span>
-不是，那么其实这种"循环节"不是常数。也就是乘以 <span
-class="math inline">\(i\)</span> 的影响是有意义的。</p>
-<p>乘以 <span class="math inline">\(i\)</span> 其实就会导致带入式子中的
-<span class="math inline">\(n\)</span> 变小。这里有一个类似 burnside
-的想法，考虑如果有 6 个单位根，然后选择一个复角 120 度的单位根，其实是
-<span class="math inline">\(2f(3)\)</span> 而不是 <span
-class="math inline">\(f(6)\)</span>.</p>
-<p>具体好像和最大公约数有关，感觉和 burnside 很像，如果 <span
-class="math inline">\((N,k) \not = 1\)</span>, 那就直接取 <span
-class="math inline">\(\frac{N}{k} f(\frac{N}{(N,k)})\)</span>
-(好像很有道理的样子？)</p>
-<p>那就直接求和，</p>
-<p><span class="math display">\[
-A = \frac{1}{N}\sum_{k=1}^N (N,k) f(\frac{N}{(N,k)})
-\]</span></p>
-<p>那 <span class="math inline">\(f(X) = 2\)</span> 当且仅当 <span
-class="math inline">\(X\)</span> 里的 <span
-class="math inline">\(2\)</span> 的因数被除干净了吧？那就是 <span
-class="math inline">\(2^{v_2(N)}|(N,k)\)</span> 的时候吧？</p>
-<p>那么 <span class="math inline">\(k\)</span> 的选择只能是 <span
-class="math inline">\(t=2^{v_2(N)}\)</span> 的倍数吧？也就是</p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_{k=1}^{N/t}(N/t,k)
-\]</span></p>
-<p>最后补个项时因为可能 <span class="math inline">\(w = 1\)</span>
-也就是不参与复数的操作的时候。</p>
-<p>那就莫比乌斯反演就好了吧？这不就是 polya 和 burnside 的关系吗？
-可是我没有背过 Polya 的结论，那就自己推一遍吧。</p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_d \sum_{k=1}^{N/td}d[(k,N/td)=1]
-\]</span></p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_{d|N} d\sum_{k=1}^{N/td}[(k,N/td)=1]
-\]</span></p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_{d|N} d\phi(N/td)
-\]</span></p>
-<p>使用黎曼函数那套生成函数法玩一玩可以得到, (最后别忘了 <span
-class="math inline">\(2^N-1\)</span>)</p>
-<p><span class="math display">\[
-\boxed{A = \frac{2t}{N}( [z^{\frac{N}{2^{v_2(N)}}}]
-\frac{\zeta^2(z-1)}{\zeta(z)}+2^N-1)}
-\]</span></p>
+<p><span class="math display">\[\frac{1}{1+x} &lt; \ln(1+\frac{1}{x})
+&lt; \frac{1}{x} \]</span></p>
+<h4 id="bernoulli">Bernoulli</h4>
+<p>when n&gt;1</p>
+<p><span class="math display">\[ (1+x)^n \geq 1+nx\]</span></p>
+<p>when n&lt;1</p>
+<p><span class="math display">\[(1+x)^n \leq 1+nx\]</span></p>
 
                 </div>
             </div>
@@ -303,14 +233,10 @@ class="math inline">\(2^N-1\)</span>)</p>
             
 <nav class="post-pagination">
     
-    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/%E5%85%B3%E4%BA%8E01%E8%83%8C%E5%8C%85/">
-        Previous post<br>关于01背包的优化
-    </a>
-    
     <span class="page-number"></span>
     
-    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/%E9%97%B2%E9%A2%98%E8%A7%A3%E7%AD%94%E5%85%B6%E4%B8%89/">
-        Next post<br>闲题解答 3
+    <a class="older-posts" href="/2023/06/11/%E4%B8%AD%E6%96%87/Inequalitys%201/">
+        Next post<br>Inequality Revision 1
     </a>
     
 </nav>
@@ -344,7 +270,7 @@ class="math inline">\(2^N-1\)</span>)</p>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?27213272"></script>
+<script src="/js/journal.min.js?75440432"></script>
 
 
 

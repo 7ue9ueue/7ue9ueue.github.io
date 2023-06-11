@@ -4,14 +4,12 @@
 <html lang="en">
 
 <head>
-    <title>闲题解答 1 - KarL05&#39;s Blog</title>
+    <title>Linear Alegebra Chapter 5 Study Notes - KarL05&#39;s Blog</title>
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Tony Wu">
-<meta name="description" content="
-
-闲题解答 | 营业日记
-有朋友问我一道题： ...">
+<meta name="description" content="高等代数学 Chapter 5
+Chapter 5....">
 <meta name="keywords" content="Blog">
 
 <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
@@ -31,7 +29,7 @@
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?6530563">
+<link rel="stylesheet" href="/css/journal.css?1956988">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -187,16 +185,16 @@
             <div class="post-head-wrapper-text-only"
                  style="background-image: url('')">
                 <div class="post-title">
-                    闲题解答 1
+                    Linear Alegebra Chapter 5 Study Notes
                     <div class="post-meta">
-                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
-                            2023-01-01 00:00
+                        <time datetime="2023-06-11T09:55:00.000Z" itemprop="datePublished">
+                            2023-06-11 17:55
                         </time>&nbsp;
                         
                         
                         <i class="material-icons" style="">folder</i>
                         
-                        <a href='/categories/随笔Prose/'>随笔Prose</a>
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
                         
                         
     
@@ -204,11 +202,9 @@
                         
                         <i class="material-icons" style="">label</i>
                         
-                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        <a href='/tags/英文English/'>英文English</a>, 
                         
-                        <a href='/tags/归档Archived/'>归档Archived</a>, 
-                        
-                        <a href='/tags/生成函数Generating-Function/'>生成函数Generating Function</a>
+                        <a href='/tags/数学Math/'>数学Math</a>
                         
                         
                     </div>
@@ -218,84 +214,123 @@
             <div class="post-body-wrapper">
                 <div class="post-body">
                     
-                    <script type="text/javascript"
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-<h1 id="闲题解答-营业日记">闲题解答 | 营业日记</h1>
-<p>有朋友问我一道题： 对于一个集合{1，2，3，4.....,N},
-求有多少子集使得子集内元素和是N的倍数。</p>
-<p>很久没做题了，就做做试试。感觉是一道纯数学题，但我数学不好，可是数数说不定能数出来，感觉形式很生成函数。因此，先把问题具体化，即求</p>
+                    <h1 id="高等代数学-chapter-5">高等代数学 Chapter 5</h1>
+<p>Chapter 5.10 Polynomials</p>
+<h4 id="definition-5.10.1">Definition 5.10.1</h4>
+<p>Sylvester Matrix</p>
 <p><span class="math display">\[
-A = \sum_k [x^{kN}]\prod_{i=1}^N (x^i+1)
+R(f,g)=\det(\left[\phantom{\begin{matrix}f_0\\ \ddots\\f_0\\b_0\\
+\ddots\\b_0 \end{matrix}}
+\right.\hspace{-1.5em}
+\underbrace{\begin{matrix}
+a_m &amp; \cdots &amp; a_0 &amp; \\
+\ddots &amp; &amp; \ddots &amp; \\
+&amp; a_m &amp; \cdots &amp; a_0 \\
+b_n &amp; \cdots &amp; b_0 &amp; \\
+\ddots &amp; &amp; \ddots &amp; \\
+&amp; b_n &amp; \cdots &amp; b_0
+\end{matrix}}_{m+n-i}
+\hspace{-1.5em}
+\left.\phantom{\begin{matrix}f_0\\ \ddots\\f_0\\b_0\\ \ddots\\b_0
+\end{matrix}}\right])
 \]</span></p>
-<p>然后看起来可能是单位根反演，那就试试：令 <span
-class="math display">\[ w = \cos(2\pi/n)+i\sin(2\pi/n)\]</span></p>
-<p>套用单位根反演去掉第一个符号可以得到：</p>
-<p><span class="math display">\[
-A = \frac{1}{N}\sum_{k=1}^N \prod_{i=1}^N (w^{ki}+1)
+<p>where</p>
+<p><span class="math display">\[ f(x) = \sum_{i=0}^m a_ix^i\]</span></p>
+<p><span class="math display">\[ g(x) = \sum_{i=0}^n b_ix^i\]</span></p>
+<h4 id="theorem-5.10.1">Theorem 5.10.1:</h4>
+<p>Check for common roots for two polynomial</p>
+<p><span class="math display">\[ R(f,g) \not = 0\]</span></p>
+<h4 id="theorem-5.10.2">Theorem 5.10.2</h4>
+<p><span class="math display">\[ R(f,g) = a_0^nb_0^m \prod_{i=1}^m
+\prod_{j=1}^n(x_i-y_j)\]</span></p>
+<h4 id="theorem-5.10.3">Theorem 5.10.3</h4>
+<p><span class="math display">\[ \Delta(f) =
+(-1)^{\frac{n(n-1)}{2}}\frac{R(f,f&#39;)}{a_0} = a_0^{2n-2} \prod_{i\leq
+j}(x_i-x_j)^2\]</span></p>
+<p>If <span class="math inline">\(\Delta(f) = 0\)</span>, then there is
+no repeated roots.</p>
+<blockquote>
+<p>Recall that <span class="math inline">\(f(x)\)</span> have no
+repeated roots iff <span class="math inline">\(\deg(\gcd(f,f&#39;)) =
+0\)</span>. This can be used to prove 5.10.3.</p>
+</blockquote>
+<hr />
+<h4 id="exercise-1">Exercise 1</h4>
+<p><span class="math display">\[f(x) = x^3+3x^2-x+4\]</span></p>
+<p><span class="math display">\[g(x) = x^2-2x-1\]</span></p>
+<p><span class="math display">\[R(f,f&#39;) = \det(\begin{bmatrix}
+1 &amp; 3 &amp; -1 &amp; 4 &amp; 0 \\
+0 &amp; 1 &amp; 3 &amp; -1 &amp; 4 \\
+1 &amp; -2 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; -2 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; -2 &amp; -1
+\end{bmatrix}) = \boxed{161}\]</span></p>
+<h4 id="exercise-2">Exercise 2</h4>
+<p>Find delta. <span class="math display">\[ f(x) = x^3 + px +
+q\]</span></p>
+<p><span class="math display">\[ f&#39;(x) = 3x + p\]</span></p>
+<p><span class="math display">\[R(f,f&#39;) = \det(\begin{bmatrix}
+1 &amp; 0 &amp; p &amp; q &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; p &amp; q \\
+3 &amp; 0 &amp; p &amp; 0 &amp; 0 \\
+0 &amp; 3 &amp; 0 &amp; p &amp; 0 \\
+0 &amp; 0 &amp; 3 &amp; 0 &amp; p
+\end{bmatrix}) = 27q^2+4p^3\]</span></p>
+<p><span class="math display">\[ \boxed{\Delta(f) =
+(-1)^3(27q^2+4p^3)}\]</span></p>
+<h4 id="exercise-3.1">Exercise 3.1</h4>
+<p>Proof</p>
+<p><span class="math display">\[R(f,g) = (-1)^{mn}R(g,f)\]</span></p>
+<p><span class="math display">\[R(f,g) = a_0^nb_0^m \prod_{i=1}^m
+\prod_{j=1}^n(x_i-y_j) = a_0^nb_0^m (-1)^{mn} \prod_{i=1}^m
+\prod_{j=1}^n(y_j-x_i) = R(g,f)\]</span></p>
+<h4 id="exercise-3.2">Exercise 3.2</h4>
+<p>Proof</p>
+<p><span class="math display">\[ R(af,bg) = a^m b^nR(f,g) \]</span></p>
+<p><span class="math display">\[ R(af,bg) = a^na_0^nb^mb_0^m
+\prod_{i=1}^m \prod_{j=1}^n(x_i-y_j) = a^m b^nR(f,g)\]</span></p>
+<h4 id="exercise-5">Exercise 5</h4>
+<p>Proof</p>
+<p><span class="math display">\[ R(f,g_1g_2) = R(f,g_1)R(f,g_2)
 \]</span></p>
-<p>首先这是数学竞赛题，肯定不能直接开始死算。敏锐的</p>
-<p>观察到：</p>
-<p><span class="math display">\[
-1-z^n = \prod_k (-w^{k}+z)
-\]</span></p>
-<p>带入 <span class="math inline">\(z=-1\)</span> 得到</p>
-<p><span class="math display">\[
-1-(-1)^n = \prod_k (-w^k-1) = (-1)^n\prod_k (w^k+1)
-\]</span></p>
-<p>所以</p>
-<p><span class="math display">\[
-f(n) = \frac{1-(-1)^n}{(-1)^n} = \prod_k (w^k+1)
-\]</span></p>
-<p>观察到如果 n 是奇数 <span class="math inline">\(f(n) = 2\)</span>,
-要不然就是 0. 特殊情况 <span class="math inline">\(f(1) = 2^N\)</span>.
-(因为没有复数了)</p>
-<p>可以直接带入吗？不能。因为这里似乎默认了 <span
-class="math inline">\(N\)</span> 是质数。如果 <span
-class="math inline">\(N\)</span>
-不是，那么其实这种"循环节"不是常数。也就是乘以 <span
-class="math inline">\(i\)</span> 的影响是有意义的。</p>
-<p>乘以 <span class="math inline">\(i\)</span> 其实就会导致带入式子中的
-<span class="math inline">\(n\)</span> 变小。这里有一个类似 burnside
-的想法，考虑如果有 6 个单位根，然后选择一个复角 120 度的单位根，其实是
-<span class="math inline">\(2f(3)\)</span> 而不是 <span
-class="math inline">\(f(6)\)</span>.</p>
-<p>具体好像和最大公约数有关，感觉和 burnside 很像，如果 <span
-class="math inline">\((N,k) \not = 1\)</span>, 那就直接取 <span
-class="math inline">\(\frac{N}{k} f(\frac{N}{(N,k)})\)</span>
-(好像很有道理的样子？)</p>
-<p>那就直接求和，</p>
-<p><span class="math display">\[
-A = \frac{1}{N}\sum_{k=1}^N (N,k) f(\frac{N}{(N,k)})
-\]</span></p>
-<p>那 <span class="math inline">\(f(X) = 2\)</span> 当且仅当 <span
-class="math inline">\(X\)</span> 里的 <span
-class="math inline">\(2\)</span> 的因数被除干净了吧？那就是 <span
-class="math inline">\(2^{v_2(N)}|(N,k)\)</span> 的时候吧？</p>
-<p>那么 <span class="math inline">\(k\)</span> 的选择只能是 <span
-class="math inline">\(t=2^{v_2(N)}\)</span> 的倍数吧？也就是</p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_{k=1}^{N/t}(N/t,k)
-\]</span></p>
-<p>最后补个项时因为可能 <span class="math inline">\(w = 1\)</span>
-也就是不参与复数的操作的时候。</p>
-<p>那就莫比乌斯反演就好了吧？这不就是 polya 和 burnside 的关系吗？
-可是我没有背过 Polya 的结论，那就自己推一遍吧。</p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_d \sum_{k=1}^{N/td}d[(k,N/td)=1]
-\]</span></p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_{d|N} d\sum_{k=1}^{N/td}[(k,N/td)=1]
-\]</span></p>
-<p><span class="math display">\[
-A = \frac{2t}{N}\sum_{d|N} d\phi(N/td)
-\]</span></p>
-<p>使用黎曼函数那套生成函数法玩一玩可以得到, (最后别忘了 <span
-class="math inline">\(2^N-1\)</span>)</p>
-<p><span class="math display">\[
-\boxed{A = \frac{2t}{N}( [z^{\frac{N}{2^{v_2(N)}}}]
-\frac{\zeta^2(z-1)}{\zeta(z)}+2^N-1)}
-\]</span></p>
+<p><span class="math display">\[ R(f,g_1g_2) = a_0^{m+n} \prod_{i=1}^{t}
+g(x_i) \]</span></p>
+<p><span class="math display">\[ R(f,g_1) = a_0^{m} \prod_{i=1}^t
+g_1(x_i) \]</span></p>
+<p><span class="math display">\[ R(f,g_2) = a_0^{n} \prod_{i=1}^t
+g_2(x_i) \]</span></p>
+<h4 id="exercise-6">Exercise 6</h4>
+<p>Let <span class="math inline">\(a_0 = 1\)</span>. Given <span
+class="math inline">\(\Delta(f(x))\)</span>. Find <span
+class="math inline">\(\Delta(f(x^2))\)</span>.</p>
+<p><span class="math display">\[\Delta(f(x)) = \prod_{i\leq
+j}(x_i-x_j)^2\]</span></p>
+<p><span class="math display">\[\Delta(f(x^2)) = \prod_{i\leq
+j}(\sqrt{x_i}-\sqrt{x_j})^2(\sqrt{x_i}+\sqrt{x_j})^2(-\sqrt{x_i}+\sqrt{x_j})^2(-\sqrt{x_i}-\sqrt{x_j})^2\]</span></p>
+<p><span class="math display">\[\Delta(f(x^2)) = \prod_{i\leq
+j}(\sqrt{x_i}-\sqrt{x_j})^4(\sqrt{x_i}+\sqrt{x_j})^4\]</span></p>
+<p><span class="math display">\[\Delta(f(x^2)) = \prod_{i\leq
+j}(x_i-x_j)^4 = \boxed{\Delta(f(x))^2}\]</span></p>
+<h4 id="exercise-7">Exercise 7</h4>
+<p>Find an equation for curve:</p>
+<p><span class="math display">\[ x = t^3 + 2t -3 \]</span></p>
+<p><span class="math display">\[ y = t^2-t +1 \]</span></p>
+<p><span class="math display">\[ f(t) = t^3 + 2t -3 -x \]</span></p>
+<p><span class="math display">\[ g(t) = t^2-t +1 - y \]</span></p>
+<p>so for a given <span class="math inline">\((x,y)\)</span>, there
+should exist a <span class="math inline">\(t\)</span> such that both
+<span class="math inline">\(f(t)\)</span> and <span
+class="math inline">\(g(t)\)</span> both is <span
+class="math inline">\(0\)</span>. So they have a common root.</p>
+<p><span class="math display">\[ R(f,g) = \det(\begin{bmatrix}
+1 &amp; 0 &amp; 2 &amp; -3-x &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 2 &amp; -3-x \\
+2 &amp; -1 &amp; 1-y &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; -1 &amp; 1-y &amp; 0 \\
+0 &amp; 0 &amp; 2 &amp; -1 &amp; 1-y
+\end{bmatrix}) \]</span></p>
+<p><span class="math display">\[ R(f,g) = \boxed{y^3 - x^2 + 3xy + y^2
+-6x + 10y -12}\]</span></p>
 
                 </div>
             </div>
@@ -303,14 +338,14 @@ class="math inline">\(2^N-1\)</span>)</p>
             
 <nav class="post-pagination">
     
-    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/%E5%85%B3%E4%BA%8E01%E8%83%8C%E5%8C%85/">
-        Previous post<br>关于01背包的优化
+    <a class="newer-posts" href="/2023/06/11/%E4%B8%AD%E6%96%87/Inequalitys%201/">
+        Previous post<br>Inequality Revision 1
     </a>
     
     <span class="page-number"></span>
     
-    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/%E9%97%B2%E9%A2%98%E8%A7%A3%E7%AD%94%E5%85%B6%E4%B8%89/">
-        Next post<br>闲题解答 3
+    <a class="older-posts" href="/2023/06/08/%E4%B8%AD%E6%96%87/Poetry/">
+        Next post<br>Some Random Poetry
     </a>
     
 </nav>
@@ -344,7 +379,7 @@ class="math inline">\(2^N-1\)</span>)</p>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?27213272"></script>
+<script src="/js/journal.min.js?48193844"></script>
 
 
 
