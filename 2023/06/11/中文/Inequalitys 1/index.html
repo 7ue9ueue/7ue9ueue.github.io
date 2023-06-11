@@ -8,9 +8,8 @@
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Tony Wu">
-<meta name="description" content="Named Inequalitys
-Cauchy
-...">
+<meta name="description" content="Inequalitys with multi
+var...">
 <meta name="keywords" content="Blog">
 
 <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
@@ -25,12 +24,12 @@ Cauchy
 
 
 <!-- modify begin -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <meta name="referrer" content="no-referrer"> 
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?44699559">
+<link rel="stylesheet" href="/css/journal.css?47581909">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -215,19 +214,24 @@ Cauchy
             <div class="post-body-wrapper">
                 <div class="post-body">
                     
-                    <h1 id="named-inequalitys">Named Inequalitys</h1>
+                    <h1 id="inequalitys-with-multi-variables">Inequalitys with multi
+variables</h1>
 <h4 id="cauchy">Cauchy</h4>
 <p><span class="math display">\[
 \sum_{i=1}^n(a_i^2)\sum_{i=1}^n(b_i^2)\geq \sum_{i=1}^n (a_i
 b_i)^2\]</span></p>
 <h4 id="carlson">Carlson</h4>
+<blockquote>
+<p>k = 2 is Cauchy</p>
 <p>k is the number of lists.</p>
+</blockquote>
 <p><span class="math display">\[
 \sum_{i=1}^n(a_i^k)\sum_{i=1}^n(b_i^k)...\sum_{i=1}^n(z_i^k)\geq
 \sum_{i=1}^n (a_i b_ic_i...z_i)^k\]</span></p>
 <h4 id="jensen">Jensen</h4>
 <blockquote>
-<p>can be weighed concave</p>
+<p>can be weighed</p>
+<p>concave</p>
 </blockquote>
 <p><span class="math display">\[ \frac{\sum_{i=1}^n f(x_i)}{n} \geq
 \sum_{i=1}^n\frac{f(x_i)}{n}\]</span></p>
@@ -242,6 +246,16 @@ b_i)^2\]</span></p>
 <p><span class="math display">\[
 \sum_{i=1}^n(a_i^p)^q\sum_{i=1}^n(b_i^q)^p\geq \sum_{i=1}^n (a_i
 b_i)^{pq}\]</span></p>
+<h4 id="am-gm">AM-GM</h4>
+<p>Define</p>
+<p><span class="math display">\[ D(p) = \lim_{k \to
+p}(\frac{x_i^k}{n})^{\frac{1}{k}}\]</span></p>
+<p>Then</p>
+<blockquote>
+<p>QM AM GM HM Rule</p>
+</blockquote>
+<p><span class="math display">\[ D(2) \geq D(1) \geq D(0) \geq
+D(-1)\]</span></p>
 
                 </div>
             </div>
@@ -290,7 +304,7 @@ b_i)^{pq}\]</span></p>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?57830108"></script>
+<script src="/js/journal.min.js?97925194"></script>
 
 
 
