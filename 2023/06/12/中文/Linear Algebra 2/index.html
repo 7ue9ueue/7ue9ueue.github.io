@@ -29,7 +29,7 @@ Theore...">
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?67317361">
+<link rel="stylesheet" href="/css/journal.css?15748499">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -279,7 +279,7 @@ P\text{diag}(\lambda_1,\lambda_2,\cdots,\lambda_n)\]</span></p>
 <li><p><span class="math inline">\(P\)</span> is eigenvectors, <span
 class="math inline">\(P^{-1}AP\)</span> is eigenvalues</p></li>
 </ol>
-<h4 id="example-6.2.3">Example 6.2.3</h4>
+<h4 id="exercise">Exercise</h4>
 <p>Find <span class="math inline">\(A^{10}\)</span></p>
 <p><span class="math display">\[ A =\begin{pmatrix}
 1 &amp; 0 \\
@@ -311,10 +311,22 @@ class="math inline">\(P^{-1}AP\)</span> is eigenvalues</p></li>
 3 &amp; 0 \\
 -1 &amp; 1
 \end{pmatrix}\]</span></p>
-<p><span class="math display">\[A^{10} =
-P(P^{-1}AP)^{10}P^{-1}\]</span></p>
-<p><span class="math display">\[A^{10} =
-P(P^{-1}AP)^{10}P^{-1}\]</span></p>
+<p><span class="math display">\[A^{10} = P(P^{-1}AP)^{10}P^{-1}
+=  \begin{pmatrix}
+1 &amp; 0 \\
+1-2^{10} &amp; 2^{10}
+\end{pmatrix}  \]</span></p>
+<h4 id="theorem-6.3.1">Theorem 6.3.1</h4>
+<p>Cayley-Hamilton Theorem</p>
+<p>let the eigenvalues of matrix A form</p>
+<p><span class="math display">\[f(x) = \prod_{i=1}^n
+(\lambda_i-x)\]</span></p>
+<p>then</p>
+<p><span class="math display">\[f(A) = O\]</span></p>
+<blockquote>
+<p>Proofing this consider an upper triangular Matrix B that is similar
+to A</p>
+</blockquote>
 
                 </div>
             </div>
@@ -359,7 +371,7 @@ P(P^{-1}AP)^{10}P^{-1}\]</span></p>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?25976028"></script>
+<script src="/js/journal.min.js?460174"></script>
 
 
 
