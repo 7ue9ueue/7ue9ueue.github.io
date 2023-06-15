@@ -4,15 +4,13 @@
 <html lang="en">
 
 <head>
-    <title>Links - KarL05&#39;s Blog</title>
+    <title>Counting Problem - KarL05&#39;s Blog</title>
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Tony Wu">
-<meta name="description" content="
-Yifan Kang&#39;s Blog
-
-
-Sa...">
+<meta name="description" content="Problem
+\[ f_{n,m}(x) =
+\...">
 <meta name="keywords" content="Blog">
 
 <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
@@ -32,7 +30,7 @@ Sa...">
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?82937808">
+<link rel="stylesheet" href="/css/journal.css?46000743">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -74,7 +72,7 @@ Sa...">
                         Category
                     </a>
                 
-                    <a class="a-block drawer-menu-item active"
+                    <a class="a-block drawer-menu-item false"
                        href="/Links.html">
                         Friends
                     </a>
@@ -145,7 +143,7 @@ Sa...">
                     Category
                 </a>
             
-                <a class="a-block nav-link-item active"
+                <a class="a-block nav-link-item false"
                    href="/Links.html">
                     Friends
                 </a>
@@ -188,26 +186,176 @@ Sa...">
             <div class="post-head-wrapper-text-only"
                  style="background-image: url('')">
                 <div class="post-title">
-                    Links
-                    
+                    Counting Problem
+                    <div class="post-meta">
+                        <time datetime="2023-06-15T05:20:00.000Z" itemprop="datePublished">
+                            2023-06-15 13:20
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/数学Math/'>数学Math</a>
+                        
+                        
+                    </div>
                 </div>
             </div>
     
             <div class="post-body-wrapper">
                 <div class="post-body">
                     
-                    <blockquote>
-<p><a target="_blank" rel="noopener" href="https://yifank.github.io/">Yifan Kang's Blog</a></p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://haoran-jie.github.io/">Samuel Jie's Blog</a></p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/KarL05/">Myself</a></p>
-</blockquote>
+                    <p>Problem</p>
+<p><span class="math display">\[ f_{n,m}(x) =
+\sum_{K,F,C,V,5,0}(x^2-1)^{k-1}x^{2-2k}x^{\sum_{1\leq l_1 &lt; l_2 \leq
+k}{a_{l_2}b_{l_1}}-a_{l_1}b_{l_2}}x^{\sum_{1\leq l \leq k}
+\gcd({a_l,b_l})}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[ K: k\geq 1\]</span></p>
+<p><span class="math display">\[ F:
+0&lt;\frac{a_1}{b_1}&lt;\frac{a_2}{b_2}&lt;\cdots&lt;\frac{a_k}{b_k}
+&lt; 1\]</span></p>
+<p><span class="math display">\[C: \sum_{i=1}^k a_i = m\]</span></p>
+<p><span class="math display">\[V: \sum_{i=1}^k b_i = n\]</span></p>
+<p><span class="math display">\[5:\forall a_i \in
+\Z_{&gt;0}\]</span></p>
+<p><span class="math display">\[0:\forall b_i \in
+\Z_{&gt;0}\]</span></p>
+<p>Show that</p>
+<p><span class="math display">\[ f_{n,m}(x) =
+x^{mn-m^2-n+2}\]</span></p>
+<hr />
+<p>Solution:</p>
+<p>Solve step by step, part by part.</p>
+<p>Assume that each of <span class="math inline">\(a_i\)</span> and
+<span class="math inline">\(b_i\)</span> is a vector, where b is x-axis
+and a is y-axis.</p>
+<p><span class="math display">\[\sum_{1\leq l_1 &lt; l_2 \leq
+k}{a_{l_2}b_{l_1}}-a_{l_1}b_{l_2} = \sum_{1\leq l_1 &lt; l_2 \leq k}
+\det(\begin{bmatrix}
+a_{l_2} &amp; a_{l_1} \\
+b_{l_2} &amp; b_{l_1}
+\end{bmatrix}) = \sum_{1\leq l_1 &lt; l_2 \leq k}
+\det(\bold{v}_{l_2},\bold{v}_{l_1})\]</span></p>
+<p><span class="math display">\[\sum_{1\leq l_1 &lt; l_2 \leq k}
+\det(\bold{v}_{l_2},\bold{v}_{l_1}) = \sum_{1\leq l_1 \leq k-1}
+\sum_{l_1+1\leq l_2 \leq k}
+\det({\bold{v}_{l_2},\bold{v}_{l_1}})=\sum_{1\leq l_1 \leq
+k}\det(\sum_{l_1+1\leq l_2 \leq k}
+{\bold{v}_{l_2},\bold{v}_{l_1}})\]</span></p>
+<p><span class="math display">\[ \sum_{1\leq l_1 \leq
+k}\det(\sum_{l_1+1\leq l_2 \leq k} {\bold{v}_{l_2},\bold{v}_{l_1}}) =
+\sum_{1\leq l_1 \leq k}\det(\bold{s}_k-\bold{s}_{l_1},\bold{v}_{l_1}) =
+\sum_{1\leq l_1 \leq k}\det(-\bold{s}_{l_1},\bold{v}_{l_1})\]</span></p>
+<p>Shoelace Theorem</p>
+<p><span class="math display">\[\sum_{l=1}^{k-1}
+-\det(\bold{s}_{l_1-1},\bold{v}_{l_1}) =
+2\text{Area}(\text{Polygon}(\bold{v}_1,\bold{v_2},\cdots,\bold{v_k},-\bold{s}_k))
+= 2A\]</span></p>
+<hr />
+<p>Pick Theorem, Consider</p>
+<p><span
+class="math display">\[\text{Polygon}(\bold{v}_1,\bold{v_2},\cdots,\bold{v_k},-m\bold{j},-n\bold{i})\]</span></p>
+<p>As</p>
+<p><span class="math display">\[A = i+\frac{b}{2}-1\]</span></p>
+<p><span class="math display">\[\sum_{1\leq l \leq k}
+\gcd({a_l,b_l})+n+m = b\]</span></p>
+<p><span class="math display">\[ nm-2A = 2i + \sum_{1\leq l \leq k}
+\gcd({a_l,b_l}) +n+m-2\]</span></p>
+<p><span class="math display">\[ 2A+ \sum_{1\leq l \leq
+k}\gcd({a_l,b_l}) = mn-n-m+2-2i\]</span></p>
+<hr />
+<p>Simplify the original equation</p>
+<p><span class="math display">\[ f_{n,m}(x) =
+\sum-{...}(x^2-1)^{k-1}x^{2-2k}x^{mn-n-m+2-2i}\]</span></p>
+<p>Rewrite as</p>
+<p><span class="math display">\[ f_{n,m}(x) =
+x^{mn-n-m+2}\sum_P(1-\frac{1}{x^2})^{k(P)-1}(\frac{1}{x^2})^{i(P)}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[P:
+\text{Polygon}(\bold{v}_1,\bold{v_2},\cdots,\bold{v_k},-\bold{s}_k))\text{
+is a convex hull}\]</span></p>
+<p>By imagining a path along a grid from <span
+class="math inline">\((0,0)\)</span> to <span
+class="math inline">\((n,m)\)</span>.</p>
+<hr />
+<p>Consider</p>
+<p><span
+class="math display">\[x^{mn-n-m+2}\sum_P(1-\frac{1}{x^2})^{k(P)-1}(\frac{1}{x^2})^{i(P)}\]</span></p>
+<p>since</p>
+<p><span class="math display">\[\forall \frac{a_i}{b_i} &lt;
+1\]</span></p>
+<p>there exist a right angle isosceles triangle where all points within
+cannot be selected as vertices of the convex hull. There are in
+total</p>
+<p><span class="math display">\[\frac{m(m-1)}{2}\]</span></p>
+<p>of them.</p>
+<p>Rewrite equation to</p>
+<p><span
+class="math display">\[x^{mn-n-m+2}\sum_P(1-\frac{1}{x^2})^{v(P)}(\frac{1}{x^2})^{o(P)}(\frac{1}{x^2})^{\frac{m(m-1)}{2}}\]</span></p>
+<p><span
+class="math display">\[x^{mn-n-m+2-m(m-1)}\sum_P(1-\frac{1}{x^2})^{v(P)}(\frac{1}{x^2})^{o(P)}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[v(P) = \text{number of vertices of the
+convex hull}\]</span></p>
+<p><span class="math display">\[o(P) = \text{number of points outside of
+the convex hull}\]</span></p>
+<p>*For clarity, if there points are colinear, the one thats a "turning
+point" is the vertex, and the others are "outside" the convexhull.</p>
+<p>define</p>
+<p><span class="math display">\[i(P) = \text{number of points inside of
+the convex hull}\]</span></p>
+<p>I will now evaluate</p>
+<p><span
+class="math display">\[S=\sum_P(1-\frac{1}{x^2})^{v(P)}(\frac{1}{x^2})^{o(P)}
+=
+\sum_P(1-\frac{1}{x^2})^{v(P)}(\frac{1}{x^2})^{o(P)}(1-\frac{1}{x^2}+\frac{1}{x^2})^{i(P)}\]</span></p>
+<p><span
+class="math display">\[S=\sum_P\sum_{k=0}^{i(P)}\binom{i(P)}{k}(1-\frac{1}{x^2})^{v(P)+k}(\frac{1}{x^2})^{o(P)+i(P)-k}\]</span></p>
+<p>Note</p>
+<p><span class="math display">\[i(P)+o(P)+v(P) = \text{const.}\]</span>
+Consider</p>
+<p><span
+class="math display">\[\binom{i(P)}{k}(\frac{1}{x^2})^{v(P)+k}\]</span></p>
+<p>This process means select <span class="math inline">\(v(P)\)</span>
+points for vertice, then select <span class="math inline">\(k\)</span>
+points interior.</p>
+<p>This is equivlent to finding a subset of points of size <span
+class="math inline">\(v(P)+k\)</span>. And then find its convex hull. As
+the convex hull for each subset is unique, the mapping is one to
+one.</p>
+<p>Hence</p>
+<p><span class="math display">\[S = \sum_{k=1}^{i(P)+o(P)+v(P)}
+\binom{i(P)+o(P)+v(P)}{k}(1-\frac{1}{x^2})^k(\frac{1}{x^2})^{i(P)+o(P)+v(P)-k}=1\]</span></p>
+<p>So <span class="math display">\[ f_{n,m}(x) =
+x^{mn-n-m+2-m(m-1)}\]</span></p>
+<p><span class="math display">\[  \boxed{f_{n,m}(x) =
+x^{mn-m^2-n+2}}\]</span></p>
 
                 </div>
             </div>
+    
+            
+<nav class="post-pagination">
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/06/14/%E4%B8%AD%E6%96%87/%E6%8A%BD%E8%B1%A1%E8%AF%97%E6%AD%8C%E4%B9%8B%E5%85%B5%E9%A9%AC%E4%BF%91/">
+        Next post<br>《兵马俑》
+    </a>
+    
+</nav>
+
+
     
             
 
@@ -236,7 +384,7 @@ Sa...">
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?65702268"></script>
+<script src="/js/journal.min.js?33316928"></script>
 
 
 
