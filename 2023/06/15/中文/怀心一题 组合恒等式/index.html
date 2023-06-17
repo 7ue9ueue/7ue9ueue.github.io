@@ -30,7 +30,7 @@
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?39937859">
+<link rel="stylesheet" href="/css/journal.css?45467">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -235,9 +235,8 @@ x^{mn-m^2-n+2}\]</span></p>
 <hr />
 <p>Solution:</p>
 <p>Solve step by step, part by part.</p>
-<p>Assume that each of <span class="math inline">\(a_i\)</span> and
-<span class="math inline">\(b_i\)</span> is a vector, where b is x-axis
-and a is y-axis.</p>
+<p>Assume that each of <span class="math inline">\((a_i,b_i)\)</span> is
+a vector, where b is x-axis and a is y-axis.</p>
 <p><span class="math display">\[\sum_{1\leq l_1 &lt; l_2 \leq
 k}{a_{l_2}b_{l_1}}-a_{l_1}b_{l_2} = \sum_{1\leq l_1 &lt; l_2 \leq k}
 \det(\begin{bmatrix}
@@ -262,7 +261,7 @@ k}\det(\texttt{s}_k-\texttt{s}_{l_1},\texttt{v}_{l_1}) = \sum_{1\leq l_1
 2\text{Area}(\text{Polygon}(\texttt{v}_1,\texttt{v}_2,\cdots,\texttt{v}_k,-\texttt{s}_k))
 = 2A\]</span></p>
 <hr />
-<p>Pick Theorem, Consider</p>
+<p>Pick Theorem. Consider</p>
 <p><span class="math display">\[\text{Polygon}
 (\texttt{v}_1,\texttt{v}_2,\cdots,\texttt{v}_k,-m\texttt{j},-n\texttt{i})\]</span></p>
 <p>As</p>
@@ -276,7 +275,7 @@ k}\gcd({a_l,b_l}) = mn-n-m+2-2i\]</span></p>
 <hr />
 <p>Simplify the original equation</p>
 <p><span class="math display">\[ f_{n,m}(x) =
-\sum-{...}(x^2-1)^{k-1}x^{2-2k}x^{mn-n-m+2-2i}\]</span></p>
+\sum_{\cdots}(x^2-1)^{k-1}x^{2-2k}x^{mn-n-m+2-2i}\]</span></p>
 <p>Rewrite as</p>
 <p><span class="math display">\[ f_{n,m}(x) =
 x^{mn-n-m+2}\sum_P(1-\frac{1}{x^2})^{k(P)-1}(\frac{1}{x^2})^{i(P)}
@@ -284,7 +283,7 @@ x^{mn-n-m+2}\sum_P(1-\frac{1}{x^2})^{k(P)-1}(\frac{1}{x^2})^{i(P)}
 <p>where</p>
 <p><span class="math display">\[P:
 \text{Polygon}(\texttt{v}_1,\texttt{v}_2,\cdots,\texttt{v}_k,-\texttt{s}_k)\text{
-is a convex hull}\]</span></p>
+is a convex polygon}\]</span></p>
 <p>By imagining a path along a grid from <span
 class="math inline">\((0,0)\)</span> to <span
 class="math inline">\((n,m)\)</span>.</p>
@@ -296,7 +295,7 @@ class="math display">\[x^{mn-n-m+2}\sum_P(1-\frac{1}{x^2})^{k(P)-1}(\frac{1}{x^2
 <p><span class="math display">\[\forall \frac{a_i}{b_i} &lt;
 1\]</span></p>
 <p>there exist a right angle isosceles triangle where all points within
-cannot be selected as vertices of the convex hull. There are in
+cannot be selected as vertices of the convex polygon(hull). There are in
 total</p>
 <p><span class="math display">\[\frac{m(m-1)}{2}\]</span></p>
 <p>of them.</p>
@@ -306,15 +305,16 @@ class="math display">\[x^{mn-n-m+2}\sum_P(1-\frac{1}{x^2})^{v(P)}(\frac{1}{x^2})
 <p><span
 class="math display">\[x^{mn-n-m+2-m(m-1)}\sum_P(1-\frac{1}{x^2})^{v(P)}(\frac{1}{x^2})^{o(P)}\]</span></p>
 <p>where</p>
-<p><span class="math display">\[v(P) = \text{number of vertices of the
-convex hull}\]</span></p>
-<p><span class="math display">\[o(P) = \text{number of points outside of
-the convex hull}\]</span></p>
-<p>*For clarity, if there points are colinear, the one thats a "turning
-point" is the vertex, and the others are "outside" the convexhull.</p>
+<p><span class="math inline">\(v(P)\)</span> = number of vertices of the
+convex hull/polygon</p>
+<p><span class="math inline">\(o(P)\)</span> = number of points outside
+the convex hull/polygon.</p>
+<p>*For clarity, if there are points that are colinear, the one that is
+a "turning point" is the vertex, and the others are "outside" the convex
+hull.</p>
 <p>define</p>
-<p><span class="math display">\[i(P) = \text{number of points inside of
-the convex hull}\]</span></p>
+<p><span class="math inline">\(i(P)\)</span> = number of points inside
+the convex hull/polygon</p>
 <p>I will now evaluate</p>
 <p><span
 class="math display">\[S=\sum_P(1-\frac{1}{x^2})^{v(P)}(\frac{1}{x^2})^{o(P)}
@@ -335,7 +335,7 @@ class="math inline">\(v(P)+k\)</span>. And then find its convex hull. As
 the convex hull for each subset is unique, the mapping is one to
 one.</p>
 <p>Hence</p>
-<p><span class="math display">\[S = \sum_{k=1}^{i(P)+o(P)+v(P)}
+<p><span class="math display">\[S = \sum_{k=0}^{i(P)+o(P)+v(P)}
 \binom{i(P)+o(P)+v(P)}{k}(1-\frac{1}{x^2})^k(\frac{1}{x^2})^{i(P)+o(P)+v(P)-k}=1\]</span></p>
 <p>So <span class="math display">\[ f_{n,m}(x) =
 x^{mn-n-m+2-m(m-1)}\]</span></p>
@@ -385,7 +385,7 @@ x^{mn-m^2-n+2}}\]</span></p>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?55124503"></script>
+<script src="/js/journal.min.js?67232722"></script>
 
 
 
