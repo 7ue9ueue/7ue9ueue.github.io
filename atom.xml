@@ -6,7 +6,7 @@
   <link href="https://7ue9ueue.github.io/atom.xml" rel="self"/>
   
   <link href="https://7ue9ueue.github.io/"/>
-  <updated>2023-06-16T07:03:11.699Z</updated>
+  <updated>2023-06-19T08:59:51.016Z</updated>
   <id>https://7ue9ueue.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Method of Lagrange Multiplier with Single Constraint</title>
+    <link href="https://7ue9ueue.github.io/2023/06/19/%E4%B8%AD%E6%96%87/Lagrange%20multiplier%20with%20Single%20Constraint/"/>
+    <id>https://7ue9ueue.github.io/2023/06/19/%E4%B8%AD%E6%96%87/Lagrange%20multiplier%20with%20Single%20Constraint/</id>
+    <published>2023-06-19T09:00:00.000Z</published>
+    <updated>2023-06-19T08:59:51.016Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="problem">Problem</h4><p>Consider a set of optimization problems in form of:</p><p>Given</p><p><span class="math display">\[ g(x,y,z) = 0\]</span></p><p>Find</p><p><span class="math display">\[\max(f(x,y,z))\]</span></p><p>Or</p><p><span class="math display">\[\min(f(x,y,z))\]</span></p><hr /><h4 id="method">Method</h4><p>Define</p><p><span class="math display">\[L(x,y,z,\lambda) = f(x,y,z)-\lambdag(x,y,z)\]</span></p><p>or in short</p><p><span class="math display">\[ L = f - \lambda g\]</span> then anylocal maximum or minimum of the function should satisfy:</p><p><span class="math display">\[ \frac{\partial L}{\partial x} =\frac{\partial L}{\partial y} = \frac{\partial L}{\partial z}=\frac{\partial L}{\partial \lambda}=0\]</span></p><hr /><h4 id="deduction">Deduction</h4><p>Consider the gradient of <span class="math inline">\(f\)</span> thatrepresents the "direction and rate of fastest increase":</p><p><span class="math display">\[\Delta f = (\frac{\partial f}{\partialx}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partialz})^T\]</span></p><p>The reason is because</p><p><span class="math display">\[\text{d}f = \frac{\partial f}{\partialx}\text{d}x+\frac{\partial f}{\partial y}\text{d}y+\frac{\partialf}{\partial z}\text{d}z\]</span></p><p>so</p><p><span class="math display">\[\text{d}f = (\frac{\partial f}{\partialx}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partialz})^T\times(\text{d}x,\text{d}y,\text{d}z) \]</span></p><p><span class="math display">\[(df)^2 = ((\frac{\partial f}{\partialx})^2 + (\frac{\partial f}{\partial y})^2+ (\frac{\partial f}{\partialz})^2)((\text{d}x)^2+(\text{d}y)^2+(\text{d}z)^2)\cos\theta\]</span></p><p><span class="math display">\[(df)^2 =(\Deltaf)((\text{d}x)^2+(\text{d}y)^2+(\text{d}z)^2)\cos \theta\]</span></p><p>so when <span class="math inline">\(\cos \theta\)</span> is largest,which means that the gradient is perpendicular to the "direction of thecurved surface", the rate of change of the <spanclass="math inline">\(f\)</span> function is the largest.</p><p>In this type of problems, <span class="math inline">\(g\)</span>determines the direction of the curve surface. So the direction of <spanclass="math inline">\(g\)</span> should be perpendicular to the gradientof <span class="math inline">\(f\)</span> at the local maximum orminimum.</p><p>In other words,</p><p><span class="math display">\[ \Delta f = \lambda \Deltag\]</span></p><p><span class="math display">\[ \Delta f - \lambda \Delta g =0\]</span></p><p><span class="math display">\[ \Delta L = 0\]</span></p><p>This is not a strict prove but it shows how this theory makesense.</p><hr /><h4 id="extended">Extended</h4><p>If there are multiple constraints, then</p><p><span class="math display">\[ \frac{\partial L}{\partial x} =\frac{\partial L}{\partial y} = \frac{\partial L}{\partial z}=\frac{\partial L}{\partial \lambda_1} = \frac{\partial L}{\partial\lambda_2} = \cdots = \frac{\partial L} {\partial\lambda_n}=0\]</span></p><p>Prove or deduction is ommited because I don't know how to prove ordeduce this.</p><hr /><h4 id="exercise">Exercise</h4><p><span class="math display">\[g(x,y) = x^2+y^2-1\]</span></p><p><span class="math display">\[f(x,y) = (x+1)(y+2)\]</span></p><p><span class="math display">\[L(x,y,\lambda) =(xy+2x+y+2)-\lambda(x^2+y^2-1)\]</span></p><p>Use the method</p><p><span class="math display">\[\frac{\partial L}{\partial x} =(y+2)-\lambda(2x)=0\]</span></p><p><span class="math display">\[\frac{\partial L}{\partial y} =(x+1)-\lambda(2y)=0\]</span></p><p><span class="math display">\[\frac{\partial L}{\partial \lambda} =x^2+y^2-1=0\]</span></p><p>clean</p><p><span class="math display">\[y+2-2\lambda x= 0\]</span></p><p><span class="math display">\[x+1-2 \lambda y= 0\]</span></p><p><span class="math display">\[x^2+y^2 = 1\]</span></p><p>solve to obtain</p><p><span class="math display">\[4x^4 + 4x^3 +x^2 -2x - 3 =0\]</span></p><p>the final steps are left for the readers to complete</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;problem&quot;&gt;Problem&lt;/h4&gt;
+&lt;p&gt;Consider a set of optimization problems in form of:&lt;/p&gt;
+&lt;p&gt;Given&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&#92;[ g(</summary>
+      
+    
+    
+    
+    <category term="笔记Notes" scheme="https://7ue9ueue.github.io/categories/%E7%AC%94%E8%AE%B0Notes/"/>
+    
+    
+    <category term="英文English" scheme="https://7ue9ueue.github.io/tags/%E8%8B%B1%E6%96%87English/"/>
+    
+    <category term="数学Math" scheme="https://7ue9ueue.github.io/tags/%E6%95%B0%E5%AD%A6Math/"/>
+    
+  </entry>
   
   <entry>
     <title>Counting Problem</title>
@@ -576,38 +605,6 @@ entry.&lt;</summary>
     <summary type="html">&lt;p&gt;&lt;strong&gt;算法名字:&lt;/strong&gt; Maximum Flow Minimum Cut/Dinic&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;对应难度:&lt;/strong&gt; 省选-/USACO Platinum-&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;算法优势:&lt;/strong&gt;&lt;/</summary>
-      
-    
-    
-    
-    <category term="笔记Notes" scheme="https://7ue9ueue.github.io/categories/%E7%AC%94%E8%AE%B0Notes/"/>
-    
-    
-    <category term="中文Chinese" scheme="https://7ue9ueue.github.io/tags/%E4%B8%AD%E6%96%87Chinese/"/>
-    
-    <category term="归档Archived" scheme="https://7ue9ueue.github.io/tags/%E5%BD%92%E6%A1%A3Archived/"/>
-    
-    <category term="信竞OI" scheme="https://7ue9ueue.github.io/tags/%E4%BF%A1%E7%AB%9EOI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Matrix Tree 学习笔记</title>
-    <link href="https://7ue9ueue.github.io/2023/01/01/%E4%B8%AD%E6%96%87/Matrix%20Tree%20%E6%A8%A1%E6%9D%BF/"/>
-    <id>https://7ue9ueue.github.io/2023/01/01/%E4%B8%AD%E6%96%87/Matrix%20Tree%20%E6%A8%A1%E6%9D%BF/</id>
-    <published>2022-12-31T16:00:00.000Z</published>
-    <updated>2023-06-11T11:35:11.232Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>写在前面:</strong>我记得曾经@ETK问过我一个矩阵形式的图的生成树有没有数学的表达方式,我说是Matrix Tree, 但我只知道有个<spanclass="math inline">\(O(n^3)\)</span> 的做法,现在仔细想了想其实是个矩阵行列式, 还是很神奇的</p><p><strong>算法名字:</strong> Matrix Tree</p><p><strong>对应难度:</strong> 省选+/USACO Platinum+</p><p><strong>算法优势:</strong></p><ol type="1"><li><p>建立了生成树和数学的表达关系</p></li><li><p>非常暴力,可以在很多巧妙的题目当中像推土机一样直接对其进行降维打击</p></li><li><p>非常优雅, elegance!</p></li><li><p>非常好记, 求 <span class="math inline">\(\text{Laplace}\)</span>矩阵的行列式!</p></li><li><p>曾经的省选的知识点!</p></li></ol><p><strong>算法劣势:</strong></p><ol type="1"><li>非常容易写炸, 即逆元, 行列式的处理不好就完蛋</li></ol><p><strong>算法描述:</strong></p><p>度数矩阵</p><p><span class="math inline">\(D[i][j] = 0\)</span></p><p><span class="math inline">\(D[i][i] =i\space\text{的度数}\)</span></p><p>邻接矩阵</p><p><span class="math inline">\(A[i][j] = \text{边权} \space i \toj\)</span></p><p>Laplace 矩阵 = 度数矩阵 - 邻接矩阵, 记为 <spanclass="math inline">\(L = D-A\)</span></p><p><span class="math inline">\(\text{det}(L,x)\)</span>,即图的Laplace矩阵的行列式, 去掉 <span class="math inline">\(x\)</span>行和 <span class="math inline">\(x\)</span> 列, 为图的生成树个数</p><p>存在拓展, 若图为带权图, 则 <spanclass="math inline">\(\text{det}(L,x)\)</span> 为所有生成树边权之积,证明留作习题</p><p>在有向图当中, 对于外向生成树和内向生成树, 类似定义入度矩阵和出度矩阵<span class="math inline">\(D\)</span> 即可, 此时, 被去掉的 <spanclass="math inline">\(x\)</span> 行和 <spanclass="math inline">\(x\)</span> 列为生成树的根</p><p>最后, 存在 <span class="math inline">\(\text{BEST}\)</span> 定理,可以统计欧拉回路, 即</p><p><span class="math display">\[\text{det}(L,x)\prod_{v \inE}(\text{deg}(v)-1)!\]</span></p><p>值得注意的是 <spanclass="math display">\[\text{det}(L,x)=\text{det}(L,y)\]</span></p><p>在欧拉图当中成立</p><p><strong>如果你喜欢这个算法, 下面是扩展阅读资料:</strong></p><p>https://oi-wiki.org/graph/matrix-tree/</p><p>https://www.luogu.com.cn/blog/command-block/ju-zhen-shu-ding-li-xing-lie-shi-post</p><p><strong>如果你想练习, 下面是一些练习题:</strong></p><p>[洛谷] P6178 【模板】Matrix-Tree 定理</p><p>[洛谷] P3317 [SDOI2014]重建</p><p>[洛谷] P4455 [CQOI2018]社交网络</p><p>[洛谷] P4336 [SHOI2016]黑暗前的幻想乡</p><p>[USACO] Platinum 2021 US Open Routing Schemes</p><p><strong>行列式模版:(完全不保证正确,已知至少存在一个问题)</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">det</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line"><span class="type">int</span> f = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">graph[i][j] += MOD;</span><br><span class="line">graph[i][j] %= MOD;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line"><span class="type">int</span> x = graph[i][i];</span><br><span class="line"><span class="type">int</span> y = graph[j][i];</span><br><span class="line"><span class="keyword">while</span> (y) &#123;</span><br><span class="line"><span class="type">int</span> tmp = x/y;</span><br><span class="line">x %= y;</span><br><span class="line"><span class="built_in">swap</span>(x,y);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> k=i;k&lt;=n;k++) &#123;</span><br><span class="line">graph[i][k] = (graph[i][k]-tmp*graph[j][k])%MOD;</span><br><span class="line">graph[i][k] += MOD;</span><br><span class="line">graph[i][k] %= MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> k=i;k&lt;=n;k++) <span class="built_in">swap</span>(graph[i][k],graph[j][k]);</span><br><span class="line">f *= <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!graph[i][i]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">res *= graph[i][i];</span><br><span class="line">res %= MOD;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span> (f==<span class="number">-1</span>) res = MOD-res;</span><br><span class="line">res %= MOD;</span><br><span class="line">res += MOD;</span><br><span class="line"><span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>彩蛋:</strong></p><p><imgsrc="https://files.mdnice.com/user/13035/4d26e066-bf29-4b55-a4ad-d54625971379.png" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;strong&gt;写在前面:&lt;/strong&gt;
-我记得曾经@ETK问过我一个矩阵形式的图的生成树有没有数学的表达方式,
-我说是Matrix Tree, 但我只知道有个&lt;span
-class=&quot;math inline&quot;&gt;&#92;(O(n^3)&#92;)&lt;/span&gt; 的做法,
-现在</summary>
       
     
     
