@@ -29,7 +29,7 @@ An OIer who don&#39;t know su...">
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?79182138">
+<link rel="stylesheet" href="/css/journal.css?13105837">
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -224,7 +224,8 @@ reasons. I personally prefers suffix array but SAM is too powerful so
 why not have a try？</p>
 <p>This blog entry is very un-detailed because its for personal use.
 Please refer to https://oi-wiki.org/string/sam/ for a detailed analysis
-of SAM. *****</p>
+of SAM.</p>
+<hr />
 <h4 id="brief">Brief</h4>
 <p>There are two automatons in Olympiad of Informatics.</p>
 <ol type="1">
@@ -240,19 +241,21 @@ the problem. The latter is often better.</p>
 <hr />
 <h4 id="notations">Notations</h4>
 <p><span class="math inline">\(\text{len}(s)\)</span> length of
-<code>string</code> s. <span class="math inline">\(\delta(v,s)\)</span>
-transition from <code>node</code> <span class="math inline">\(v\)</span>
-by a path of <code>string</code> <span class="math inline">\(s\)</span>.
-<span class="math inline">\(\text{endpos}(s)\)</span> The
+<code>string</code> s.</p>
+<p><span class="math inline">\(\delta(v,s)\)</span> transition from
+<code>node</code> <span class="math inline">\(v\)</span> by a path of
+<code>string</code> <span class="math inline">\(s\)</span>.</p>
+<p><span class="math inline">\(\text{endpos}(s)\)</span> The
 <code>set</code> of end points in the original string that has
 <code>string</code> <span class="math inline">\(s\)</span> as a
-substring. <span class="math inline">\(\text{parent}(v)\)</span> parent
-of <code>node</code> <span class="math inline">\(v\)</span> in the tree
-<span class="math inline">\(\text{max}(v)\)</span> the longest substring
-represented by the <code>node</code> <span
-class="math inline">\(v\)</span>. <span
-class="math inline">\(\text{min}(v)\)</span> the shortest substring
-represented by the <code>node</code> <span
+substring.</p>
+<p><span class="math inline">\(\text{parent}(v)\)</span> parent of
+<code>node</code> <span class="math inline">\(v\)</span> in the tree</p>
+<p><span class="math inline">\(\text{max}(v)\)</span> the longest
+substring represented by the <code>node</code> <span
+class="math inline">\(v\)</span>.</p>
+<p><span class="math inline">\(\text{min}(v)\)</span> the shortest
+substring represented by the <code>node</code> <span
 class="math inline">\(v\)</span>.</p>
 <hr />
 <h4 id="dag">DAG</h4>
@@ -354,7 +357,7 @@ record the parent node for each node</p></li>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?12120342"></script>
+<script src="/js/journal.min.js?64034771"></script>
 
 
 
