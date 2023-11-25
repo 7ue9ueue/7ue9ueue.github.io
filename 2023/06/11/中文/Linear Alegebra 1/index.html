@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Linear Alegebra Chapter 5 Study Notes - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="高等代数学 Chapter 5
+Chapter 5.1...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?84338971">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Linear Alegebra Chapter 5 Study Notes
+                    <div class="post-meta">
+                        <time datetime="2023-06-11T09:55:00.000Z" itemprop="datePublished">
+                            2023-06-11 17:55
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/数学Math/'>数学Math</a>, 
+                        
+                        <a href='/tags/英文English/'>英文English</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="高等代数学-chapter-5">高等代数学 Chapter 5</h1>
+<p>Chapter 5.10 Polynomials</p>
+<h4 id="theorem-5.7.4">Theorem 5.7.4</h4>
+<p>Eisenstein Method</p>
+<p><span class="math display">\[ f(x) = \sum a_i x^i\]</span></p>
+<p>cannot be divided other polynomials if</p>
+<p><span class="math display">\[ p \not | a_n, p | a_i,p^2 \not |
+a_0\]</span> #### Definition 5.10.1 Sylvester Matrix</p>
+<p><span class="math display">\[
+R(f,g)=\det(\left[\phantom{\begin{matrix}f_0\\ \ddots\\f_0\\b_0\\
+\ddots\\b_0 \end{matrix}}
+\right.\hspace{-1.5em}
+\underbrace{\begin{matrix}
+a_m &amp; \cdots &amp; a_0 &amp; \\
+\ddots &amp; &amp; \ddots &amp; \\
+&amp; a_m &amp; \cdots &amp; a_0 \\
+b_n &amp; \cdots &amp; b_0 &amp; \\
+\ddots &amp; &amp; \ddots &amp; \\
+&amp; b_n &amp; \cdots &amp; b_0
+\end{matrix}}_{m+n-i}
+\hspace{-1.5em}
+\left.\phantom{\begin{matrix}f_0\\ \ddots\\f_0\\b_0\\ \ddots\\b_0
+\end{matrix}}\right])
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[ f(x) = \sum_{i=0}^m a_ix^i\]</span></p>
+<p><span class="math display">\[ g(x) = \sum_{i=0}^n b_ix^i\]</span></p>
+<h4 id="theorem-5.10.1">Theorem 5.10.1</h4>
+<p>Check for common roots for two polynomial</p>
+<p><span class="math display">\[ R(f,g) \not = 0\]</span></p>
+<h4 id="theorem-5.10.2">Theorem 5.10.2</h4>
+<p><span class="math display">\[ R(f,g) = a_0^nb_0^m \prod_{i=1}^m
+\prod_{j=1}^n(x_i-y_j)\]</span></p>
+<h4 id="theorem-5.10.3">Theorem 5.10.3</h4>
+<p><span class="math display">\[ \Delta(f) =
+(-1)^{\frac{n(n-1)}{2}}\frac{R(f,f&#39;)}{a_0} = a_0^{2n-2} \prod_{i\leq
+j}(x_i-x_j)^2\]</span></p>
+<p>If <span class="math inline">\(\Delta(f) = 0\)</span>, then there is
+no repeated roots.</p>
+<blockquote>
+<p>Recall that <span class="math inline">\(f(x)\)</span> have no
+repeated roots iff <span class="math inline">\(\deg(\gcd(f,f&#39;)) =
+0\)</span>. This can be used to prove 5.10.3.</p>
+</blockquote>
+<hr />
+<h4 id="exercise-1">Exercise 1</h4>
+<p><span class="math display">\[f(x) = x^3+3x^2-x+4\]</span></p>
+<p><span class="math display">\[g(x) = x^2-2x-1\]</span></p>
+<p><span class="math display">\[R(f,f&#39;) = \det(\begin{bmatrix}
+1 &amp; 3 &amp; -1 &amp; 4 &amp; 0 \\
+0 &amp; 1 &amp; 3 &amp; -1 &amp; 4 \\
+1 &amp; -2 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; -2 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; -2 &amp; -1
+\end{bmatrix}) = \boxed{161}\]</span></p>
+<h4 id="exercise-2">Exercise 2</h4>
+<p>Find delta. <span class="math display">\[ f(x) = x^3 + px +
+q\]</span></p>
+<p><span class="math display">\[ f&#39;(x) = 3x + p\]</span></p>
+<p><span class="math display">\[R(f,f&#39;) = \det(\begin{bmatrix}
+1 &amp; 0 &amp; p &amp; q &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; p &amp; q \\
+3 &amp; 0 &amp; p &amp; 0 &amp; 0 \\
+0 &amp; 3 &amp; 0 &amp; p &amp; 0 \\
+0 &amp; 0 &amp; 3 &amp; 0 &amp; p
+\end{bmatrix}) = 27q^2+4p^3\]</span></p>
+<p><span class="math display">\[ \boxed{\Delta(f) =
+(-1)^3(27q^2+4p^3)}\]</span></p>
+<h4 id="exercise-3.1">Exercise 3.1</h4>
+<p>Proof</p>
+<p><span class="math display">\[R(f,g) = (-1)^{mn}R(g,f)\]</span></p>
+<p><span class="math display">\[R(f,g) = a_0^nb_0^m \prod_{i=1}^m
+\prod_{j=1}^n(x_i-y_j) = a_0^nb_0^m (-1)^{mn} \prod_{i=1}^m
+\prod_{j=1}^n(y_j-x_i) = R(g,f)\]</span></p>
+<h4 id="exercise-3.2">Exercise 3.2</h4>
+<p>Proof</p>
+<p><span class="math display">\[ R(af,bg) = a^m b^nR(f,g) \]</span></p>
+<p><span class="math display">\[ R(af,bg) = a^na_0^nb^mb_0^m
+\prod_{i=1}^m \prod_{j=1}^n(x_i-y_j) = a^m b^nR(f,g)\]</span></p>
+<h4 id="exercise-5">Exercise 5</h4>
+<p>Proof</p>
+<p><span class="math display">\[ R(f,g_1g_2) = R(f,g_1)R(f,g_2)
+\]</span></p>
+<p><span class="math display">\[ R(f,g_1g_2) = a_0^{m+n} \prod_{i=1}^{t}
+g(x_i) \]</span></p>
+<p><span class="math display">\[ R(f,g_1) = a_0^{m} \prod_{i=1}^t
+g_1(x_i) \]</span></p>
+<p><span class="math display">\[ R(f,g_2) = a_0^{n} \prod_{i=1}^t
+g_2(x_i) \]</span></p>
+<h4 id="exercise-6">Exercise 6</h4>
+<p>Let <span class="math inline">\(a_0 = 1\)</span>. Given <span
+class="math inline">\(\Delta(f(x))\)</span>. Find <span
+class="math inline">\(\Delta(f(x^2))\)</span>.</p>
+<p><span class="math display">\[\Delta(f(x)) = \prod_{i\leq
+j}(x_i-x_j)^2\]</span></p>
+<p><span class="math display">\[\Delta(f(x^2)) = \prod_{i\leq
+j}(\sqrt{x_i}-\sqrt{x_j})^2(\sqrt{x_i}+\sqrt{x_j})^2(-\sqrt{x_i}+\sqrt{x_j})^2(-\sqrt{x_i}-\sqrt{x_j})^2\]</span></p>
+<p><span class="math display">\[\Delta(f(x^2)) = \prod_{i\leq
+j}(\sqrt{x_i}-\sqrt{x_j})^4(\sqrt{x_i}+\sqrt{x_j})^4\]</span></p>
+<p><span class="math display">\[\Delta(f(x^2)) = \prod_{i\leq
+j}(x_i-x_j)^4 = \boxed{\Delta(f(x))^2}\]</span></p>
+<h4 id="exercise-7">Exercise 7</h4>
+<p>Find an equation for curve:</p>
+<p><span class="math display">\[ x = t^3 + 2t -3 \]</span></p>
+<p><span class="math display">\[ y = t^2-t +1 \]</span></p>
+<p><span class="math display">\[ f(t) = t^3 + 2t -3 -x \]</span></p>
+<p><span class="math display">\[ g(t) = t^2-t +1 - y \]</span></p>
+<p>so for a given <span class="math inline">\((x,y)\)</span>, there
+should exist a <span class="math inline">\(t\)</span> such that both
+<span class="math inline">\(f(t)\)</span> and <span
+class="math inline">\(g(t)\)</span> both is <span
+class="math inline">\(0\)</span>. So they have a common root.</p>
+<p><span class="math display">\[ R(f,g) = \det(\begin{bmatrix}
+1 &amp; 0 &amp; 2 &amp; -3-x &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 2 &amp; -3-x \\
+2 &amp; -1 &amp; 1-y &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; -1 &amp; 1-y &amp; 0 \\
+0 &amp; 0 &amp; 2 &amp; -1 &amp; 1-y
+\end{bmatrix}) \]</span></p>
+<p><span class="math display">\[ R(f,g) = \boxed{y^3 - x^2 + 3xy + y^2
+-6x + 10y -12}\]</span></p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/06/11/%E4%B8%AD%E6%96%87/Inequalitys%201/">
+        Previous post<br>Inequality Revision 1
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/06/08/%E4%B8%AD%E6%96%87/Poetry/">
+        Next post<br>Some Random Poetry
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?34987662"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

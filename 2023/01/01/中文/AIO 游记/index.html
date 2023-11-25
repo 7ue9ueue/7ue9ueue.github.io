@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AIO 游记 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="金色的AIO 2021游记
+好耶, 集训队了
+题目难度...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?44148121">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    AIO 游记
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/游记Diary/'>游记Diary</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <p>金色的AIO 2021游记</p>
+<p>好耶, 集训队了<br />
+题目难度: CF2000-2200, CSP-S一等奖<br />
+分数: (100+100+100+100+100+100) / 600</p>
+<p>Day -2</p>
+<p>考前在做一道比较分类讨论的题目:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">有 n 个学生, 其中有一个学生偷吃了饼干</span><br><span class="line">现在有 m 条口供, 每一种口供为如下三种其一:</span><br><span class="line"></span><br><span class="line">x 说 y 在说谎</span><br><span class="line">x 说 y 没有说谎</span><br><span class="line">x 说 y 偷吃了饼干</span><br><span class="line"></span><br><span class="line">已知每个学生要么只说谎要么只说实话, 求谁可能偷吃了饼干, 或者此情况是不可能的</span><br></pre></td></tr></table></figure>
+<p>去年都用二分图染色去做, 没成功</p>
+<p>这次用并查集去做, 调了 10hrs 后分类讨论出来了</p>
+<p>Day 1</p>
+<p>请假 <del>(逃课)</del> 在睡觉, 然后打游戏</p>
+<p>上午的时候做了套前几年的题, 40min AK掉了, 自信心提升了</p>
+<p>下午的时候想写写题, 第一题就没调出来, 就又睡觉去了</p>
+<p>Day 0</p>
+<p>比较提前的到了考场, 心情比较平静, 比较紧张,
+和Ethan妈妈一起布置了一下考场环境然后简单的沟通了一下就直接开考了</p>
+<p>我的策略是顺着做题, 做完才看下一题, 因为我是奔着满分去的,
+而不是在省选集训那样为了骗分去打出各种策略</p>
+<p>一共有六道题, 前三题是简单题, 大概是普及组的难度,
+花了15分钟左右写好了</p>
+<p><strong>T1 Robot [普及]</strong>,
+考虑起点和终点的曼哈顿距离即可<br />
+<strong>T2 Art Class II [普及]</strong>,考虑x
+y坐标情况下分别的最值即可<br />
+<strong>T3 Melody [普及]</strong>, 考虑 Mod 3
+每个同余组内最多的数的个数即可</p>
+<p>然后其实把握是比较大的, 因为最近几个月的cf训练导致我的手速及其的快,
+其实这套题也和cf的题目类似, 也就做的比较顺了</p>
+<p><strong>T4 Social Distancing [普及+/提高-]</strong>
+是第一道有一些算法的题目, 但是很显然的动态规划, 具体而言, 转移式应是
+:</p>
+<p><span class="math display">\[
+dp(i) = \max((dp(j)+v(i) [pos(i)-pos(j) ≥ k] ))
+\]</span></p>
+<p><span class="math display">\[v(i), pos(i) ≥ 0\]</span></p>
+<p>对所有的 <span class="math inline">\(\text{pos}\)</span>
+进行排序后动态规划即可</p>
+<p>朴素的做法是 <span class="math inline">\(O(n^2)\)</span>,
+直接数据结构是 <span class="math inline">\(O(n\log n)\)</span> 的,
+而且会非常的耗时, 但是这个动态规划显然单调递增, 因此具有抉择单调性,
+可以用维护一个前缀最大值的方法做到 <span
+class="math inline">\(O(n)\)</span>, 而且比较好写</p>
+<p>写法大概就是考虑一个新的 <span
+class="math inline">\(\text{i}\)</span> 可以激活什么点,
+激活后就把放入到前缀最大值的考虑当中</p>
+<p>抉择单调性的证明是这样的:</p>
+<p>$dp(i) = ((dp(j)+v(i)[pos(i)-pos(j) ≥ k]) $</p>
+<p>$dp(i) = (dp(j)[pos(i)-k≥pos(j)])+v(i) $</p>
+<p>又有 <span class="math inline">\(pos(i)-k\)</span> 递增, 故 <span
+class="math inline">\(\text{dp}\)</span> 递增, 自然具有抉择单调性</p>
+<p>大概花了20分钟就写出来, 感觉难度不是很大, 但是写这种
+「激活」类型的代码我一直不太擅长, 所以运气还是比较好的</p>
+<p>第一遍提交的时候以为 <span class="math inline">\(v[i]=1\)</span> 了,
+读了一边题后发现了这个问题, 解决了就通过了</p>
+<p><strong>T5 Space Mission [提高]</strong>
+是一个trival的数据结构问题</p>
+<p>这个问题用代数形式表达出来就是:</p>
+<p><span
+class="math display">\[\max(\text{abs}(i-j)[v[i]+v[j]≤C])\]</span></p>
+<p>遇到绝对值可以直接分类讨论, 然后看到这是个类似二维偏序的问题,
+直接数据结构就好了, 然后可以用上一题激活的思想离线可以处理掉一维,
+最后剩下的问题用线段树/树状数组就好了</p>
+<p>(不知道为啥我离线之后维度还是二,
+反思了一下如果离线之后可能不需要数据结构了,
+但是我考场上还是写了个线段树)</p>
+<p>我的代码能力比较差, 这题大概花了一个小时, 但还是有惊无险的通过了</p>
+<p><strong>T6 Laser Cut [提高+/省选-]</strong>
+是对代码能力要求比较高的题目,
+题目大意是在一个正方形中给一个两条不相交的折线(每一部分与正方形一边平行),
+其中折线的长度都是正方形长度的两倍,
+求两条折线中间围出的区域最大能塞一个多大的正方形</p>
+<p>这道题看到的时候稍微有点慌, 因为一眼只有想法, 没有答案</p>
+<p>前几题一眼能看出答案,
+这题只能大概猜出是动态规划或者数据结构方面的一个问题, 但是看到数据范围是
+$ 10^5$ 就大概清楚具体做法了</p>
+<p>首先这个问题必须要利用到单调性, 因为 <span
+class="math inline">\(10^{10}\)</span> 的信息量去表达一个形状是不可行的,
+因此需要用 <span class="math inline">\(10^5\)</span>
+的信息量去考虑每一行的左右限制</p>
+<ol type="1">
+<li>我的第一想法是首先考虑下折线中的每个折点,
+我认为每一种正方形的方法都可以平移到使得左下角在折点中的情况</li>
+</ol>
+<p>由于题目的特殊限制是<strong>正方形</strong>,
+不是<strong>长方形</strong>, 那么我可以锁定右上角在 <span
+class="math inline">\(x = y\)</span> 上的所有点上,
+只要在中间区域就行</p>
+<p>然后会发现上折线中的折点如果在 <span class="math inline">\(x =
+y\)</span> 一点的右下方, 这个点就不能选了,
+那此时我把这个问题从一个不具体的二维问题变成了一个可做的东西,
+然后枚举下折点, 和上折点, 就可以做到 <span
+class="math inline">\(O(n^2)\)</span> 了</p>
+<p>但是这一切是基于 猜想 1 成立的情况下的</p>
+<p>写了个暴力, 一直没过, 开始质疑自己的结论但是没有找到反例,
+最后在考试还剩30分钟的时候暴力成功通过</p>
+<p>当时很激动, 因为我大概 <span class="math inline">\(O(n\log
+n)\)</span> 做法</p>
+<p>考虑每个右折点会导致答案 <span class="math inline">\(ans =
+\min(ans,v[r])\)</span>, 然后最终答案自然是 <span
+class="math inline">\(\max(ans)\)</span>, 此时有单调性:</p>
+<p><strong>v[x] 是凹函数</strong></p>
+<p>我只需要在上面一个做斜率二分就好了, 但是我发现我不会斜率二分,
+然后我打算写一个三分乱搞试试</p>
+<p>反正时间没多少, 不如写一个自己有把握的</p>
+<p>但是三分的问题是可能两个采样点相等, 当时看到问题的时候有些害怕,
+因为这个问题似乎非常的本质, 无法短时间解决</p>
+<p>我记得当时还剩10分钟, 但是我之前的紧张感好像一点都没了</p>
+<p>我只在认真的思考解决的方法</p>
+<p>我在想, 我在想如何拯救一个假掉的算法</p>
+<p>如果能想出来, 那集训队就到手了</p>
+<p>那么如果问题是本质的话, 那就考虑乱搞吧</p>
+<p>梦回金华集训!!!!!!</p>
+<p>我如果两个采样点相同, 那么我直接break掉循环, 然后遍历 v[left:right],
+然后就看有没有奇迹了</p>
+<p>然后奇迹发生了, 通过了, 运气非常不错, 当时比赛还剩五分钟,
+看到自己的分数是</p>
+<p>100 + 100 + 100 + 100 + 100 + 100</p>
+<p>非常的激动, 庆祝了一番, 然后就和Ethan和深中的某位大佬吃饭去了</p>
+<p>然后吃完饭, Ethan带我走了走校园, 不得不说还是非常壮观的,
+甚至校园内部有一个园林, 园林内部还有湖, 湖里还有鸭子可以喂</p>
+<p>如果能重来, 我要上清华!!!!!!!!!!!!!!!!! (?)</p>
+<p>对于第六题的证明是这样的:</p>
+<p>最多有 n 组情况会导致强制break, 有 <span
+class="math inline">\(n^2\)</span> 中采样方法, 概率大概是 <span
+class="math inline">\(\dfrac{1}{n}\)</span></p>
+<p>所以次数必然小于</p>
+<p><span class="math display">\[
+\sum_{i=1}^{O(\lg n)} \dfrac{1}{n^i}(\dfrac{3}{4})^i O(\lg n)
+\]</span></p>
+<p>必然小于</p>
+<p><span class="math display">\[
+\sum_{i=1}^{\inf} \dfrac{1}{n^i}(\dfrac{3}{4})^i O(\lg n)
+\]</span></p>
+<p>固然小于</p>
+<p><span class="math display">\[
+\dfrac {O(\lg n)}{1-\dfrac{3}{4n}} = \dfrac {O(\lg n)}{\dfrac{4n-3}{4n}}
+= \dfrac {4nO(\lg n)}{4n-3} = O(\lg n)
+\]</span></p>
+<p>所以随机情况下这个算法的时间复杂度是正确的</p>
+<p>感谢我的爸爸和妈妈始终支持我学习算法, 帮我买书, 报课, 报集训!</p>
+<p>感谢Ethan妈妈帮我成功在深圳报上AIO!</p>
+<p>感谢ETK和我一直进行算法学习上的交流 ~</p>
+<p>感谢Starlight237的学习资料和考前的rp++!</p>
+<p>感谢干大好事群里的各位, 我以后打比赛也会继续当吉祥物的!
+祝各位都进省队~</p>
+<p>那么我就很荣幸的暂时AFO啦~ 几个月后见</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/AIO%20%E4%B8%80%E9%A2%98%E9%A2%98%E8%A7%A3/">
+        Previous post<br>AIO Lollipops, Sweets and Chocolates 题解
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/CF1536F%20%E9%A2%98%E8%A7%A3/">
+        Next post<br>CF1536F
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?20346482"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

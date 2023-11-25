@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Multivariable Inequalitys - Finding the dual - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="Multivariable
+Inequalitys -...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?7326744">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Multivariable Inequalitys - Finding the dual
+                    <div class="post-meta">
+                        <time datetime="2023-09-09T16:00:00.000Z" itemprop="datePublished">
+                            2023-09-10 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/数学Math/'>数学Math</a>, 
+                        
+                        <a href='/tags/英文English/'>英文English</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="multivariable-inequalitys---dual-inequality">Multivariable
+Inequalitys - Dual Inequality</h1>
+<p>As a method from《不等式的秘密》(Secrets of Inequalities)</p>
+<h1 id="introduction">Introduction</h1>
+<p>In Lagrange multiplier method, its often given that</p>
+<p><span class="math display">\[ g(\texttt{v}) = 0\]</span></p>
+<p>and the function</p>
+<p><span class="math display">\[ f(\texttt{v}) \geq 0\]</span></p>
+<p>is to be proved.</p>
+<p>Many times, g is simpler than f. Then can we swap f and g, in other
+words, prove that:</p>
+<p><span class="math display">\[ f(\texttt{v}) = 0\]</span></p>
+<p>and</p>
+<p><span class="math display">\[ g(\texttt{v}) \geq 0\]</span></p>
+<p>?</p>
+<p>The answer is yes!</p>
+<hr />
+<h1 id="the-idea">The Idea</h1>
+<p>WLOG, the following inequalities will all have three variables.
+However, this method can be easily extended to more variable.</p>
+<p>Consider</p>
+<p><span class="math display">\[x+y+z=3\]</span></p>
+<p>Show that <span class="math display">\[ x + y + z \geq xy + xz + yz
+\]</span></p>
+<p>This may be hard to prove (is it?) But can we swap what is to be
+proved and what is given? Well, then we will have</p>
+<p><span class="math display">\[ x+ y+ z = xy + xz + yz\]</span></p>
+<p>And we have to show that</p>
+<p><span class="math display">\[ x+y+z \geq 3\]</span></p>
+<p>The two inequalities are equivlent. This method is called the dual
+inequality method. When the original inequality is complex, its dual is
+often easy.</p>
+<hr />
+<h1 id="the-method">The Method</h1>
+<p>If <span class="math display">\[A: g(x,y,z) = 0, f(x,y,z) \geq 0
+\]</span></p>
+<p><span class="math display">\[ B: g(x,y,z) \geq 0, f(x,y,z) = 0
+\]</span></p>
+<p>First, try to show that (which is not hard, use the adjustment method
+i.e replace x,y,z with tx,ty,tz) <span class="math display">\[ A \iff
+B\]</span></p>
+<p>Second prove <span class="math display">\[B\]</span>.</p>
+<hr />
+<h1 id="example-1">Example 1</h1>
+<p><span class="math display">\[ xyz = 1 \]</span></p>
+<p><span class="math display">\[\frac{1}{2+x} + \frac{1}{2+y} +
+\frac{1}{2+z} \leq 1\]</span></p>
+<p>Dual:</p>
+<p><span class="math display">\[\frac{1}{2+x} + \frac{1}{2+y} +
+\frac{1}{2+z} = 1\]</span></p>
+<p><span class="math display">\[ xyz \leq 1 \]</span></p>
+<p>Prove dual using substitution:</p>
+<p><span class="math display">\[ a = \frac{1}{2+x},b = \frac{1}{2+y},c =
+\frac{1}{2+z}\]</span></p>
+<p>Then want to show:</p>
+<p><span class="math display">\[ (1-2a)(1-2b)(1-2c) \leq abc
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[ a+b+c = 1 \]</span></p>
+<p>Then want to show:</p>
+<p><span class="math display">\[ (a+b-c)(a+c-b)(b+c-a) \leq abc
+\]</span></p>
+<p>This is schur's inequlity.</p>
+<hr />
+<h1 id="example-2">Example 2</h1>
+<p><span class="math display">\[a,b,c&gt;0, ab+bc+ac = 3\]</span></p>
+<p><span class="math display">\[ \sqrt{a+3} + \sqrt{b+3} + \sqrt{c+3}
+\geq 6\]</span></p>
+<p>Dual:</p>
+<p><span class="math display">\[a,b,c&gt;0, ab+bc+ac \leq 3\]</span></p>
+<p><span class="math display">\[ \sqrt{a+3} + \sqrt{b+3} + \sqrt{c+3} =
+6\]</span></p>
+<p>Subtitution:</p>
+<p><span class="math display">\[ x = \sqrt{a+3}, y = \sqrt{b+3}, z =
+\sqrt{c+3}\]</span></p>
+<p>Equivlent to:</p>
+<p><span class="math display">\[ x+ y+ z = 6\]</span></p>
+<p><span class="math display">\[(x^2-3)(y^2-3)+ (x^2-3)(z^2-3)+
+(y^2-3)(z^2-3) \leq 3\]</span></p>
+<p>Simplify:</p>
+<p><span class="math display">\[x^2y^2 +y^2z^2 + z^2x^2 + 24 \leq 6(x^2
++ y^2 + z^2)\]</span></p>
+<p>Want to make this homogeneous, so:</p>
+<p><span class="math display">\[6(x^2y^2 +y^2z^2 + z^2x^2 + 24) \leq
+(x+y+z)^2(x^2 + y^2 + z^2)\]</span></p>
+<p><span class="math display">\[6(54x^2y^2 +54y^2z^2 + 54z^2x^2 +
+(x+y+z)^4) \leq 54(x+y+z)^2(x^2 + y^2 + z^2)\]</span></p>
+<p><span class="math display">\[ 324\sum{x^2y^2}+6(\sum{x})^4 \leq
+54(\sum x)^2(\sum x^2)^2\]</span></p>
+<p>Now use the total derivitive method.</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/11/23/%E4%B8%AD%E6%96%87/Knapsack/">
+        Previous post<br>Accelerated 01 Knapsack Algorithm and the Quadrangle Inequality
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/09/08/%E4%B8%AD%E6%96%87/Mech%20Inequality/">
+        Next post<br>Multivariable Inequalitys - The mechanisation  method
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?68187339"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

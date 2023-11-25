@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IOI 2022 Prisons 题解 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="
+IOI 2022 D1T2 Prisons 题解
+题...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?44569502">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    IOI 2022 Prisons 题解
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <meta name="referrer" content="no-referrer" />
+<h1 id="ioi-2022-d1t2-prisons-题解">IOI 2022 D1T2 Prisons 题解</h1>
+<p>题目链接: https://ioi2022.id/tasks/</p>
+<p>通过人数：8/357</p>
+<p>题目难度：CF2600?</p>
+<p>首先，能使用的数字很少，因此需要尽量每次传递一点信息。</p>
+<p>尽然要传递信息，就最好选择交替询问A，B。</p>
+<h3 id="pts-m26">56pts (m=26)</h3>
+<p>观察到一个数字写成 2 进制形式是唯一的。因此，不妨在 2
+进制形式下一位一位的作比较。传递一个 <code>(bit,0/1)</code>
+的值，来让下一个囚犯知道另一个袋子中数字的 2 进制下的 bit 位是 0 还是 1.
+递归即可。由于 <span class="math inline">\(2^{12} = 4096\)</span>
+得到需要 26 个位置。</p>
+<h3 id="pts-m24">70pts (m=24)</h3>
+<p>为什么一定要 2 进制呢？观察到三进制的情况下 <span
+class="math inline">\(3^7 = 2187\)</span>，
+也就是意味着三进制情况下只需要 <span class="math inline">\(8 \times
+3\)</span> 种值就可以完成传递信息。</p>
+<h3 id="pts-m21">90pts (m=21)</h3>
+<p>为什么一定要拆成进制呢？可以不可以二分或者三分答案呢？固然是可以的。有没有什么本质区别？有的。三分的时候，可以注意到在段落中会有一个
++1/-1
+的微调。而如果我们单纯的选择使用进制的话，这个+1/-1的优势就被浪费掉了。例如如果看到袋子里的数是
+<span class="math inline">\(1\)</span>.
+固然直接就会选择当前的袋子（因为另外一个必然会更大）, <span
+class="math inline">\(n\)</span> 同理。</p>
+<p>那么这种情况下 <span class="math inline">\(m\)</span>
+怎么计算呢？可以发现，最大迭代次数满足：</p>
+<p><span class="math display">\[
+f(x) = \lceil \frac{x-2}{3} \rceil
+\]</span></p>
+<p>若干次后 <span class="math inline">\(f(x) = 1\)</span>,
+最坏情况需要迭代 <span class="math inline">\(7\)</span> 次，然后剩一个
+<span class="math inline">\(2\)</span>，特殊处理就可以。所以是 <span
+class="math inline">\(3 \times 7 + 1 = 22\)</span>. 为什么 <span
+class="math inline">\(m=21\)</span> 这里就不得而知了。可能大小是 <span
+class="math inline">\(2\)</span> 可以直接处理掉。</p>
+<h3 id="pts-m20">100pts （m=20)</h3>
+<p>为什么一定要三分呢？为什么不二分呢？如果二分的话，迭代的形式大概是：</p>
+<p><span class="math display">\[
+f(x) = \lceil \frac{x-2}{2} \rceil
+\]</span></p>
+<p>虽然函数下降的速度变慢了，但是二分情况下只需要 0/1
+就可以表达。注意到如果三分，变化形式是： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5000 -3-&gt; 1666 -3-&gt; 555 -3-&gt; 185 -3-&gt; 61 -3-&gt; 20 -3-&gt; 6 -3-&gt; 2</span><br></pre></td></tr></table></figure></p>
+<p>最后几个如果改成二分，会变成 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5000 -3-&gt; 1666 -3-&gt; 555 -3-&gt; 185 -3-&gt; 61 -3-&gt; 20 -3-&gt; 6 -2-&gt; 2</span><br></pre></td></tr></table></figure></p>
+<p>那这个时候需要的数字数量就变成了 <span class="math inline">\(3\times6
++ 2 = 20\)</span>, 刚考卡住。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;prison.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">vector&lt; vector&lt;<span class="type">int</span>&gt; &gt; ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">calculate</span> <span class="params">(<span class="type">int</span> pid, <span class="type">int</span> rep, <span class="type">int</span> c, <span class="type">int</span> loth, <span class="type">int</span> roth, <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> cid = rep+rep+rep+c;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=l;i&lt;=r;i++) ans[pid][i] = cid; </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=loth;i&lt;=l;i++) ans[cid][i] = <span class="number">-1</span>-ans[cid][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=r;i&lt;=roth;i++) ans[cid][i] = <span class="number">-2</span>+ans[cid][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">if</span> (l+<span class="number">1</span>&gt;r<span class="number">-1</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (l+<span class="number">1</span>+<span class="number">2</span>&gt;r<span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="built_in">calculate</span>(cid,rep+<span class="number">1</span>,<span class="number">1</span>,l,r,l+<span class="number">1</span>,r<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (l+<span class="number">1</span>+<span class="number">4</span>&gt;r<span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="built_in">calculate</span>(cid,rep+<span class="number">1</span>,<span class="number">1</span>,l,r,l+<span class="number">1</span>,(l+r)/<span class="number">2</span>);</span><br><span class="line">        <span class="built_in">calculate</span>(cid,rep+<span class="number">1</span>,<span class="number">2</span>,l,r,(l+r)/<span class="number">2</span>+<span class="number">1</span>,r<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> m1 = (l+l+r+<span class="number">1</span>+<span class="number">1</span><span class="number">-1</span>)/<span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> m2 = (l+r+r+<span class="number">1</span><span class="number">-1</span><span class="number">-1</span>)/<span class="number">3</span>;</span><br><span class="line">    <span class="built_in">calculate</span>(cid,rep+<span class="number">1</span>,<span class="number">1</span>,l,r,l+<span class="number">1</span>,m1);</span><br><span class="line">    <span class="built_in">calculate</span>(cid,rep+<span class="number">1</span>,<span class="number">2</span>,l,r,m1+<span class="number">1</span>,m2);</span><br><span class="line">    <span class="built_in">calculate</span>(cid,rep+<span class="number">1</span>,<span class="number">3</span>,l,r,m2+<span class="number">1</span>,r<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">initialize</span> <span class="params">(<span class="type">int</span> len, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=len;i++) ans.<span class="built_in">push_back</span>(<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n+<span class="number">1</span>,<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=len;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> ((i+<span class="number">2</span>)%<span class="number">6</span>&lt;<span class="number">3</span>) ans[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt; vector&lt;<span class="type">int</span>&gt; &gt; <span class="built_in">devise_strategy</span>(<span class="type">int</span> n) &#123;</span><br><span class="line">    <span class="built_in">initialize</span>(<span class="number">20</span>,n);</span><br><span class="line">    <span class="built_in">calculate</span>(<span class="number">0</span>,<span class="number">-1</span>,<span class="number">3</span>,<span class="number">1</span>,n,<span class="number">1</span>,n);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/IOI22%20Insects%20%E9%A2%98%E8%A7%A3/">
+        Previous post<br>IOI 2022 Insects 题解
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/IOI22%20Tower%20%E9%A2%98%E8%A7%A3/">
+        Next post<br>IOI 2022 Towers 题解
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?15607911"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

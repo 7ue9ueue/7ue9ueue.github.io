@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>莫比乌斯反演练习题 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="题目难度: 省选-
+题目分类: 计算数论
+题目大意:
+...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?74238430">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    莫比乌斯反演练习题
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <p><strong>题目难度:</strong> 省选-</p>
+<p><strong>题目分类:</strong> 计算数论</p>
+<p><strong>题目大意:</strong></p>
+<p>珂朵莉被困在了梦里!</p>
+<p>她询问眼前的红发少女的离开的方法,</p>
+<p>红发少女说:</p>
+<p>“我的梦境中有 k 个星球“</p>
+<p>”每个星球上都住着一个黄金妖精“</p>
+<p>“她们都有一个生命力“</p>
+<p>“生命力若到达了魔力上限 n, 则会触发妖精乡之门, 燃尽自己的生命”</p>
+<p>“但我不知道她们的生命力分别是多少”</p>
+<p>“陌生的黄金妖精啊, 你若可以帮我求得”</p>
+<p>“斐波那契数列中“</p>
+<p>”属于她们生命力的最大公约数的那一项”</p>
+<p>“再将所有可能的情况求和”</p>
+<p>“我则可以让你离开”</p>
+<p><span class="math display">\[
+\sum_{a_1=1}^n\sum_{a_2=1}^n\sum_{a_3=1}^n\dots\sum_{a_k=1}^nf(\gcd(a_i))
+\]</span></p>
+<p><span class="math inline">\(k≤10^4\)</span> and <span
+class="math inline">\(n≤10^4\)</span></p>
+<p><strong>解题思路:</strong></p>
+<p>将此抽象问题转化成数论计数问题,
+后考虑组合和容斥将其转化成莫比乌斯反演求解即可</p>
+<p><strong>题目答案:</strong> <span class="math display">\[
+\sum_{a_1=1}^n\sum_{a_2=1}^n\sum_{a_3=1}^n\dots\sum_{a_k=1}^nf(\gcd(a_i))
+\]</span> <span class="math display">\[
+\sum_{i=1}^n f(i)g(\lfloor \frac{n}{i} \rfloor) \]</span></p>
+<p>纯莫比乌斯反演法</p>
+<p><span class="math display">\[
+g(n) = g_a(n) = \sum_{i=1}^n g_a\prime(i) \]</span> <span
+class="math display">\[
+n^k =g_b(n) = \sum_{i=1}^n g_b\prime(i) \]</span> <span
+class="math display">\[
+\because g_b(n) = \sum_{d|n}g_a\prime(d) \]</span> <span
+class="math display">\[
+\therefore g_a\prime(n) = \sum_{d|n}\mu(d)g_b\prime(\frac{n}{d})
+\]</span></p>
+<p>反演, 变换, 求其值!</p>
+<p><span class="math display">\[
+g_a(n) = \sum_{i=1}^n g_a\prime(i) =
+\sum_{i=1}^n\sum_{d|i}\mu(d)g_b\prime(\frac{i}{d}) \]</span></p>
+<p><span class="math display">\[
+g_a(n)= \sum_{d=1}^n\mu(d)\sum_{i=1}^n g_b\prime(i) [d|i] \]</span></p>
+<p><span class="math display">\[
+g_a(n)= \sum_{d=1}^n\mu(d)\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}
+g_b\prime(i) \]</span></p>
+<p><span class="math display">\[
+g_a(n)= \sum_{d=1}^n\mu(d)g_b(\lfloor\frac{n}{d}\rfloor) \]</span></p>
+<p><span class="math display">\[
+g_a(n) = \sum_{d=1}^n\mu(d)\lfloor\frac{n}{d}\rfloor^k \]</span></p>
+<p>时间复杂度简单证明</p>
+<p><strong>Claim:</strong> 时间复杂度是 <span
+class="math inline">\(O(n)\)</span></p>
+<p><strong>lemma:</strong> <span class="math inline">\(g(n)\)</span>
+的时间复杂度是 <span class="math inline">\(O(\sqrt n)\)</span></p>
+<p><span class="math display">\[\because \lfloor \frac{n}{i} \rfloor
+有O(\sqrt n)种取值\]</span> <span class="math display">\[\therefore
+g(n)的 时间复杂度是 (\sqrt n)\]</span> ****</p>
+<p><span class="math inline">\(情况1:\)</span> <span
+class="math inline">\(i \in [\sqrt n,n]\)</span>, <span
+class="math inline">\(\frac{n}{i} \in [1,\sqrt n]\)</span></p>
+<p><span class="math display">\[
+即计算 \sum_{i=1}^{\sqrt{n}} \sqrt i \]</span> <span
+class="math display">\[
+约等于 \int_0^{\sqrt{n}} \sqrt i di\]</span> <span
+class="math display">\[
+等于 \frac{2}{3}(\sqrt n)^\frac{3}{2}\]</span> <span
+class="math display">\[
+等于 O(n^\frac{3}{4})\]</span> ****</p>
+<p><span class="math inline">\(情况2:\)</span> <span
+class="math inline">\(i \in [1,\sqrt n]\)</span> <span
+class="math display">\[
+\lfloor \frac{n}{i} \rfloor 约等于 \frac{n}{i}
+\]</span> <span class="math display">\[
+即计算 \sum_{i=1}^{\sqrt n} \sqrt \frac{n}{i} \]</span></p>
+<p><span class="math display">\[ 约等于 \int_o^{\sqrt n} \sqrt
+\frac{n}{i}di \]</span></p>
+<p><span class="math display">\[ 等于 \int_o^{\sqrt n}  \sqrt n\times
+\frac{1}{ \sqrt i}di \]</span></p>
+<p><span class="math display">\[ 等于 \sqrt n \times n^{\frac{1}{4}} =
+O(n^\frac{3}{4}) \space \square\]</span></p>
+<p><strong>Note:</strong> 这都能有对称性? 巧合还是注定?</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/Matrix%20Tree%20%E6%A8%A1%E6%9D%BF/">
+        Previous post<br>Matrix Tree 学习笔记
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/NOIP%202022%20%E9%A2%98%E7%9B%AE%E8%A7%A3%E6%9E%90/">
+        Next post<br>NOIP 2021 题目解析
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?68397711"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

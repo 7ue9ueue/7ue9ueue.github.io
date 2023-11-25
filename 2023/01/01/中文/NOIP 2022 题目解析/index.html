@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NOIP 2021 题目解析 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="NOIP 2021 题目解析
+NOIP 2021
+本次...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?79497120">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    NOIP 2021 题目解析
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="noip-2021-题目解析">NOIP 2021 题目解析</h1>
+<h3 id="noip-2021">NOIP 2021</h3>
+<p>本次命题对于水平接近的选手区分度较低,
+同时难度梯度偏大。第四题代码量偏高,
+要拿到省队线分数的同学需要快速解决前三题好在最后一题上面拿到足够的分数。</p>
+<p>每次题目前三题都可以被归类为动态规划方法, 第四题是图论问题。</p>
+<p>作者认为一等奖分数线应为 <span class="math inline">\(150\)</span>,
+弱省省队线 <span class="math inline">\(250\)</span>, 强省省队线 <span
+class="math inline">\(310\)</span>.</p>
+<h3 id="t1-普及-rmiv-提高-rmi---报数">T1 普及 <span
+class="math inline">\(\rm{IV}\)</span> / 提高 <span
+class="math inline">\(\rm{I}\)</span> - 报数</h3>
+<p><img
+src="https://files.mdnice.com/user/13035/dbb0c332-a6ed-45ec-b4e1-27fa2fd0d82c.png" /></p>
+<p><span class="math inline">\(x≤ 10^7\)</span></p>
+<p>题目考点: 数论, 动态规划</p>
+<p>通过题目可以发现游戏规则和质数筛法类似,
+因此可以提前处理出所有含有数字 <span
+class="math inline">\(\rm{7}\)</span> 的数字。之后,
+使用这些处理出的数字去对于进行<strong>挨拉托色尼筛</strong>类似过程即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span> <span class="params">()</span> </span>&#123; </span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(c&lt;<span class="string">&#x27;0&#x27;</span>||c&gt;<span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">		c = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">		x = x*<span class="number">10</span>+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		c = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxt = <span class="number">1e7</span>+<span class="number">1e5</span>;</span><br><span class="line"><span class="type">int</span> t[maxt];</span><br><span class="line"><span class="type">int</span> ans[maxt];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> x)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (x&gt;<span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (x%<span class="number">10</span>==<span class="number">7</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		x /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">1e7</span>;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!t[i]) <span class="keyword">if</span> (<span class="built_in">check</span>(i)) &#123;</span><br><span class="line">			t[i] = <span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j=i;j&lt;=<span class="number">1e7</span>;j+=i) t[j] = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	n = <span class="built_in">read</span>();</span><br><span class="line">	<span class="built_in">init</span>();</span><br><span class="line">	<span class="type">int</span> pre = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">1e7</span>+<span class="number">1e3</span>;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (t[i]) &#123;</span><br><span class="line">			ans[i] = <span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (i!=<span class="number">1</span>) &#123;</span><br><span class="line">			ans[pre] = i;</span><br><span class="line">			pre = i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">		<span class="type">int</span> x = <span class="built_in">read</span>();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans[x]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="t2-提高-rmv---数列">T2 提高 <span
+class="math inline">\(\rm{V}\)</span> - 数列</h3>
+<p><img
+src="https://files.mdnice.com/user/13035/fec81579-c4a5-44a5-86f3-a363f9ae3f36.png" /></p>
+<p><span class="math inline">\(n ≤ 30, m ≤ 100\)</span></p>
+<p>题目考点: 动态规划</p>
+<p>观察到问题的核心其实是考虑对于 <span
+class="math inline">\(\rm{2}\)</span>
+的次方的求和的<strong>进位问题</strong>。这引导我们发现如果 <span
+class="math inline">\(a_i\)</span> 从小到大考虑, 则只需要考虑 <span
+class="math inline">\(a_i\)</span> 当前的进位即可。因此, <span
+class="math inline">\(\rm S\)</span>
+是不需要被状态压缩的。因此我们考虑使用动态规划解决问题。</p>
+<p>考虑在选择了 <span class="math inline">\(i\)</span> 个 <span
+class="math inline">\(a\)</span> 中的元素后再选择 <span
+class="math inline">\(k\)</span> 个值为 <span
+class="math inline">\(x\)</span> 的元素。可以发现,
+我们需要四个维度来进行动态规划, 因为除了题目给的两个限制之外,
+进位还需要考虑。在进位的过程中, 假设进了 <span
+class="math inline">\(j\)</span> 位, 则 <span
+class="math inline">\(j/2\)</span> 的进位会保留, <span
+class="math inline">\(j \text{ mod } 2\)</span>
+的进位会直接使用。分两种情况讨论即可。</p>
+<p>最后发现, 答案求的并不是有序数列, 因此要乘以一个组合数,
+在动态规划的过程中做乘法即可。这是因为一个数列的权值是连积。</p>
+<p>具体而言, 令 <span class="math inline">\(f[i][j][k][l]\)</span>
+是考虑到选则了 <span class="math inline">\(i\)</span> 个元素, 和为 <span
+class="math inline">\(j\)</span>, 已经有了 <span
+class="math inline">\(k\)</span> 个 1 的位置, 进位为 <span
+class="math inline">\(l\)</span>, 细节可以参考代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123; </span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span>(c&lt;<span class="string">&#x27;0&#x27;</span>||c&gt;<span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">		c = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">		x = x*<span class="number">10</span>+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		c = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">35</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxm = <span class="number">105</span>;</span><br><span class="line"><span class="type">int</span> n,m,k,V[maxm];</span><br><span class="line"><span class="type">int</span> f[maxm][maxm][maxm][maxm];</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MOD = <span class="number">998244353</span>;</span><br><span class="line"><span class="type">int</span> C[maxm][maxm];</span><br><span class="line"><span class="type">int</span> Vp[maxm][maxm];</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    m = <span class="built_in">read</span>();</span><br><span class="line">    k = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=m;i++) V[i] = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=m;i++) &#123;</span><br><span class="line">        Vp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">			Vp[i][j] = Vp[i][j<span class="number">-1</span>]*V[i]%MOD;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    C[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        C[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=i;j++) C[i][j] = (C[i<span class="number">-1</span>][j]+C[i<span class="number">-1</span>][j<span class="number">-1</span>])%MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        f[<span class="number">0</span>][i][i/<span class="number">2</span>][i%<span class="number">2</span>] = Vp[<span class="number">0</span>][i]*C[n][i]%MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++) <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;=n;j++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> p=<span class="number">0</span>;p&lt;=j/<span class="number">2</span>;p++) <span class="keyword">for</span> (<span class="type">int</span> l=<span class="number">0</span>;l&lt;=<span class="built_in">min</span>(i+<span class="number">1</span>,j);l++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (!f[i][j][p][l]) <span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> t=j;t&lt;=n;t++) &#123;</span><br><span class="line">				<span class="type">int</span> q = t-j+p;</span><br><span class="line">				f[i+<span class="number">1</span>][t][q/<span class="number">2</span>][l+q%<span class="number">2</span>] += f[i][j][p][l]*Vp[i+<span class="number">1</span>][t-j]%MOD*C[n-j][t-j]%MOD;</span><br><span class="line">				f[i+<span class="number">1</span>][t][q/<span class="number">2</span>][l+q%<span class="number">2</span>] %= MOD;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> p=<span class="number">0</span>;p&lt;=n;p++) <span class="keyword">for</span> (<span class="type">int</span> l=<span class="number">0</span>;l&lt;=m+<span class="number">1</span>;l++) &#123;</span><br><span class="line">        <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> x = p;</span><br><span class="line">		<span class="keyword">while</span> (x) &#123;</span><br><span class="line">			<span class="keyword">if</span>(x%<span class="number">2</span>==<span class="number">1</span>) cnt++;</span><br><span class="line">			x /= <span class="number">2</span>;</span><br><span class="line">		&#125;   </span><br><span class="line">        <span class="keyword">if</span> (l+cnt&lt;=k) ans = (ans+f[m][n][p][l])%MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="t3-省选-rmiii---方差">T3 省选 <span
+class="math inline">\(\rm{III}\)</span> - 方差</h3>
+<p><img
+src="https://files.mdnice.com/user/13035/2b1d11f3-ae54-463c-85ec-32d5fafb94ff.png" /></p>
+<p><span class="math inline">\(n≤10^4, a_i≤600\)</span></p>
+<p>显然一个位置不能做两次连续操作。令这两个值是 <span
+class="math inline">\(X\)</span> 和 <span
+class="math inline">\(Y\)</span>, 则 <span class="math display">\[X+Y
+=a_{i-1} + a_{i+1}\]</span></p>
+<p>可以得到</p>
+<p><span class="math display">\[X = 1/2(a_{i-1} + a_{i+1}) + t
+\]</span></p>
+<p><span class="math display">\[X = 1/2(a_{i-1} + a_{i+1}) - t
+\]</span></p>
+<p>即一个是 +a, +b 的过程, 另一个是 +b, +a
+的过程。这引导我们去考虑<strong>差分</strong>,
+因为这一步是交换差分数组的相邻两个位置。这也说明这个差分数组是可以随意排序的。此时,
+整理式子, 可以得到</p>
+<p><span class="math display">\[D = n\sum_{i=1}^n a_i^2-(\sum_{i=1}^n
+{a_i})^2\]</span></p>
+<p>对这个问题进行动态规划, 令 <span
+class="math inline">\(dp[i][S]\)</span> 为 <span class="math display">\[
+\min\sum_{i=1}^na_i^2\]</span></p>
+<p>在考虑到第 i 个差分值时 <span class="math inline">\(S = \sum_{i=1}^n
+{a_i}\)</span> 的情况。此时可以得到56分的成绩。利用反证法可以证明 <span
+class="math inline">\(b_i\)</span> 是单峰的, 这引导我们去将 <span
+class="math inline">\(b_i\)</span> 排序,
+之后前后插入作为转移的方法。这个时候可以得到72分的成绩。最后,
+如果观察到非 <span class="math inline">\(\rm{0}\)</span> 的 <span
+class="math inline">\(b_i\)</span> 值只有 <span
+class="math inline">\(O(a_i)\)</span> 种,
+简单优化之后就可以得到100分。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">#include&quot;bits/stdc++.h&quot;</span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int inf = 2e9;</span><br><span class="line">const int maxn = 605;</span><br><span class="line">const int maxv = 605;</span><br><span class="line">int a[10000+5];</span><br><span class="line">int b[10000+5];</span><br><span class="line">int p[10000+5];</span><br><span class="line">int n;</span><br><span class="line">int dp[maxv][maxn*maxv];</span><br><span class="line">ll ans = 1e18;</span><br><span class="line"></span><br><span class="line">int read() &#123; </span><br><span class="line">	int x = 0;</span><br><span class="line">	char c = getchar();</span><br><span class="line">	while(c&lt;&#x27;0&#x27;||c&gt;&#x27;9&#x27;) &#123;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	while(c&gt;=&#x27;0&#x27;&amp;&amp;c&lt;=&#x27;9&#x27;) &#123;</span><br><span class="line">		x = x*10+c-&#x27;0&#x27;;</span><br><span class="line">		c = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	return x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void checkMin (int &amp;_x, int _y) &#123;</span><br><span class="line">	_x = min(_x,_y);</span><br><span class="line">	// cout&lt;&lt;_x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">signed main () &#123;</span><br><span class="line">	n = read();</span><br><span class="line">	int V = 0;</span><br><span class="line">	for (int i=1;i&lt;=n;i++) a[i] = read();</span><br><span class="line">	for (int i=0;i&lt;n;i++) &#123;</span><br><span class="line">		b[i] = a[i+1]-a[i];</span><br><span class="line">		V = max(V,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(b+1,b+n);</span><br><span class="line">	for (int i=1;i&lt;n;i++) p[i] = p[i-1]+b[i];</span><br><span class="line">	int cnt = 1;</span><br><span class="line">	while (b[cnt]==0) cnt++;</span><br><span class="line">	cnt--;</span><br><span class="line">	for (int i=0;i+cnt&lt;=n+1;i++) for (int v=0;v&lt;=n*V;v++) dp[i][v] = inf;</span><br><span class="line">	dp[0][0] = 0;</span><br><span class="line">	for (int i=0;i+cnt+1&lt;n;i++) for (int v=0;v&lt;=n*V;v++) &#123;</span><br><span class="line">		if (dp[i][v]==inf) continue;</span><br><span class="line">		// cout&lt;&lt;&quot;i = &quot;&lt;&lt;i&lt;&lt;&quot; v = &quot;&lt;&lt;v&lt;&lt;endl;</span><br><span class="line">		int amt = cnt+i+1;</span><br><span class="line">		// cout&lt;&lt;amt*b[amt]*b[amt]+2*b[amt]*v&lt;&lt;&quot; &quot;&lt;&lt;p[amt]*p[amt]&lt;&lt;endl;</span><br><span class="line">		// cout&lt;&lt;dp[i][v]&lt;&lt;&quot; &quot;;</span><br><span class="line">	    if (max(v+p[amt],v+amt*b[amt])&gt;600*600) continue;</span><br><span class="line">		checkMin(dp[i+1][v+amt*b[amt]],dp[i][v]+amt*b[amt]*b[amt]+2*b[amt]*v);</span><br><span class="line">		// cout&lt;&lt;dp[i][v]&lt;&lt;&quot; &quot;;</span><br><span class="line">		checkMin(dp[i+1][v+p[amt]],dp[i][v]+p[amt]*p[amt]);</span><br><span class="line">	&#125; </span><br><span class="line">	for (int v=1;v&lt;=n*V;v++) &#123;</span><br><span class="line">	    if (v&gt;600*600) continue;</span><br><span class="line">		if (dp[n-cnt-1][v]==inf) continue;</span><br><span class="line">		dp[n-cnt-1][v] += a[1]*a[1]*n+2*a[1]*v;</span><br><span class="line">		int val = dp[n-cnt-1][v];</span><br><span class="line">		// cout&lt;&lt;&quot;v = &quot;&lt;&lt;v&lt;&lt;endl;</span><br><span class="line">		// cout&lt;&lt;&quot;val = &quot;&lt;&lt;val&lt;&lt;endl;</span><br><span class="line">		ans = min(ans,(1ll*n*val-1ll*(v+a[1]*n)*(v+a[1]*n)));</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;%lld\n&quot;,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="t4-省选">T4 省选 </h3>
+<p><img
+src="https://files.mdnice.com/user/13035/8cbdb8aa-1bce-489f-ac46-5d9ea7051064.png" /></p>
+<p><span class="math inline">\(X ≤ 10^5\)</span></p>
+<p>首先，我们倒序处理询问; 在过程中，尝试维护由 3 边连接而成的连通块,
+其中不包含棋子. 这部分用并查集实现。</p>
+<p>在每个连通块中，使用四个可持久化线段树,
+其中两个需要储存连通块内所有点，一个储存 (x, y)，一个储存 (y, x),
+另一个储存的是和这个连通块只相隔了一个 3 边的棋子信息, 然后对于 2
+的路处理上下左右能走到哪, 四个实际是把白色和黑色分开，方便代码编写。</p>
+<p>然后后续移除棋子的时候，我们先枚举向外的 3
+边，将这些连通块中的棋子信息移除，然后合并连通块, 采取线段树启发式合并,
+对于 2 的路，移除一个边，我们枚举外面的 2
+边，考虑进行扩张。于是我们就完成了 3 路径和 2 路径连通块的维护。</p>
+<p>对于每个要被拉出来的点, 先考虑
+3，把连着的连通块编号储存起来，然后通过刚刚所说的连通块棋子信息计算出能干碎的棋子个数。这一部分的答案就是能被干碎的棋子数量加上连通块大小,
+然后考虑 2 边，首先看能到达哪里,
+然后特判终点，如果是棋子则判断可不可以干碎，如果是空地则不需要。</p>
+<p>两种情况都需要看所在的连通块有没有出现在 3 路中储存的编号中,
+考虑完之后，我们加上中间的点。但是注意到会有重复, 我们枚举刚刚储存的
+ID，此时就需要看连通块内和一个线段交于几个点,
+这个方法使用刚刚维护的连通块内节点信息处理, 这样子只会考虑 cnt(2) *
+cnt(3) = 4 种覆盖方式。</p>
+<p>时间复杂度 <span class="math inline">\(O(n\log^2 n)\)</span>
+代码过于繁琐, 故不展示</p>
+<h3 id="什么是noip">什么是NOIP?</h3>
+<p>全国青少年信息学奥林匹克联赛（National Olympiad in Informatics in
+Provinces，简称NOIP）自1995年至2020年已举办25次。每年由中国计算机学会统一组织。
+NOIP在同一时间、不同地点以各省市为单位由特派员组织。全国统一大纲、统一试卷。初、高中或其他中等专业学校的学生可报名参加联赛。联赛分初赛和复赛两个阶段。初赛考察通用和实用的计算机科学知识，以笔试形式进行。复赛为程序设计，须在计算机上调试完成。参加初赛者须达到一定分数线后才有资格参加复赛。联赛分普及组和提高组两个组别，难度不同，分别面向初中和高中阶段的学生。</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/Mobius%20%E7%BB%83%E4%B9%A0%E9%A2%98/">
+        Previous post<br>莫比乌斯反演练习题
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/USACO%202021%20Dec%E9%93%82%E9%87%91%E9%A2%98%E8%A7%A3/">
+        Next post<br>USACO 21DEC 铂金题解
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?5472629"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

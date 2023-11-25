@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AIIO 和 AIME 游记 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="AIME &amp;amp; AIOC 游记
+这次是我第一次参...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?25897223">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    AIIO 和 AIME 游记
+                    <div class="post-meta">
+                        <time datetime="2023-06-11T11:35:12.000Z" itemprop="datePublished">
+                            2023-06-11 19:35
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/游记Diary/'>游记Diary</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="aime-aioc-游记">AIME &amp; AIOC 游记</h1>
+<p>这次是我第一次参加三题制的OI比赛, 感觉战术执行非常成功,
+虽然四个小时的时间浪费了五个小时, 然是还是暴力打满了</p>
+<p>2022/02/09</p>
+<p>考了AIME, 题目比较有挑战性, 还好后面的第14题和第15题看起来完全不会做,
+最后剩下半个小时对着完全不会做了两题莫名的思考了一下就去检查了,
+所以时间也还算充裕</p>
+<p>第8题和第12题都讲过类似的题目, 算了小一个小时就算出来了,
+比较好玩的是第5题, 还好我在学校的数学课上认真听了物理的内容,
+然后应用一下就做出来了, 感觉很趣味</p>
+<p>最后得分是12/15pts, 应该算是不错, 算是做了热身</p>
+<p>2022/02/10</p>
+<p>进入了考场, 开始按照顺序做题</p>
+<p>第一题读完题发现题目的意思是给一棵树, 每个点有一个权值,
+求所有联通子图内权值和的最大值, 因此做法应该是</p>
+<p><span class="math display">\[f[u] = \sum_{v \in
+\rm{Son}}\max(f[v],0)+p[u]\]</span></p>
+<p>写了十分钟做出来了就去看第二题了(https://orac2.info/problem/aiio22hike/)</p>
+<p>读完题发现了是个最短路径问题,
+跑两次最短路然后显然上山时只在乎下山路反之也相同,
+然后Dijkstra写错了调了半个小时发现没有带vis数组之后终于做出来了</p>
+<p>然后就去看最后一题(https://orac2.info/problem/aiio22square/),
+读完题发现是个不可做题, 就先打暴力<span
+class="math inline">\(O(n^5)\)</span>了, 结果发现读错题了,
+不是求数量而是最大值, 可能存在优化的方法</p>
+<p>首先题目的难点是一共有 <span class="math inline">\(O(n^3)\)</span>
+种可能的正方形, 思考了两个小时不太会做, 发现时间要没了, 赶紧写了一个
+<span class="math inline">\(O(n^3\log n)\)</span> 的做法,
+然后最后五分钟提交成功了, 其中发现数组开大了一惊一乍了十几分钟</p>
+<p>最后得分是270/300pts, 应该是寄了</p>
+<p>2022/02/20</p>
+<p>Alpha比赛由于我莫名其妙很有自信, 没什么压力, 吃完饭就开始做题了</p>
+<p>一共有四道题, 只有四个小时时间比较紧, 就抓紧看题了</p>
+<p>第一题看起来不是很难, 写了写莫名其妙就过了</p>
+<p>第二题看起来不是很难, 写了写莫名其妙就过了</p>
+<p>第三题看起来不是很难, 写了写莫名其妙就过了</p>
+<p>第四题是说有 <span class="math inline">\(n\)</span> 个人, 在 <span
+class="math inline">\(l_i\)</span> 到 <span
+class="math inline">\(r_i\)</span> 天来庙里旅游, inclusive.
+庙里有一个僧人, 僧人每天只能接待一位客人, 问使得每个人都能被接待 <span
+class="math inline">\(k\)</span> 次的 <span
+class="math inline">\(k\)</span> 最大是多少</p>
+<p>写了写莫名其妙就挂了, 发现二分之后是个陷阱题, 对于 <span
+class="math inline">\(n\)</span> 条线段来说, 它们本身意义是不大的,
+而有意义的是它们所构成的交的线段的集合,
+发现了题目的本质之后好像就做了出来</p>
+<p>看起来是提前两个小时做完了, 就去睡觉了, 400/400pts</p>
+<p>2022/03/03</p>
+<p>因为感觉FARIO没什么用, 就不是很紧张</p>
+<p>第一题是说有 <span class="math inline">\(n\)</span> 个歌手拍成一队,
+实力分别是 <span class="math inline">\(a_i\)</span>.
+按照顺序从舞台左边进场, 右边出去, 其中歌手两两之间距离固定. 有 <span
+class="math inline">\(j\)</span> 名导师, 可以看到 <span
+class="math inline">\(l_i\)</span> 到 <span
+class="math inline">\(r_i\)</span> 范围内的歌手,
+然后每秒会给范围内实力最强的选手一分.</p>
+<p>已知所有歌手每秒往右边移动一格, 求每个歌手的分数</p>
+<p>发现导师的信息只有区间长度有关, 然后随便维护一下应该就可以了,
+大概是一个二维的数据结构, 考虑到时间很紧凑,
+我打算乱搞搞然后拿到了93分</p>
+<p>第二题很难, 不会做, 就先跳过了</p>
+<p>第三题是说给 <span class="math inline">\(n\)</span> 个圆心,
+要求构造一些圆, 使得这些圆互不相交, 并且周长尽量大.</p>
+<p>题目看起来很乱搞, 但是往后读发现对答案精度要求很高, 就不知道怎么办了.
+高斯消元和差分约束都不太适合这个场景, 因为互不相交这个条件是不等式.</p>
+<p>但是尽然发现了是不等式, 其实也刻画出了数学模型,</p>
+<p><span class="math display">\[ (x_i-x_j)^2+(y_i-y_j)^2 ≤ r_i + r_j
+\]</span></p>
+<p>其中左边是常数, 右边是我们需要最大化的变量,
+画图实验一下可以蒙到这个条件是当且仅当</p>
+<p>然后写个线性规划就可以做出来了, 但是 <span
+class="math inline">\(n≤5000\)</span>, 而我写的是指数级的,
+不太懂怎么优化, 就硬着头皮写了,
+最后坚韧不拔的在坏掉的评测机上调试拿到了40.6分.</p>
+<p>评测机坏了就顺便读一读第二题, 仔细读了读说的是有 <span
+class="math inline">\(n\)</span> 个人排成一列, 实力分别是 <span
+class="math inline">\(a_i\)</span>. 每次选择最左边的三个人决斗,
+留下中位数的那位玩家, 你需要维护一个数据结构:</p>
+<p>修改 - 移动一个人的位置</p>
+<p>查询 - 查询存活的人是谁</p>
+<p>有一些部分分是只会修改前100个人和后100个人,
+还有一个部分分是只移动一个人, 这些部分分都挺简单的,
+可惜我前面花的时间很多, 后面花的时间很多, 最后就只写了后100个人的分</p>
+<p>156.6/300pts</p>
+<p>2022/03/07</p>
+<p>问了问AIIO的奖项, 是银牌, 悲</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/06/12/%E4%B8%AD%E6%96%87/Linear%20Algebra%202/">
+        Previous post<br>Linear Alegebra Chapter 1,2,6 Study Notes
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/06/11/%E4%B8%AD%E6%96%87/Inequalitys%202/">
+        Next post<br>Inequality Revision 2
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?80303917"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

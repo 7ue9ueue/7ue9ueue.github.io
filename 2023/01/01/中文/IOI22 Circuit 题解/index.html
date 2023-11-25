@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IOI 2022 Circuit 题解 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="IOI2022 Circuit 题解
+题目链接: ht...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?58391769">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    IOI 2022 Circuit 题解
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="ioi2022-circuit-题解">IOI2022 Circuit 题解</h1>
+<p>题目链接: https://loj.ac/p/3833</p>
+<p>通过人数：~100/357</p>
+<p>题目难度：CF1800</p>
+<h1 id="观察">观察</h1>
+<p>题目的描述看起来非常开幕雷击 -
+这怎么可能能做呢？这个看起来像动态规划的问题凭什么可以区间修改？ -
+估计隐藏了一些条件，那么这题的目的就是找到隐藏的条件了。</p>
+<h1 id="解答">解答</h1>
+<p>首先注意到 DAG 和树在本问题上没有区别。因此考虑一个树。</p>
+<p>对于 DAG 中的任意一个节点 u, 若令该节点不亮的参数选择有 <span
+class="math inline">\(a_u\)</span> 种，令该节点不亮的参数选择有 <span
+class="math inline">\(b_u\)</span> 种, 令集合 <span
+class="math inline">\(S(u)\)</span> 包括所有存在边 (u,v) 的点 v，
+且定义函数 <span class="math inline">\(f(v)\)</span> 为</p>
+<p><span class="math display">\[f(v) = (\prod_{s \in S(u)}
+(a_s+b_s))\times b_v\]</span></p>
+<p>（设一个点的点权为他的同父亲节点的点的 <span
+class="math inline">\((a+b)\)</span> 之积和该点的 <span
+class="math inline">\(b\)</span> 的乘积）</p>
+<p>则 <span class="math inline">\(b_u\)</span> 满足以下递归式</p>
+<p><span class="math display">\[b_u = \sum_{s \in S(u)}
+f(v)\]</span></p>
+<p>（对于 <span class="math inline">\(b_u\)</span>, 可以分解为 <span
+class="math inline">\(u\)</span>
+的所有相邻点（除父亲节点外）的权值之和）</p>
+<p>观察到 <span class="math inline">\((a_i+b_i)\)</span> 为常数，将
+<span class="math inline">\(b_1\)</span>
+即所求答案的表达式打开可以得到叶子节点的贡献对于 <span
+class="math inline">\(b_1\)</span> 加法独立。注意到叶子节点 <span
+class="math inline">\(b_l = 1\)</span> 是亮，<span
+class="math inline">\(a_l = 0\)</span> 是不亮。线段树维护即可（维护
+<span class="math inline">\(\sum g(i)\)</span>,
+也就是对于每个叶子维护单独的贡献之和）。</p>
+<h1 id="证明">证明</h1>
+<p>根据组合意义显然。</p>
+<p>也可以考虑计算的方式，考虑生成函数 <span class="math inline">\(f_i(x)
+= (a_i+b_ix)\)</span>, 则 <span class="math inline">\(b_u\)</span>
+可以表达为一些 <span class="math inline">\(f_i(x)\)</span>
+的积的系数的带权和。（也就是对于每种亮和不亮的选择，我可以选择权值使得当前的节点亮必须要小于等于亮的节点个数）。权与
+<span class="math inline">\(x\)</span>
+的幂次相关（因为幂次是亮的灯的个数），因此考虑求导。</p>
+<p>所以 <span class="math inline">\(b_u\)</span>
+的递归式可以写成如下的形式。</p>
+<p><span class="math display">\[ b_u = \sum_{c} [x^c]
+\frac{\text{d}}{\text{d}x}\prod (a_i+b_ix) \]</span></p>
+<p><span class="math display">\[ b_u = [x^{p-1}] \frac{1}{1-x}
+\frac{\text{d}}{\text{d}x}\prod (a_i+b_ix) \]</span></p>
+<p><span class="math display">\[ b_u = [x^{p-1}] \frac{1}{1-x}
+\sum_i\frac{b_i}{a_i+b_ix}\prod_{j} (a_j+b_jx) \]</span></p>
+<p>注意到我们要求的是 <span class="math inline">\(x\)</span> 的 1-p
+次幂的系数和。其中 p 为度数。但左侧生成函数的最高次只有 <span
+class="math inline">\(p\)</span>, 因此所有的 <span
+class="math inline">\(x\)</span> 都可以取 1
+（现在可以随便选也满足要求，限制求导后就消失了，x=1
+就去掉生成函数了）.</p>
+<p><span class="math display">\[ b_u
+=  \sum_i\frac{b_i}{a_i+b_i}\prod_{j} (a_j+b_j) \]</span></p>
+<p>变形后可以得到前面的公式。证毕。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;circuit.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ls p+p</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rs p+p+1</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; E[maxn];</span><br><span class="line">vector&lt;ll&gt; pre[maxn], suf[maxn];</span><br><span class="line">ll val[maxn]; ll deg[maxn];</span><br><span class="line">ll on[maxn]; ll ans[maxn];</span><br><span class="line">ll cnt[maxn];</span><br><span class="line"><span class="type">int</span> n,m,rt = <span class="number">1</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MOD = <span class="number">1e9</span>+<span class="number">2022</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">seg</span> &#123;</span><br><span class="line">    <span class="type">int</span> l, r;</span><br><span class="line">    ll cur, oth;</span><br><span class="line">    <span class="type">int</span> tag;</span><br><span class="line">&#125;;</span><br><span class="line">seg t[maxn*<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span> <span class="params">(<span class="type">int</span> p)</span> </span>&#123;</span><br><span class="line">    t[p].cur = (t[ls].cur+t[rs].cur)%MOD;</span><br><span class="line">    t[p].oth = (t[ls].oth+t[rs].oth)%MOD;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span> <span class="params">(<span class="type">int</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!t[p].tag) <span class="keyword">return</span>;</span><br><span class="line">    t[p].tag = <span class="number">0</span>;</span><br><span class="line">    t[ls].tag ^= <span class="number">1</span>;t[rs].tag ^= <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">swap</span>(t[ls].cur,t[ls].oth);</span><br><span class="line">    <span class="built_in">swap</span>(t[rs].cur,t[rs].oth);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span> <span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    t[p].l = l;</span><br><span class="line">    t[p].r = r;</span><br><span class="line">    <span class="keyword">if</span> (l==r) &#123;</span><br><span class="line">        <span class="keyword">if</span> (on[l]) t[p].cur = ans[l+n];</span><br><span class="line">        <span class="keyword">else</span> t[p].oth = ans[l+n];</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> mid = (l+r)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">build</span>(ls,l,mid);</span><br><span class="line">    <span class="built_in">build</span>(rs,mid+<span class="number">1</span>,r);</span><br><span class="line">    <span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> t[<span class="number">1</span>].cur%MOD;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span> <span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l&lt;=t[p].l &amp;&amp; t[p].r&lt;=r) &#123;</span><br><span class="line">        <span class="built_in">swap</span>(t[p].cur,t[p].oth);</span><br><span class="line">        t[p].tag ^= <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">pushdown</span>(p);</span><br><span class="line">    <span class="type">int</span> mid = (t[p].l+t[p].r)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (l&lt;=mid) <span class="built_in">update</span>(ls,l,r);</span><br><span class="line">    <span class="keyword">if</span> (mid&lt;r) <span class="built_in">update</span>(rs,l,r);</span><br><span class="line">    <span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">DFS1</span> <span class="params">(<span class="type">int</span> u)</span> </span>&#123;</span><br><span class="line">    val[u] = <span class="built_in">max</span>(<span class="number">1ll</span>,deg[u]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> v:E[u]) &#123;</span><br><span class="line">        val[u] *= <span class="built_in">DFS1</span>(v);</span><br><span class="line">        val[u] %= MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val[u];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS2</span> <span class="params">(<span class="type">int</span> u, ll prod)</span> </span>&#123;</span><br><span class="line">    ans[u] = prod;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;E[u].<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">        ll nprod = prod;</span><br><span class="line">        <span class="type">int</span> v = E[u][i];</span><br><span class="line">        <span class="keyword">if</span> (i&gt;<span class="number">0</span>) &#123;</span><br><span class="line">            nprod *= pre[u][i<span class="number">-1</span>];</span><br><span class="line">            nprod %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i&lt;E[u].<span class="built_in">size</span>()<span class="number">-1</span>) &#123;</span><br><span class="line">            nprod *= suf[u][i+<span class="number">1</span>];</span><br><span class="line">            nprod %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">DFS2</span>(v,nprod);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span> <span class="params">(<span class="type">int</span> N, <span class="type">int</span> M, vector&lt;<span class="type">int</span>&gt; f, vector&lt;<span class="type">int</span>&gt; v)</span> </span>&#123;</span><br><span class="line">    n = N; m = M;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;f.<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">        E[f[i]+<span class="number">1</span>].<span class="built_in">push_back</span>(i+<span class="number">1</span>);</span><br><span class="line">        pre[f[i]+<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">        suf[f[i]+<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">        deg[f[i]+<span class="number">1</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">        on[i+<span class="number">1</span>] = v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">DFS1</span>(rt);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n+m;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;E[i].<span class="built_in">size</span>();j++) &#123;</span><br><span class="line">            pre[i][j] = val[E[i][j]];</span><br><span class="line">            suf[i][j] = val[E[i][j]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;E[i].<span class="built_in">size</span>();j++) &#123;</span><br><span class="line">            pre[i][j] *= pre[i][j<span class="number">-1</span>];</span><br><span class="line">            pre[i][j] %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=E[i].<span class="built_in">size</span>()<span class="number">-2</span>;j&gt;=<span class="number">0</span>;j--) &#123;</span><br><span class="line">            suf[i][j] *= suf[i][j+<span class="number">1</span>];</span><br><span class="line">            suf[i][j] %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">DFS2</span>(rt,<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>,<span class="number">1</span>,m);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">count_ways</span> <span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    l++;r++;l-=n;r-=n;</span><br><span class="line">    <span class="built_in">update</span>(<span class="number">1</span>,l,r);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/CF1536F%20%E9%A2%98%E8%A7%A3/">
+        Previous post<br>CF1536F
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/IOI22%20Fish%20%E9%A2%98%E8%A7%A3/">
+        Next post<br>IOI 2022 Fish 题解
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?81176479"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

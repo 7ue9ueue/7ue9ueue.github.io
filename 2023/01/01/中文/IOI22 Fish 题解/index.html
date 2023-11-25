@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IOI 2022 Fish 题解 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="IOI 2022 D1T1 Fish 题解
+题目链接:...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?43916394">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    IOI 2022 Fish 题解
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="ioi-2022-d1t1-fish-题解">IOI 2022 D1T1 Fish 题解</h1>
+<p>题目链接: https://ioi2022.id/tasks/</p>
+<p>通过人数：50/357</p>
+<p>题目难度：CF2400? ### Subtask 1</p>
+<p>全部加在一起即可</p>
+<h3 id="subtask-245">Subtask 2,4,5</h3>
+<p>首先，一定最多只有两个连续的 <span class="math inline">\(c_i =
+0\)</span>，因为如果有连续三个 <span class="math inline">\(c_i =
+0\)</span>, 则中间的一个 <span class="math inline">\(c_i = n\)</span>
+一定是一个更好的选择。</p>
+<p>所以每一个连续的非零 <span class="math inline">\(c_i\)</span>
+的最大子段之间最多只间隔两个 <span class="math inline">\(0\)</span>.</p>
+<p>因此，考虑分类讨论。</p>
+<p>如果间隔两个 <span class="math inline">\(0\)</span>，
+那么这两段之间没有影响。</p>
+<p>观察到在这种形式的 <span class="math inline">\(c_i\)</span> 的情况中:
+<code>(5,0,3,0,5)</code>，中间的 <code>3</code>
+没有起到任何的作用。但是如果是<code>(5,0,6,0,5)</code>，中间的
+<code>6</code> 掌控着旁边两个区域。</p>
+<p>更广义的情况是，如果间隔一个 <span class="math inline">\(0\)</span>,
+考虑将所有这些 <span class="math inline">\(0\)</span>
+移除，那么剩下的连续非零的 <span class="math inline">\(c_i\)</span>
+的最大子段一定是单峰且凸的。</p>
+<p>因此，考虑动态规划，令 <code>dp[i][h][0/1]</code> 为选到第
+<code>i</code> 列且 <span class="math inline">\(c_i\)</span> 的值是
+<code>h</code> 且目前是在上升/下降情况下最大的答案。转移必然是来自
+<code>dp[i-1][h']</code>, <code>dp[i-2][h']</code>,
+和<code>dp[i-3][h']</code>.
+由于一定是先升后降（先0后1），转移方法是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">dp[i][h][0] = max of：</span><br><span class="line">max(dp[i-1][h&#x27;][0] + prex[i][h] - prex[i][h&#x27;])</span><br><span class="line">max(dp[i-2][h&#x27;][0] + prex[i][h]) </span><br><span class="line">&#123;h&#x27;&lt;=h&#125;</span><br><span class="line">max(dp[i-3][h&#x27;][0] + prex[i-2][h&#x27;] + prex[i-1][h])</span><br><span class="line">max(dp[i-3][h&#x27;][1] + prex[i-2][h&#x27;] + prex[i-1][h])</span><br><span class="line"></span><br><span class="line">dp[i][h][1] = max of:</span><br><span class="line">max(dp[i-1][hp][1] + prex[i][h&#x27;] - prex[i][h]);</span><br><span class="line">max(dp[i-2][hp][1] + prex[i-1][h&#x27;]);</span><br><span class="line">max(dp[i-1][hp][0] + prex[i][h&#x27;] - prex[i][h]);</span><br><span class="line">max(dp[i-2][hp][0] + prex[i-1][h&#x27;]);</span><br><span class="line">&#123;h&#x27;&gt;=h&#125;</span><br></pre></td></tr></table></figure>
+<p>分八种情况讨论，前缀和维护动态规划 <span
+class="math inline">\(O(n^3)\)</span> 即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;cstring&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;fish.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">P</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x,y,w;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxm = <span class="number">3e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">3005</span>;</span><br><span class="line">ll dp[maxn][maxn][<span class="number">2</span>];</span><br><span class="line">ll prx[maxn][maxn];</span><br><span class="line">P fish[maxm];</span><br><span class="line">ll ans;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">c</span> <span class="params">(<span class="type">int</span> i, <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> prx[i][r]-prx[i][l<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">max_weights</span> <span class="params">(<span class="type">int</span> n, <span class="type">int</span> m, vector&lt;<span class="type">int</span>&gt; X, vector&lt;<span class="type">int</span>&gt; Y, vector&lt;<span class="type">int</span>&gt; W)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++) &#123;</span><br><span class="line">        prx[X[i]+<span class="number">1</span>][Y[i]+<span class="number">1</span>] += W[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">        prx[i][j] += prx[i][j<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">-0x3f</span>,<span class="built_in">sizeof</span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;=n;h++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> hp=<span class="number">0</span>;hp&lt;=n;hp++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (hp&lt;=h) &#123;</span><br><span class="line">                	<span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) dp[i][h][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">0</span>],dp[i<span class="number">-1</span>][hp][<span class="number">0</span>]+<span class="built_in">c</span>(i<span class="number">-1</span>,hp+<span class="number">1</span>,h));</span><br><span class="line">                	<span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) dp[i][h][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">0</span>],dp[i<span class="number">-2</span>][hp][<span class="number">0</span>]+<span class="built_in">c</span>(i<span class="number">-1</span>,<span class="number">1</span>,h));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (hp&gt;=h) &#123;</span><br><span class="line">                	<span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) dp[i][h][<span class="number">1</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">1</span>],dp[i<span class="number">-1</span>][hp][<span class="number">1</span>]+<span class="built_in">c</span>(i,h+<span class="number">1</span>,hp));</span><br><span class="line">                	<span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) dp[i][h][<span class="number">1</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">1</span>],dp[i<span class="number">-2</span>][hp][<span class="number">1</span>]+<span class="built_in">c</span>(i<span class="number">-1</span>,<span class="number">1</span>,hp));</span><br><span class="line">                	<span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) dp[i][h][<span class="number">1</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">1</span>],dp[i<span class="number">-1</span>][hp][<span class="number">0</span>]+<span class="built_in">c</span>(i,h+<span class="number">1</span>,hp));</span><br><span class="line">                	<span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) dp[i][h][<span class="number">1</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">1</span>],dp[i<span class="number">-2</span>][hp][<span class="number">0</span>]+<span class="built_in">c</span>(i<span class="number">-1</span>,<span class="number">1</span>,hp));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (i<span class="number">-3</span>&gt;=<span class="number">0</span>) &#123;</span><br><span class="line">                    dp[i][h][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">0</span>],dp[i<span class="number">-3</span>][hp][<span class="number">1</span>]+<span class="built_in">c</span>(i<span class="number">-2</span>,<span class="number">1</span>,hp)+<span class="built_in">c</span>(i<span class="number">-1</span>,<span class="number">1</span>,h));</span><br><span class="line">                    dp[i][h][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i][h][<span class="number">0</span>],dp[i<span class="number">-3</span>][hp][<span class="number">0</span>]+<span class="built_in">c</span>(i<span class="number">-2</span>,<span class="number">1</span>,hp)+<span class="built_in">c</span>(i<span class="number">-1</span>,<span class="number">1</span>,h));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;=n;h++) &#123;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,dp[i][h][<span class="number">1</span>]+<span class="built_in">c</span>(i+<span class="number">1</span>,<span class="number">1</span>,h));</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,dp[i][h][<span class="number">0</span>]+<span class="built_in">c</span>(i+<span class="number">1</span>,<span class="number">1</span>,h));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="subtask-36">Subtask 3,6</h3>
+<p>首先，把八种转移根据限制分成三种，注意到转移满足抉择单调性，把循环枚举的转移部分去掉即可。</p>
+<p>例如 <code>h'&lt;=h</code> 这类限制中，随着 <code>h</code>
+越大，其来自的 <code>h'</code> 也会越来越大。在循环 <code>h</code>
+的时候处理 <code>h'</code> 即可。时间复杂度 <span
+class="math inline">\(O(n^2)\)</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;cstring&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;fish.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">P</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x,y,w;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxm = <span class="number">3e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">3005</span>;</span><br><span class="line">ll dp[maxn][maxn][<span class="number">2</span>];</span><br><span class="line">ll prx[maxn][maxn];</span><br><span class="line">ll v[maxn];</span><br><span class="line">P fish[maxm];</span><br><span class="line">ll ans;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">max_weights</span> <span class="params">(<span class="type">int</span> n, <span class="type">int</span> m, vector&lt;<span class="type">int</span>&gt; X, vector&lt;<span class="type">int</span>&gt; Y, vector&lt;<span class="type">int</span>&gt; W)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++) &#123;</span><br><span class="line">        prx[X[i]+<span class="number">1</span>][Y[i]+<span class="number">1</span>] += W[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">        prx[i][j] += prx[i][j<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">-0x3f</span>,<span class="built_in">sizeof</span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">    	<span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;=<span class="number">8</span>;h++) v[h] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;=n;h++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) v[<span class="number">1</span>] = <span class="built_in">max</span>(v[<span class="number">1</span>],dp[i<span class="number">-1</span>][h][<span class="number">0</span>]-prx[i<span class="number">-1</span>][h]);</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) v[<span class="number">2</span>] = <span class="built_in">max</span>(v[<span class="number">2</span>],dp[i<span class="number">-2</span>][h][<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-3</span>&gt;=<span class="number">0</span>) v[<span class="number">7</span>] = <span class="built_in">max</span>(v[<span class="number">7</span>],dp[i<span class="number">-3</span>][h][<span class="number">1</span>]+prx[i<span class="number">-2</span>][h]);</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-3</span>&gt;=<span class="number">0</span>) v[<span class="number">8</span>] = <span class="built_in">max</span>(v[<span class="number">8</span>],dp[i<span class="number">-3</span>][h][<span class="number">0</span>]+prx[i<span class="number">-2</span>][h]);</span><br><span class="line">            dp[i][h][<span class="number">0</span>] = <span class="built_in">max</span>(&#123;dp[i][h][<span class="number">0</span>],v[<span class="number">1</span>]+prx[i<span class="number">-1</span>][h],v[<span class="number">2</span>]+prx[i<span class="number">-1</span>][h]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h=n;h&gt;=<span class="number">0</span>;h--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) v[<span class="number">3</span>] = <span class="built_in">max</span>(v[<span class="number">3</span>],dp[i<span class="number">-1</span>][h][<span class="number">1</span>]+prx[i][h]);</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) v[<span class="number">4</span>] = <span class="built_in">max</span>(v[<span class="number">4</span>],dp[i<span class="number">-2</span>][h][<span class="number">1</span>]+prx[i<span class="number">-1</span>][h]);</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) v[<span class="number">5</span>] = <span class="built_in">max</span>(v[<span class="number">5</span>],dp[i<span class="number">-1</span>][h][<span class="number">0</span>]+prx[i][h]);</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) v[<span class="number">6</span>] = <span class="built_in">max</span>(v[<span class="number">6</span>],dp[i<span class="number">-2</span>][h][<span class="number">0</span>]+prx[i<span class="number">-1</span>][h]);</span><br><span class="line">            dp[i][h][<span class="number">1</span>] = <span class="built_in">max</span>(&#123;dp[i][h][<span class="number">1</span>],v[<span class="number">3</span>]-prx[i][h],v[<span class="number">4</span>],v[<span class="number">5</span>]-prx[i][h],v[<span class="number">6</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;=n;h++) &#123;</span><br><span class="line">            dp[i][h][<span class="number">0</span>] = <span class="built_in">max</span>(&#123;dp[i][h][<span class="number">0</span>],v[<span class="number">7</span>]+prx[i<span class="number">-1</span>][h],v[<span class="number">8</span>]+prx[i<span class="number">-1</span>][h]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;=n;h++) &#123;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,dp[i][h][<span class="number">1</span>]+(prx[i+<span class="number">1</span>][h]));</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,dp[i][h][<span class="number">0</span>]+(prx[i+<span class="number">1</span>][h]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="full-solution">Full Solution</h3>
+<p>注意到还有一个限制没有用: <span
+class="math inline">\(m&lt;10^5\)</span>.</p>
+<p>同时，子任务 7
+也提示了我们，需要考虑每条鱼的位置。也就是柱子最好的选择一定是鱼的位置下面一格。因为在这种情况下，我们才在尽可能不“盖”住某条鱼的前提之下让它覆盖的范围尽可能大。</p>
+<p>所以，把第二维换成鱼在列里的第几个即可。</p>
+<p>枚举的时候需要考虑两个位置：当前的位置和现在的位置。</p>
+<p>要注意到，前缀和可能和枚举的位置（列坐标）不对应，二分到正确的前缀和即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;iostream&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;vector&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;cstring&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;fish.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;algorithm&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;long long,long long&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxm = <span class="number">3e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">3e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> ll inf = <span class="number">1e18</span>;</span><br><span class="line">vector&lt;P&gt; dp[maxn];</span><br><span class="line">vector&lt;P&gt; fish[maxn];</span><br><span class="line">ll v[<span class="number">10</span>], pter[<span class="number">10</span>];</span><br><span class="line">ll ans;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">solve</span> <span class="params">(<span class="type">int</span> i, ll val)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (i&gt;n) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (i&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> pos = <span class="built_in">upper_bound</span>(fish[i].<span class="built_in">begin</span>(),fish[i].<span class="built_in">end</span>(),<span class="built_in">make_pair</span>(val,inf))-fish[i].<span class="built_in">begin</span>()<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span> (pos&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> fish[i][pos].second;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">max_weights</span> <span class="params">(<span class="type">int</span> N, <span class="type">int</span> M, vector&lt;<span class="type">int</span>&gt; X, vector&lt;<span class="type">int</span>&gt; Y, vector&lt;<span class="type">int</span>&gt; W)</span> </span>&#123;</span><br><span class="line">    n = N; m = M;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++) &#123;</span><br><span class="line">        fish[X[i]+<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(Y[i]+<span class="number">1</span>,W[i]));</span><br><span class="line">        dp[X[i]+<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(-inf,-inf));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        fish[i].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(n+<span class="number">1</span>,<span class="number">0</span>));</span><br><span class="line">        fish[i].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>,<span class="number">0</span>));</span><br><span class="line">        dp[i].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(-inf,-inf));</span><br><span class="line">        dp[i].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(-inf,-inf));</span><br><span class="line">        <span class="built_in">sort</span>(fish[i].<span class="built_in">begin</span>(),fish[i].<span class="built_in">end</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;fish[i].<span class="built_in">size</span>();j++) &#123;</span><br><span class="line">        fish[i][j].second += fish[i][j<span class="number">-1</span>].second;</span><br><span class="line">    &#125;</span><br><span class="line">	fish[<span class="number">0</span>].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>,<span class="number">0</span>));</span><br><span class="line">    dp[<span class="number">0</span>].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>,-inf));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">    	<span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">8</span>;j++) pter[j] = v[j] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">3</span>;j&lt;=<span class="number">6</span>;j++) pter[j] = dp[i<span class="number">-2</span>+j%<span class="number">2</span>].<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;dp[i].<span class="built_in">size</span>();h++) &#123;</span><br><span class="line">            <span class="type">int</span> pos = fish[i][h].first<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span> (pos&lt;<span class="number">0</span>) pos = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">1</span>]&lt;dp[i<span class="number">-1</span>].<span class="built_in">size</span>() <span class="keyword">and</span> fish[i<span class="number">-1</span>][pter[<span class="number">1</span>]].first<span class="number">-1</span>&lt;=pos) &#123;</span><br><span class="line">                v[<span class="number">1</span>] = <span class="built_in">max</span>(v[<span class="number">1</span>],dp[i<span class="number">-1</span>][pter[<span class="number">1</span>]].first-<span class="built_in">solve</span>(i<span class="number">-1</span>,fish[i<span class="number">-1</span>][pter[<span class="number">1</span>]].first<span class="number">-1</span>));</span><br><span class="line">                pter[<span class="number">1</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">2</span>]&lt;dp[i<span class="number">-2</span>].<span class="built_in">size</span>() <span class="keyword">and</span> fish[i<span class="number">-2</span>][pter[<span class="number">2</span>]].first<span class="number">-1</span>&lt;=pos) &#123;</span><br><span class="line">                v[<span class="number">2</span>] = <span class="built_in">max</span>(v[<span class="number">2</span>],dp[i<span class="number">-2</span>][pter[<span class="number">2</span>]].first<span class="number">-1</span>);</span><br><span class="line">                pter[<span class="number">2</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-3</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">7</span>]&lt;dp[i<span class="number">-3</span>].<span class="built_in">size</span>() <span class="keyword">and</span> fish[i<span class="number">-3</span>][pter[<span class="number">7</span>]].first<span class="number">-1</span>&lt;=pos) &#123;</span><br><span class="line">                v[<span class="number">7</span>] = <span class="built_in">max</span>(v[<span class="number">7</span>],dp[i<span class="number">-3</span>][pter[<span class="number">7</span>]].second+<span class="built_in">solve</span>(i<span class="number">-2</span>,fish[i<span class="number">-3</span>][pter[<span class="number">7</span>]].first<span class="number">-1</span>));</span><br><span class="line">                pter[<span class="number">7</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-3</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">8</span>]&lt;dp[i<span class="number">-3</span>].<span class="built_in">size</span>() <span class="keyword">and</span> fish[i<span class="number">-3</span>][pter[<span class="number">8</span>]].first<span class="number">-1</span>&lt;=pos) &#123;</span><br><span class="line">                v[<span class="number">8</span>] = <span class="built_in">max</span>(v[<span class="number">8</span>],dp[i<span class="number">-3</span>][pter[<span class="number">8</span>]].first+<span class="built_in">solve</span>(i<span class="number">-2</span>,fish[i<span class="number">-3</span>][pter[<span class="number">8</span>]].first<span class="number">-1</span>));</span><br><span class="line">                pter[<span class="number">8</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i][h].first = <span class="built_in">max</span>(&#123;dp[i][h].first,v[<span class="number">1</span>]+<span class="built_in">solve</span>(i<span class="number">-1</span>,pos),v[<span class="number">2</span>]+<span class="built_in">solve</span>(i<span class="number">-1</span>,pos)&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h=dp[i].<span class="built_in">size</span>()<span class="number">-1</span>;h&gt;=<span class="number">0</span>;h--) &#123;</span><br><span class="line">            <span class="type">int</span> pos = fish[i][h].first<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">3</span>]&gt;=<span class="number">0</span> <span class="keyword">and</span> fish[i<span class="number">-1</span>][pter[<span class="number">3</span>]].first<span class="number">-1</span>&gt;=pos) &#123;</span><br><span class="line">                v[<span class="number">3</span>] = <span class="built_in">max</span>(v[<span class="number">3</span>],dp[i<span class="number">-1</span>][pter[<span class="number">3</span>]].second+<span class="built_in">solve</span>(i,fish[i<span class="number">-1</span>][pter[<span class="number">3</span>]].first<span class="number">-1</span>));</span><br><span class="line">                pter[<span class="number">3</span>]--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">4</span>]&gt;=<span class="number">0</span> <span class="keyword">and</span> fish[i<span class="number">-2</span>][pter[<span class="number">4</span>]].first<span class="number">-1</span>&gt;=pos) &#123;</span><br><span class="line">                v[<span class="number">4</span>] = <span class="built_in">max</span>(v[<span class="number">4</span>],dp[i<span class="number">-2</span>][pter[<span class="number">4</span>]].second+<span class="built_in">solve</span>(i<span class="number">-1</span>,fish[i<span class="number">-2</span>][pter[<span class="number">4</span>]].first<span class="number">-1</span>));</span><br><span class="line">                pter[<span class="number">4</span>]--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-1</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">5</span>]&gt;=<span class="number">0</span> <span class="keyword">and</span> fish[i<span class="number">-1</span>][pter[<span class="number">5</span>]].first<span class="number">-1</span>&gt;=pos) &#123;</span><br><span class="line">                v[<span class="number">5</span>] = <span class="built_in">max</span>(v[<span class="number">5</span>],dp[i<span class="number">-1</span>][pter[<span class="number">5</span>]].first+<span class="built_in">solve</span>(i,fish[i<span class="number">-1</span>][pter[<span class="number">5</span>]].first<span class="number">-1</span>));</span><br><span class="line">                pter[<span class="number">5</span>]--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i<span class="number">-2</span>&gt;=<span class="number">0</span>) <span class="keyword">while</span> (pter[<span class="number">6</span>]&gt;=<span class="number">0</span> <span class="keyword">and</span> fish[i<span class="number">-2</span>][pter[<span class="number">6</span>]].first<span class="number">-1</span>&gt;=pos) &#123;</span><br><span class="line">                v[<span class="number">6</span>] = <span class="built_in">max</span>(v[<span class="number">6</span>],dp[i<span class="number">-2</span>][pter[<span class="number">6</span>]].first+<span class="built_in">solve</span>(i<span class="number">-1</span>,fish[i<span class="number">-2</span>][pter[<span class="number">6</span>]].first<span class="number">-1</span>));</span><br><span class="line">                pter[<span class="number">6</span>]--;</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i][h].second = <span class="built_in">max</span>(&#123;dp[i][h].second,v[<span class="number">3</span>]-<span class="built_in">solve</span>(i,pos),v[<span class="number">4</span>],v[<span class="number">5</span>]-<span class="built_in">solve</span>(i,pos),v[<span class="number">6</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;dp[i].<span class="built_in">size</span>();h++) &#123;</span><br><span class="line">        	<span class="type">int</span> pos = fish[i][h].first<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">if</span> (pos&lt;<span class="number">0</span>) pos = <span class="number">0</span>;</span><br><span class="line">            dp[i][h].first = <span class="built_in">max</span>(&#123;dp[i][h].first,v[<span class="number">7</span>]+<span class="built_in">solve</span>(i<span class="number">-1</span>,pos),v[<span class="number">8</span>]+<span class="built_in">solve</span>(i<span class="number">-1</span>,pos)&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">for</span> (<span class="type">int</span> h=<span class="number">0</span>;h&lt;dp[i].<span class="built_in">size</span>();h++) &#123;</span><br><span class="line">        <span class="type">int</span> pos = fish[i][h].first<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span> (pos&lt;<span class="number">0</span>) pos = <span class="number">0</span>;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,dp[i][h].second+<span class="built_in">solve</span>(i+<span class="number">1</span>,pos));</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,dp[i][h].first+<span class="built_in">solve</span>(i+<span class="number">1</span>,pos));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/IOI22%20Circuit%20%E9%A2%98%E8%A7%A3/">
+        Previous post<br>IOI 2022 Circuit 题解
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/IOI22%20Insects%20%E9%A2%98%E8%A7%A3/">
+        Next post<br>IOI 2022 Insects 题解
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?72507607"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

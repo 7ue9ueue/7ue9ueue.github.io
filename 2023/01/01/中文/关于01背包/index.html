@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>关于01背包的优化 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="关于01背包优化问题中论文和竞赛做法的不同之处
+在给U...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?85140918">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    关于01背包的优化
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/随笔Prose/'>随笔Prose</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1
+id="关于01背包优化问题中论文和竞赛做法的不同之处">关于01背包优化问题中论文和竞赛做法的不同之处</h1>
+<p>在给USACO Platinum出模拟赛的时候, 我设计了如下的压轴题:</p>
+<blockquote>
+<p>有一个容量为 <span class="math inline">\(V\)</span> 的背包, 有 <span
+class="math inline">\(n\)</span> 种物品, 占用的空间为 <span
+class="math inline">\(c_i\)</span> , 权值为 <span
+class="math inline">\(v_i\)</span> - 其中权值不可重集合 <span
+class="math inline">\(v\)</span> 元素个数小于 <span
+class="math inline">\(C\)</span>. 每个物品可以可以选择拿或者不拿,
+求物品权值的最大值是多少?</p>
+</blockquote>
+<p>简单来说, 就是01背包, 但权值的集合很小. 经典做法的时间复杂度是 <span
+class="math inline">\(O(nV)\)</span>.</p>
+<p>我得到了错误的做法, 在分别求助了 w33z 和 wlzhouzhuan 后,
+我得到了两种完全不同的做法, 分别是经典的论文做法和竞赛做法.
+这其中的区别和相似之处令我非常感兴趣, 故写下进行记录.</p>
+<hr />
+<p>这道题尽然存在如此 “初等” 的做法, 通过以另一种方式巧妙的利用单调性,
+绕过了 (max, +) 卷积的困难性</p>
+<p>可能这就是算法竞赛的魅力吧, 固然我仰慕这些研究者的工作,
+也深知在不远的将来我可能也会成为其中之一</p>
+<p>或者默默无闻, 没有任何有意义的成就, 或者完全没有能力研究高深的问题,
+但在掌握着这算法竞赛中有限的工具库中, 往往也可以解决困难的问题</p>
+<p>所为 <strong>“分治优化抉择单调性”</strong> 初见是可能感到疑惑,
+为学习这种技巧性极强的做法感到不快,
+但这其实不妨是选手们做出的一次又一次的尝试:</p>
+<p>在没有足够的数学的工具的情况下依然解决了一个又一个的难题,
+哪怕做法没有那么的完美</p>
+<p>但却足够震撼, 能利用这一套更为简朴的工具, 巧妙的克服一个个困难,
+得到一个哪怕不那么完美的答案</p>
+<p>这也许就是算法竞赛的艺术吧: 我的水平不足以理解竞赛中比较前沿的研究,
+但是能看到自己所了解的算法在别人的使用下解决一个又一个困难的问题时,
+我找到了我所努力的意义.</p>
+<hr />
+<p>在进入主题前, 我先对这问题进行一些简单的分析以助于理解.</p>
+<p>在这个问题当中, 可以发现权值和空间的意义是可以互换的,
+因此可以选择一个简单的情景进行解决.</p>
+<p>我认为比较简单的情景是令<strong>空间的集合有限</strong>的情况,
+同时考虑一些<strong>有序数列</strong>, 代表 <span
+class="math inline">\(c_i\)</span> 这个占用空间的物品当中所有的权值.
+这个问题存在单调性, 如果对于 空间为 <span
+class="math inline">\(c_i\)</span> 的物品选择 <span
+class="math inline">\(x\)</span> 个, 那肯定是价值最大的一些.</p>
+<p>对于每一个 <span class="math inline">\(c_i\)</span> 维护一个函数
+<span class="math inline">\(f_i(t)\)</span>, 代表对于空间为 <span
+class="math inline">\(c_i\)</span> 的物品中我花费 <span
+class="math inline">\(t\)</span> 的空间所能得到的权值的最大值.
+那么这个问题就转化成了求解 <span class="math inline">\(f_i(t)\)</span>
+的 <strong>(max,+) 卷积和</strong>.</p>
+<p>发现 <span class="math inline">\(f_i(t)\)</span> 是类似于跳跃步数为
+<span class="math inline">\(c_i\)</span> 的函数同时在这些位置单调的,
+<strong>之后称此函数为 <span class="math inline">\(c_i\)</span> step
+monotonic function.</strong></p>
+<hr />
+<p>我的错误思路如下:</p>
+<blockquote>
+<p>lemma 1.1: 对于凸函数 f(x), g(x), <span class="math inline">\(x \in
+X\)</span> 其 (max,+) 卷积可以 <span
+class="math inline">\(O(|X|)\)</span> 求出.</p>
+</blockquote>
+<p>利用<strong>闵可夫斯基和</strong>去求解<strong>凸函数的 (max,+)
+卷积,</strong> 显然 <span class="math inline">\(f_i(t)\)</span>
+函数在<strong>离散化之后是单调的,</strong> 所以考虑对离散化后的 <span
+class="math inline">\(f_i(t)\)</span> 进行经典算法:
+<strong>差分后归并排序</strong>,
+然后考虑对<strong>离散化前函数的映射关系.</strong></p>
+<p>可以注意到进行了 (max,+)
+卷积后的函数的每一个元素对应到原结果当中连续的一段,
+可以考虑<strong>维护这一段的左端点和右端点来解决. </strong></p>
+<blockquote>
+<p>lemma 1.1: 对于凸函数 f(x), k step monotonic function g(x), <span
+class="math inline">\(x \in X\)</span> 其 (max,+) 卷积可以 <span
+class="math inline">\(O(|X|)\)</span> 求出.</p>
+</blockquote>
+<p>如果算法成立, 时间复杂度是 <span class="math inline">\(O(DV)\)</span>
+的, <strong>但是算法是错误的, 因为无法 (max,+)
+卷积后的函数并不保证凸性.</strong></p>
+<p>在论文当中 arXiv:1802.06440v2 (Kyriakos Axiotis, MIT, Christos
+Tzamos, University of Wisconsin-Madison), 作者解决了这个问题.</p>
+<p>利用 Monge 矩阵的特殊性质, lemma 1.1 和 lemma 1.2 可以分别加强为:</p>
+<blockquote>
+<p>lemma 1.3: 对于任意函数 f(x), 凸函数 g(x), <span
+class="math inline">\(x \in X\)</span> 其 (max,+) 卷积可以 <span
+class="math inline">\(O(|X|)\)</span> 求出.</p>
+</blockquote>
+<blockquote>
+<p>lemma 1.4: 对于任意函数 f(x), k step monotonic function 函数 g(x),
+<span class="math inline">\(x \in X\)</span> 其 (max,+) 卷积可以 <span
+class="math inline">\(O(|X|)\)</span> 求出.</p>
+</blockquote>
+<p>故问题得到解决, 时间复杂度为 <span
+class="math inline">\(O(DV)\)</span>, 证明略.</p>
+<hr />
+<p>这个算法的专业性质过强, 并且要求读者有一定的大数的理解.
+导致我花了很久也没有理解.</p>
+<p>我找到了在算法竞赛中对应题目: <strong>LOJ6039</strong>.
+我记得曾经做这道题的时候我的想法是部分DP整体贪心 -
+正解对于我来说过于复杂, 我就没有尝试理解.</p>
+<p>在询问 wlzhouzhuan 这道题后, 他给出了一个巧妙的OI做法:</p>
+<blockquote>
+<p><strong>进行动态规划, 发现自然满足抉择单调性,
+因此考虑cdq分治优化动态规划, <span class="math inline">\(O(DV\log
+V)\)</span>.</strong></p>
+</blockquote>
+<p>一个及其复杂的问题就被这样巧妙的以一个 log 的代价轻松的解决了.</p>
+<hr />
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/%E4%BA%94%E7%82%B9%E5%85%B1%E5%9C%86/">
+        Previous post<br>五点共圆问题和密克点
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%9D%BF/">
+        Next post<br>图论模板
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?63366976"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

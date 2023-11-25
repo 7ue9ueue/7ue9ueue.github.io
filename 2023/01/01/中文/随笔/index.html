@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>随笔 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="在数学集训的过程当中, 我第一次和OI完全的切断了联系...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?24854651">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    随笔
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/随笔Prose/'>随笔Prose</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <p>在数学集训的过程当中, 我第一次和OI完全的切断了联系, 因此有了一些感触,
+故在忘掉之前, 我想记录下来。</p>
+<p>我记得第一次接触OI是在和董家伊闲聊的时候。</p>
+<p>在此之前, 我很想学习编程, 自然很感兴趣。</p>
+<p>那道题目我记忆非常深刻,</p>
+<p>A点B点分别有1000升水, 每个点分别有十个水桶, 有一人在A点B点来回走动,
+每次将一个水桶灌满水并拿走后灌入对面的水桶,
+求四次走动之后A点水桶的水可能是多少?</p>
+<p>至今我会给想学习OI的学弟们出这道题,</p>
+<p>似乎很无趣, 但是我却每次都选择这题作为试题。</p>
+<p>在听到题目后, 我开始自言自语, 想到了一个将两次走动当作一次交换的想法,
+后用Scratch完成了编码。</p>
+<p>那种快乐和成就感, 是我曾经没有体验过的。</p>
+<p>我好像没有享受过解决一道题目。</p>
+<p>边走我边了解到了USACO的赛制,</p>
+<p>听起来非常具有科技感, 我的幻想中选手需要写代码,
+同时也会实时的告诉选手自己其成绩, 敲击着键盘, 享受着比赛的乐趣。</p>
+<p>之后董家伊给我讲解了递归求解阶乘的思想。后我也用Scratch完成了此算法的编码。</p>
+<p>听着她的称赞, 我似乎发现自己在这件事上有点天赋。</p>
+<p>在经历过美高的全聚德和数学竞赛的吊打之后,
+我似乎很久没有在一件事上显现过一些天赋了。</p>
+<p>或者是我所谓的天赋,
+就是无知的初学者对未来抱有的期盼罢了。也仅当那遮住我的目光的乌云离开后,
+我才发现乌云之外还有一片广阔的天空。</p>
+<p>所以, 为何不试试呢?</p>
+<p>在此, 我非常感谢 董家伊 同学, 让我了解到了算法竞赛。</p>
+<p>之后我学习了一周的Java, 满分通过了USACO Bronze.</p>
+<p>我记得当时我的喜悦。</p>
+<p>那种喜悦是发自内心的喜悦。</p>
+<p>我解决每一道题题目之后都会兴奋的原地起跳。和我的父亲一起庆祝。</p>
+<p>最后一题是一个Splay/倍增的题的弱化版, 当时把我难住了,
+我思考了数小时后, 猜测了操作具有循环节的特性, 经过了数小时后的调试,
+我通过了那道题目。数百行的代码, 终于通过了。</p>
+<p>我很开心。</p>
+<p>从来没有体验的开心。</p>
+<p>我没有成功过。</p>
+<p>我一直都是失败者。</p>
+<p>托福/SSAT/数学, 我都是失败者。</p>
+<p>但这次, 我胜利了。</p>
+<p>我没有学过USACO, 但是正因为我一无所有,</p>
+<p>我才会感到意外的喜悦吧。</p>
+<p>但喜悦之外, 我似乎只能选择继续走下去了。</p>
+<p>因为应该是我唯一能做好的一件事了吧。而且当时的我看起来是如此的兴奋,
+是无法拒绝的吧。</p>
+<p>这也使得我变得很自大。</p>
+<p><img
+src="https://files.mdnice.com/user/13035/3c55eefa-7bb9-4de7-a1d9-5752e07f0b7c.png" /></p>
+<p>后来, 我开始和 陈军 老师学习算法。</p>
+<p>我发现了算法竞赛原来不仅仅是编程,</p>
+<p>而是对于时间和空间的利用,</p>
+<p>里面大有学问。</p>
+<p>我于是越来越感兴趣, 开始自主的学习算法。</p>
+<p>在此, 我非常感谢 陈军 老师, 培养了我算法上面的兴趣。</p>
+<p>在考 USACO Silver, Gold 的时候就很痛苦了</p>
+<p>不是因为题目的难度,</p>
+<p>而是因为对自己超高的要求。</p>
+<p>这是我唯一擅长的事情, 因此我不能出任何岔子, 我这样想到。</p>
+<p>从能得到多少分不自然的就变成了不丢多少分。</p>
+<p>每次比赛都很痛苦, 因为我不想输, 我不能输。</p>
+<p>如果我输了, 那我真的就是一事无成了。</p>
+<p>甚至最离谱的一次, 我选择了放弃比赛,
+因为我最擅长的数据结构问题没有做出来....</p>
+<p>也因此, 我可能看起来有些消沉... 行为也比较魔怔...</p>
+<p><img
+src="https://files.mdnice.com/user/13035/6461a384-eb4f-4272-b208-dbc7f943cb3a.png" /></p>
+<p>随着知识越来越多, Platinum 也拿到了不错的成绩。</p>
+<p>在此, 我非常感谢 NiroBC 老师和 洛谷网课
+为我提供的训练。你们对我的帮助使得我能有自信去解决一些复杂的问题。</p>
+<p>但是当初享受做题的乐趣的那个我似乎已经离开了。</p>
+<p>我做题, 似乎仅是以为, 如果不这样, 我就是个废物了吧。</p>
+<p>我需要去了解更多的知识, 否则题目就会做不出来。</p>
+<p>我真的不喜欢比赛。</p>
+<p>我很讨厌比赛。</p>
+<p>我讨厌遇到一道题毫无想法的时候, 需要迷茫探索来找到一条合适的路。</p>
+<p>更可怕的是, 如果我没有想法,</p>
+<p>那我这道题就要丢大分了.....</p>
+<p>在数学集训的过程中, 我要求自己不要去学算法。</p>
+<p>因为我的数学不好, 所以我考试每次都倒数了。</p>
+<p>但是我其实挺享受这个过程的。</p>
+<p>我的排名慢慢的在提升, 二试的题目也逐渐的有了想法</p>
+<p>也有一个很好玩的室友。</p>
+<p>也有了一些好玩的想法, 想去动手做的想法。</p>
+<p>更重要的事, 我很期待着自己回归OI的那一天。</p>
+<p>我主动的参与了另一个系列的算法比赛。</p>
+<p>如果成功, 就IOI见了</p>
+<p>失败的话, 那我什么也没有得到</p>
+<p>但是我也没怎么犹豫的开始了备考</p>
+<p>毕竟OI, 似乎已经是我生活的一部分了</p>
+<p>其实早在USACO Platinum拿到好成绩的时候已经可以停止OI了, 功利的来讲,
+后面的都没有必要了</p>
+<p>但是谁没有一个梦想呢?</p>
+<p>KarL05 2021/07/25</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/%E9%97%B2%E9%A2%98%E8%A7%A3%E7%AD%94%E5%85%B6%E5%9B%9B/">
+        Previous post<br>闲题解答 4
+    </a>
+    
+    <span class="page-number"></span>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?58573835"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

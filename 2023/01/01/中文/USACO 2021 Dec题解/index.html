@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>USACO 21DEC 题解 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="USACO 题解
+USACO 2021 Dec 月赛已...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?10033256">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    USACO 21DEC 题解
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="usaco-题解">USACO 题解</h1>
+<p>USACO 2021 Dec 月赛已经结束了。作者本届USACO难度整体难度偏高,
+每个组别的难度都有显著的提升。尤其Bronze组别和Silver组别,
+题目逐渐需要一定的算法知识, 而不是可以轻松解决的了。</p>
+<p>Bronze组别的题目数据范围都有一定的提升,
+算法的效率也变成了考核的一部分了。</p>
+<p>本次月赛的Silver T3是在每周社团时间讲过的FFT, 快速傅立叶变换算法,
+成功押题!</p>
+<p>本次金组题目难度适中, 其中Gold T3看起来非常计算几何,
+但是考虑到其中的关系的话其实本质上是一个森林!
+如果没有考虑到可能这道题就会很不好做了。</p>
+<p>本次铂金组题目难度适中, 但是由于作者没有成功完成解答,
+故不对题目进行分析。</p>
+<p>本次题目难度评级依然使用[入门, 普及, 提高, 省选]作为大难度标签,
+将使用[I-IV] 作为小难度标签。评级仅代表作者个人观点。</p>
+<h2 id="bronze-t1-入门-rmiv">Bronze T1 [入门 <span
+class="math inline">\(\rm{IV}\)</span>]</h2>
+<p><img
+src="https://files.mdnice.com/user/13035/dc428116-e2d4-449d-a215-7efcb8b59d4d.png" /></p>
+<p>枚举左端点 L, 若令满足题目要求的对应的连续右端点为 [R1,R2], 则 R1, R2
+分别单调递增。因此考虑双指针分别维护 L, R1, R2 即可。</p>
+<h2 id="bronze-t2-入门-rmvi">Bronze T2 [入门 <span
+class="math inline">\(\rm{VI}\)</span>]</h2>
+<p><img
+src="https://files.mdnice.com/user/13035/22830fed-f1cc-4dc0-9743-c2b14738905d.png" /></p>
+<p>首先令 <span class="math inline">\(p_i\)</span> 和 <span
+class="math inline">\(t_i\)</span>
+做差。后考虑每一次连续的区间加操作本质上是对于差分数组前后两个位置分别
++x, -x。后模拟即可。</p>
+<h2 id="bronze-t3-普及-rmiv">Bronze T3 [普及 <span
+class="math inline">\(\rm{IV}\)</span>]</h2>
+<p><img
+src="https://files.mdnice.com/user/13035/a36ede10-327b-4932-a81f-20d794779620.png" /></p>
+<p>动态规划, dp[i][j][k][l] 表示走到了 i 行 j 列转弯 k 次,
+其中目前的朝向是 l 即可。但是考虑到 k 很小, 可以做出更简单的求解。</p>
+<h2 id="silver-t1-提高-rmiii">Silver T1 [提高 <span
+class="math inline">\(\rm{III}\)</span>]</h2>
+<p><img
+src="https://files.mdnice.com/user/13035/6bed347d-42d0-418d-9d25-2826a88d55e1.png" /></p>
+<p>考虑到连续两个对方的牛之间,
+我们只需要使用两头牛即可占领这区间所有的草堆。因此每个区间放的奶牛数量必然为
+1 或者 2。预处理出放一头牛的收益 c1, 和放两头牛的收益 c2, 求解即可。由于
+c1&gt;c2-c1, 可以使用堆, 贪心的取最大的若干个。</p>
+<h1 id="silver-t2-普及-rmiv">Silver T2 [普及 <span
+class="math inline">\(\rm{IV}\)</span>]</h1>
+<p><img
+src="https://files.mdnice.com/user/13035/ebd33309-dd7c-4696-be38-0c6682f52d85.png" /></p>
+<p>首先并查集处理出联通块。有两种情况,
+放一条边和放两条边。放一条边的只能从 1 号在的联通块建立到 n
+号在的联通块。简单二分即可。第二种情况是 1-&gt;x-&gt;n 的这种情况,
+考虑枚举联通块x, 中的节点, 然后同样简单二分即可。</p>
+<h1 id="silver-t3-提高-rmi省选-rmi">Silver T3 [提高 <span
+class="math inline">\(\rm{I}\)</span>/省选 <span
+class="math inline">\(\rm{I}\)</span>]</h1>
+<p><img
+src="https://files.mdnice.com/user/13035/3758fa61-29ae-4e5b-a016-9ab794dcdd56.png" /></p>
+<p>开桶,
+直接按照题目要求FFT乘法卷积即可。可以注意到卷积的英文是Convolution,
+而题目的名字是Convoluted Intervals.</p>
+<h1 id="gold-t1-提高-rmiii">Gold T1 [提高 <span
+class="math inline">\(\rm{III}\)</span>]</h1>
+<p><img
+src="https://files.mdnice.com/user/13035/6e14c5bc-2821-49fc-936f-7e8c7393f003.png" /></p>
+<p>观察到一定是两个两个相邻的成对。直接dp即可。注意需要维护一下奇偶性。</p>
+<h1 id="gold-t2-提高-rmiii">Gold T2 [提高 <span
+class="math inline">\(\rm{III}\)</span>]</h1>
+<p><img
+src="https://files.mdnice.com/user/13035/682f67c9-de2e-4ee1-a48d-a1c72512bf2b.png" /></p>
+<p>可以考虑从大到小枚举x+0.5, 只有x-1, x, x+1
+可能会随之变化。用平衡树维护答案即可。</p>
+<h1 id="gold-t3-提高-rmi-v">Gold T3 [提高 <span
+class="math inline">\(\rm{I-V}\)</span>]</h1>
+<p><img
+src="https://files.mdnice.com/user/13035/893b3f1b-5ea5-4586-a7ad-262e485d08db.png" /></p>
+<p>可以发现不同的Polygon之间只有包含关系,
+不能有相交关系。这个形式可以被化作为一颗树,
+其中给定的序列即是目前树的括号序列。建树后判断即可。</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/USACO%202021%20Dec%E9%93%82%E9%87%91%E9%A2%98%E8%A7%A3/">
+        Previous post<br>USACO 21DEC 铂金题解
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/WC2021%20%E6%8B%AC%E5%8F%B7%E8%B7%AF%E5%BE%84%E9%A2%98%E8%A7%A3/">
+        Next post<br>WC2021 括号路径题解
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?97183242"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

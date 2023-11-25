@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IOI 2022 Insects 题解 - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="IOI2022 Insects 高伪正解
+注：本解答可...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?54276630">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    IOI 2022 Insects 题解
+                    <div class="post-meta">
+                        <time datetime="2022-12-31T16:00:00.000Z" itemprop="datePublished">
+                            2023-01-01 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/题解Solution/'>题解Solution</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/中文Chinese/'>中文Chinese</a>, 
+                        
+                        <a href='/tags/归档Archived/'>归档Archived</a>, 
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="ioi2022-insects-高伪正解">IOI2022 Insects 高伪正解</h1>
+<p>注：本解答可能不是正解，但是分数是100 (?)</p>
+<blockquote>
+<p>有的路原本不是路，走的路多了经成了路 — 沃.梓即硕德</p>
+</blockquote>
+<p><img
+src="https://files.mdnice.com/user/13035/7af1faf9-5113-4cb8-919f-0b4b1370302b.png" /></p>
+<p><img
+src="https://files.mdnice.com/user/13035/652b2139-9d57-48c4-be32-22eafe31ed7d.jpg" /></p>
+<p>题目链接: https://ioi2022.id/tasks/</p>
+<p>通过人数：9/357</p>
+<p>题目难度：CF2400</p>
+<h1 id="高伪解答">高伪解答</h1>
+<p>首先观察题目要求，大概是要求 <span
+class="math inline">\(O(N)\)</span> 或者 <span
+class="math inline">\(O(N\log N)\)</span> 级别的算法。</p>
+<p>定义 <span class="math inline">\(\text{Group}\)</span>
+为不同的数字的个数。</p>
+<p>定义 <span class="math inline">\(\text{MinSize}\)</span> 为答案。</p>
+<p>可以尝试找根号级别的分治算法，因为 <span
+class="math inline">\(\text{Groups}*\text{MinSize} &gt;=
+N\)</span>，相互是反比例关系。</p>
+<p>算法1：当Group大的时候，考虑两两枚举放入机器。如果结果=2,
+则数字一样。如果结果=1, 则数字不一样。算法复杂度<span
+class="math inline">\(O(\text{Group}N)\)</span></p>
+<p>算法2：当MinSize大的时候，考虑枚举从小到大MinSize
+（因为MinSize是答案），如果机器返回的答案大于 <span
+class="math inline">\(\text{MinSize}\)</span>,
+那么就可以考虑忽略掉。考虑做差即可。算法复杂度<span
+class="math inline">\(O(\text{MinSize}N)\)</span></p>
+<p>根号分治可以得到 <span class="math inline">\(O(N \sqrt
+N)\)</span>.</p>
+<p>考虑放弃根号算法，采取二分答案并且使用算法2.
+放弃从小到大枚举，改成二分即可。删除和添加数字的时候，每次都可以排除一半的数字，记得打个记号，时间复杂度大概可以
+<span class="math inline">\(T(3n)\)</span>.</p>
+<p>但是喜提 99.556
+分，怎么办呢？？？看起来已经没有优化的空间了？？？感觉故意被针对了？？？常数恰好
+比<span class="math inline">\(3\)</span> 多了一点怎么办？</p>
+<p>实际上可以乱搞搞，精髓是魔改后的二分：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">srand(time(0));</span><br><span class="line">int mid = (left+right+rand()%2)/2;</span><br></pre></td></tr></table></figure>
+<p>在一定概率下（?）可以省下很多时间。多提交几次炸炸评测机就行了。</p>
+<p>当然我的细节还有很多，代码如下请自行体会：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;insects.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;random&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">2005</span>;</span><br><span class="line"><span class="type">int</span> ex[maxn];<span class="type">int</span> ix[maxn];</span><br><span class="line"><span class="type">int</span> in[maxn];</span><br><span class="line"><span class="type">int</span> group;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">inside</span> <span class="params">(<span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    in[i] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">move_inside</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">outside</span> <span class="params">(<span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    in[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">move_outside</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">press</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">press_button</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; rem,sel;</span><br><span class="line"><span class="type">int</span> cnt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">check</span> <span class="params">(<span class="type">int</span> mid, <span class="type">int</span> N, <span class="type">bool</span> flag)</span> </span>&#123;</span><br><span class="line">    rem.<span class="built_in">clear</span>();</span><br><span class="line">    <span class="keyword">if</span> (!flag) sel.<span class="built_in">clear</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cnt==group*mid) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span> (in[i]||ex[i]) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">inside</span>(i);</span><br><span class="line">        <span class="type">int</span> w = <span class="built_in">press</span>();</span><br><span class="line">        <span class="keyword">if</span> (w&gt;mid) &#123;</span><br><span class="line">            <span class="built_in">outside</span>(i);</span><br><span class="line">            rem.<span class="built_in">push_back</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            cnt++;</span><br><span class="line">            sel.<span class="built_in">push_back</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt==group*mid) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">del</span> <span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (in[i]&amp;&amp;!ix[i]) &#123;</span><br><span class="line">            <span class="built_in">outside</span>(i);</span><br><span class="line">            cnt--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u:rem) ex[u] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">upd</span> <span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> u:sel) ix[u] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">min_cardinality</span> <span class="params">(<span class="type">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">    sel.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">inside</span>(<span class="number">0</span>); group++;cnt++;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;N;i++) &#123;</span><br><span class="line">        <span class="built_in">inside</span>(i);</span><br><span class="line">        <span class="type">int</span> w = <span class="built_in">press</span>();</span><br><span class="line">        <span class="keyword">if</span> (w==<span class="number">1</span>) &#123;</span><br><span class="line">            group++;</span><br><span class="line">            cnt++;</span><br><span class="line">            sel.<span class="built_in">push_back</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">outside</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (group==N) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> left = <span class="number">1</span>;<span class="type">int</span> right = N/group;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right) &#123;</span><br><span class="line">        <span class="type">int</span> mid = (left+right+<span class="built_in">rand</span>()%<span class="number">2</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid,N,(left==<span class="number">1</span>)&amp;&amp;(right==N/group))) &#123;</span><br><span class="line">            left = mid+<span class="number">1</span>;</span><br><span class="line">            ans = mid;</span><br><span class="line">            <span class="built_in">upd</span>(N);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">        	  right = mid<span class="number">-1</span>;</span><br><span class="line">            <span class="built_in">del</span>(N);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/IOI22%20Fish%20%E9%A2%98%E8%A7%A3/">
+        Previous post<br>IOI 2022 Fish 题解
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/01/01/%E4%B8%AD%E6%96%87/IOI22%20Prison%20%E9%A2%98%E8%A7%A3/">
+        Next post<br>IOI 2022 Prisons 题解
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?17961531"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

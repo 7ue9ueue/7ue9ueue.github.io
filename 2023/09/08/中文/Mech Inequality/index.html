@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Multivariable Inequalitys - The mechanisation  method - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="Multivariable
+Inequalitys -...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?27489316">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Multivariable Inequalitys - The mechanisation  method
+                    <div class="post-meta">
+                        <time datetime="2023-09-07T16:00:00.000Z" itemprop="datePublished">
+                            2023-09-08 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/数学Math/'>数学Math</a>, 
+                        
+                        <a href='/tags/英文English/'>英文English</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1
+id="multivariable-inequalitys---the-mechanisation-method">Multivariable
+Inequalitys - The mechanisation method</h1>
+<p>As a method from《不等式的秘密》(Secrets In Inequalities)</p>
+<h1 id="introduction">Introduction</h1>
+<p>When I was studying Math Olympiad, I was struggling about
+inequalities. I know one method called Sum of Squares (SOS) that could
+give a good approach to a Homogeneous polynomial. But still, unavoidably
+the solver still have to examine Schurs, AM-GM, and some other
+inequalities to implement.</p>
+<p>Although this approach is great, to some sense, its not universal. It
+does not approach <strong>all</strong> inequality problems in
+<strong>one way</strong> and solve it.</p>
+<p>So I always wounder if such method exists. When I studied and
+undergrad math, I notice a method called the Method of Lagrange
+Multiplier. This works really well in most cases. Still, solving such a
+system of equations may be hard when the form of inequality is not
+pleasent.</p>
+<p>For more complex inequalities, such as an inequality with three
+variables, Lagrange Multiplier is actually also quite a difficult
+approach.</p>
+<p>So one day I watched this video introducing two methods: the
+differtiation method and the dual inequality method.</p>
+<p>Yes, there two methods are still far from universal. However, from
+common inequality problems, these are sort of a mechanised method that
+allows a direct approach to problems.</p>
+<p>It works especially well when the polynomial is symetric.</p>
+<hr />
+<h1 id="the-idea">The Idea</h1>
+<p>Consider a polynomial <span class="math inline">\(f\)</span>,
+where</p>
+<p><span class="math display">\[f(x_1,x_2,x_3,x_4,\cdots,x_n) \geq
+0\]</span></p>
+<p>is too be proved.</p>
+<p>Then imagive the whole input as one variable, can we in some form,
+write <span class="math inline">\(f(x_1,x_2,x_3,\cdots,x_n)\)</span> in
+<span class="math inline">\(f(t)\)</span>, and apply methods that solves
+a single variable inequality?</p>
+<p>As this is a polynomial, solving <span class="math inline">\(f(t)
+\geq 0\)</span> is much easier. One idea is that we have to
+differentiate and examine <span
+class="math inline">\(f&#39;(t)\)</span>. After some analysis on <span
+class="math inline">\(f&#39;(t)\)</span>, proving the inequality may
+actually be much easier.</p>
+<p>This leads to the idea of writing the polynomial with one variable.
+This can similar to <strong>total derivative</strong>.</p>
+<p>I will use three variables to illustrate how this algorithm work.
+However, this idea can be used on any number of variables.</p>
+<p><span class="math display">\[
+\frac{\text{d}f}{\text{d}t} = \frac{\partial f}{\partial
+x}\frac{\text{d}x}{\text{d}t} +\frac{\partial f}{\partial
+y}\frac{\text{d}y}{\text{d}t} + \frac{\partial f}{\partial
+z}\frac{\text{d}z}{\text{d}t}
+\]</span></p>
+<p>Now we are able to conside this new variable <span
+class="math inline">\(t\)</span> to deal with and treat the polynomial
+as a whole.</p>
+<p>To let our df/dt satisfy better properties, here is most the
+essential idea of this method.</p>
+<p>Let</p>
+<p><span class="math display">\[
+\frac{\text{d}x}{\text{d}t} = \frac{\text{d}y}{\text{d}t} =
+\frac{\text{d}z}{\text{d}t} = 1
+\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+D(f) = \frac{\text{d}f}{\text{d}t} = \frac{\partial f}{\partial x}
++\frac{\partial f}{\partial y} + \frac{\partial f}{\partial z}
+\]</span></p>
+<p>Note that <span class="math inline">\(D(f)\)</span> is a linear
+transform and follows all rules that normal differtiation follows.</p>
+<p>And the symetry of the inequality (that is to be proved) can be used
+perfectly by this method.</p>
+<p><span class="math display">\[D(f+g) = D(f)+D(g)\]</span></p>
+<p><span class="math display">\[D(kf) = kD(f)\]</span></p>
+<hr />
+<h1 id="the-method">The Method</h1>
+<p>To prove <span class="math inline">\(f \geq 0\)</span> where <span
+class="math inline">\(x,y,z\geq 0\)</span>, do the following:</p>
+<p>Step 1. Show <span class="math inline">\(f \geq 0 \iff xyz =
+0\)</span></p>
+<p>Step 2. Show <span class="math inline">\(D(f) \geq 0\)</span></p>
+<hr />
+<h1 id="why">Why?</h1>
+<p>First, this method in many occasions work when than the Lagrange
+multiplier method. <strong>The reason is that Step 1 is very easy if the
+inequality is symetric.</strong></p>
+<p>Step 2 is actually also quite easy. The reason is because Step 2 can
+be recursive. I.E: <span class="math inline">\(f \geq 0 \iff D(f) \iff 0
+\iff D(D(f)) \geq 0\)</span>.</p>
+<hr />
+<h1 id="prove">Prove?</h1>
+<p>For</p>
+<p><span class="math display">\[f(x,y,z)\]</span></p>
+<p>WLOG, assume <span class="math inline">\(z\)</span> to be the
+smallest.</p>
+<p>Then, consider</p>
+<p><span class="math display">\[ g(t) =
+f((x-z)+t,(y-z)+t,(z-z)+t)\]</span></p>
+<p><span class="math display">\[ \frac{\text{d}g}{\text{d}t} =
+\frac{\partial f}{\partial(x-z+t)} +\frac{\partial f}{\partial y(y-z+t)}
++ \frac{\partial f}{\partial (z-z+t)}\]</span></p>
+<p><span class="math display">\[ \frac{\text{d}f}{\text{d}t} =
+\frac{\partial f}{\partial (x-z+t)} \frac{d(x-z+t)}{dt}+\frac{\partial
+f}{\partial (y-z+t)} \frac{d(y-z+t)}{dt}+\frac{\partial f}{\partial
+(z-z+t)} \frac{d (z-z+t)}{d t}\]</span></p>
+<p><span class="math display">\[ \frac{\text{d}f}{\text{d}t} =
+\frac{\partial f}{\partial (x-z+t)}+\frac{\partial f}{\partial
+(y-z+t)}+\frac{\partial f}{\partial (z-z+t)} =
+\frac{\text{d}g}{\text{d}t}\]</span></p>
+<p><span class="math display">\[
+g&#39;(t) = D(f) \]</span></p>
+<p>Then</p>
+<p><span class="math display">\[ g(u) \geq g(0) , u \in \{
+x,y,z\}\]</span></p>
+<p>Hence</p>
+<p><span class="math display">\[f(x,y,z)\geq f(x-z,y-z,0) \geq 0
+\]</span></p>
+<hr />
+<h1 id="example">Example</h1>
+<p>I will only use this method. (Like L-Hospital)</p>
+<p>Schur's</p>
+<p><span class="math display">\[x^3+y^3+z^3 +3xyz \geq x^2y + x^2 z+
+y^2z + y^2x + z^2x + z^2y\]</span></p>
+<p>Step 1</p>
+<p><span class="math display">\[ x^3+y^3 \geq x^2y+y^2x\]</span></p>
+<p>Step 1.1 (END)</p>
+<p><span class="math display">\[ x^3 \geq 0\]</span></p>
+<p>Step 1.2 <span class="math display">\[ 3x^2+3y^2 \geq x^2 + y^2 +
+4xy\]</span></p>
+<p>Step 1.2.1 (END) <span class="math display">\[ 3x^2 \geq
+x^2\]</span></p>
+<p>Step 1.2.2 (END) <span class="math display">\[ D(3x^2+3y^2) \geq
+D(x^2 + y^2 + 4xy)\]</span></p>
+<p><span class="math display">\[ 6x+6y \geq 6x+6y\]</span></p>
+<p>Step 2 <span class="math display">\[D(x^3+y^3+z^3 +3xyz) \geq D(x^2y
++ x^2 z+ y^2z + y^2x + z^2x + z^2y)\]</span></p>
+<p><span class="math display">\[ 3\sum_{sym}x^2 + 3\sum_{cyc} xy \geq
+2\sum_{sym} x^2 + 4\sum_{cyc} xy\]</span></p>
+<p><span class="math display">\[ \sum_{sym}x^2  \geq  \sum_{cyc}
+xy\]</span></p>
+<p><span class="math display">\[
+x^2+y^2+z^2  \geq  xy+yz+xz\]</span></p>
+<p>Step 2.1</p>
+<p><span class="math display">\[ x^2+y^2 \geq xy\]</span></p>
+<p>Step 2.1.1 (END)</p>
+<p><span class="math display">\[x^2 \geq 0\]</span></p>
+<p>Step 2.1.2 (END)</p>
+<p><span class="math display">\[ D(x^2+y^2) \geq D(xy)\]</span></p>
+<p><span class="math display">\[ 2x+2y \geq 2x+2y\]</span></p>
+<p>Step 2.2 (END)</p>
+<p><span class="math display">\[
+D(x^2+y^2+z^2)  \geq  D(xy+yz+xz)\]</span></p>
+<p><span class="math display">\[ 2x+2y+2z \geq  2x+2y+2z\]</span></p>
+<hr />
+<h1 id="summary">Summary</h1>
+<p>Just apply it mechanically if the equation is symetric. If not, I
+will cover it in the next article.</p>
+<p>This is a detailed notes of the following video. Really like this
+method because I really stuck on inequalities.</p>
+<p>https://www.bilibili.com/video/BV1rT411h7ej/</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/09/10/%E4%B8%AD%E6%96%87/Dual%20Inequality/">
+        Previous post<br>Multivariable Inequalitys - Finding the dual
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/08/16/%E4%B8%AD%E6%96%87/Slow%20Fourier%20Transform/">
+        Next post<br>Slow Fourier Transform
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?21033857"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

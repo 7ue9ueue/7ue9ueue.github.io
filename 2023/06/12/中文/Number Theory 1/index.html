@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Elementary Number Theory Chapter 7 Study Notes - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="初等数论 Chapter 7
+Definition C...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?5106031">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Elementary Number Theory Chapter 7 Study Notes
+                    <div class="post-meta">
+                        <time datetime="2023-06-12T08:02:00.000Z" itemprop="datePublished">
+                            2023-06-12 16:02
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/数论Number-Theory/'>数论Number Theory</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="初等数论-chapter-7">初等数论 Chapter 7</h1>
+<h4 id="definition-continued-fraction">Definition Continued
+Fraction</h4>
+<blockquote>
+<p>An approximation for irrational numbers or an representation of
+rational numbers</p>
+</blockquote>
+<p><span class="math display">\[ \langle x_0,x_1,x_2,x_3,....x_n \rangle
+= \frac{1}{x_0+\frac{1}{x_1+...}}\]</span></p>
+<h4 id="propertys">Propertys</h4>
+<p>Define <span class="math display">\[\frac{P_n}{Q_n} = \langle
+x_0,x_1,x_2,....x_n \rangle\]</span></p>
+<p>Then</p>
+<p><strong>1.1</strong></p>
+<p><span class="math display">\[P_nQ_{n-1} - P_{n-1}Q_n =
+(-1)^{n+1}\]</span></p>
+<p><strong>1.2</strong></p>
+<p><span class="math display">\[P_nQ_{n-2} - P_{n-2}Q_n = (-1)^n
+x_n\]</span></p>
+<p><strong>1.3</strong></p>
+<p><span class="math display">\[\langle x_0,x_1,x_2,....x_n
+\rangle-\langle x_0,x_1,x_2,....x_{n-1} \rangle = \frac{(-1)^{n+1}}{Q_n
+Q_{n-1}}\]</span></p>
+<p><strong>1.4</strong></p>
+<p><span class="math display">\[\langle x_0,x_1,x_2,....x_n
+\rangle-\langle x_0,x_1,x_2,....x_{n-2} \rangle = \frac{(-1)^{n}x_n}{Q_n
+Q_{n-2}}\]</span></p>
+<p><strong>1.5</strong></p>
+<p><span class="math display">\[P_n = x_n P_{n-1} + P_{n-2}\]</span></p>
+<p><strong>1.6</strong></p>
+<p><span class="math display">\[Q_n = x_n Q_{n-1} + Q_{n-2}\]</span></p>
+<h4 id="pells-function">Pell's Function</h4>
+<blockquote>
+<p>Try use the knowledge from continued fraction to prove this! （Which
+seams utterly impossible)</p>
+</blockquote>
+<p><span class="math display">\[ x^2 - Dy^2 = \plusmn 1\]</span></p>
+<p><strong>General Solution</strong> <span
+class="math display">\[x_n+y_n\sqrt D = (x_0+y_0\sqrt D)^n\]</span></p>
+<p><strong>Matrix Form</strong> <span
+class="math display">\[\begin{pmatrix}x_n  \\ y_n \end{pmatrix} =
+\begin{pmatrix}x_0 &amp; Dy_0  \\ y_0 &amp; x_0
+\end{pmatrix}\begin{pmatrix}x_0  \\ y_0 \end{pmatrix}\]</span></p>
+<blockquote>
+<p>Why? Assume $ x_1^2 - Dy_1^2 = 1$ and $ x_2^2 - Dy_2^2 = $, then
+$(x_1^2 - Dy_1<sup>2)(x_2</sup>2 - Dy_2^2) = (x_1x_2+Dy_1y_2)^2 -
+D(x_1y_2 -y_1x_2)^2 =1 $. So another solution can be formed by
+multiplying them together! Rearrange to obtain the above form.</p>
+</blockquote>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/06/14/%E4%B8%AD%E6%96%87/%E6%8A%BD%E8%B1%A1%E8%AF%97%E6%AD%8C%E4%B9%8B%E5%85%B5%E9%A9%AC%E4%BF%91/">
+        Previous post<br>《兵马俑》
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/06/12/%E4%B8%AD%E6%96%87/Linear%20Algebra%202/">
+        Next post<br>Linear Alegebra Chapter 1,2,6 Study Notes
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?94522152"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>

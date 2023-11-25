@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Generalized Suffix Automaton Study Notes - KarL05&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Tony Wu">
+<meta name="description" content="
+An OIer who don&#39;t know suf...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?56140476">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            KarL05&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">KarL05&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Blog
+        </div>
+        <div class="nav-subtitle">
+            Tony Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Generalized Suffix Automaton Study Notes
+                    <div class="post-meta">
+                        <time datetime="2023-06-21T08:08:00.000Z" itemprop="datePublished">
+                            2023-06-21 16:08
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>, 
+                        
+                        <a href='/tags/英文English/'>英文English</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <blockquote>
+<p>An OIer who don't know suffix automaton, is like a gamer that doesn't
+play Genshin Impact. - Said by me</p>
+</blockquote>
+<p>Suffix Automaton (SAM) is the ultimate algorithm for strings in
+Olympiad of Informatics. But its nonetheless useless because of obvious
+reasons. I personally prefers suffix array but SAM is too powerful so
+why not have a try？</p>
+<p>This blog entry is very un-detailed because its for personal use.
+Please refer to https://oi-wiki.org/string/sam/ for a detailed analysis
+of SAM.</p>
+<hr />
+<h4 id="brief">Brief</h4>
+<p>There are two automatons in Olympiad of Informatics.</p>
+<ol type="1">
+<li>ACAM</li>
+<li>SAM</li>
+</ol>
+<p>I think in nature, the -AMs store the information of the strings in a
+compressed <code>Directed Acyclic Graph</code>, while having another
+<code>Tree</code> to show the connection between each substring.</p>
+<p>In other words, you can either choose the
+<code>Directed Acyclic Graph</code> or the <code>Tree</code> to solve
+the problem. The latter is often better.</p>
+<hr />
+<h4 id="notations">Notations</h4>
+<p><span class="math inline">\(\text{len}(s)\)</span> length of
+<code>string</code> s.</p>
+<p><span class="math inline">\(\delta(v,s)\)</span> transition from
+<code>node</code> <span class="math inline">\(v\)</span> by a path of
+<code>string</code> <span class="math inline">\(s\)</span>.</p>
+<p><span class="math inline">\(\text{endpos}(s)\)</span> The
+<code>set</code> of end points in the original string that has
+<code>string</code> <span class="math inline">\(s\)</span> as a
+substring.</p>
+<p><span class="math inline">\(\text{parent}(v)\)</span> parent of
+<code>node</code> <span class="math inline">\(v\)</span> in the tree</p>
+<p><span class="math inline">\(\text{max}(v)\)</span> the longest
+substring represented by the <code>node</code> <span
+class="math inline">\(v\)</span>.</p>
+<p><span class="math inline">\(\text{min}(v)\)</span> the shortest
+substring represented by the <code>node</code> <span
+class="math inline">\(v\)</span>.</p>
+<hr />
+<h4 id="dag">DAG</h4>
+<p><code>SAM</code> stores the information about the suffix strings
+using a similar structure as the <code>Trie</code> tree. However,
+"useless" nodes are merged so that it becomes a <code>DAG</code>.</p>
+<p><code>SAM</code>'s <code>DAG</code> contains all substrings of the
+original string. Represented by a path from the root node <span
+class="math inline">\(\varphi\)</span>.</p>
+<p>Denote the transition from one node to another node in the
+<code>DAG</code> as <span class="math inline">\(\delta(v,c)\)</span>
+where <span class="math inline">\(v\)</span> is a node and <span
+class="math inline">\(c\)</span> is a character. This also means to add
+a character at the back of the strings at node <span
+class="math inline">\(v\)</span>.</p>
+<p>Yes, one node can represent multiple strings in <code>SAM</code>
+which is very special. This is very likely because <code>SAM</code> is
+highly compressed with memory complexity of <span
+class="math inline">\(O(N)\)</span>.</p>
+<p>But what rule do we merge two nodes? We compare the <span
+class="math inline">\(\text{endpos}(u)\)</span> and <span
+class="math inline">\(\text{endpos}(v)\)</span>. If they are the same,
+they are merged.</p>
+<hr />
+<h4 id="tree">Tree</h4>
+<p><span class="math inline">\(\text{parent}(v) = f\)</span> if and only
+if</p>
+<p><span class="math display">\[\text{endpos}(\max(v)) \subsetneq
+\text{endpos}(\max(f))\]</span></p>
+<p>or if and only if</p>
+<p><span class="math display">\[\text{len}(\min (v)) =
+\text{len}(\max(f))+1\]</span></p>
+<p>And the <span class="math inline">\(\text{parent}(v)\)</span>
+function forms a tree.</p>
+<hr />
+<h4 id="complexity">Complexity</h4>
+<p>Completely Linear.</p>
+<hr />
+<h4 id="generalised">Generalised</h4>
+<p>How about multiple strings? A incorrect way is to connect the
+multiple strings with a <code>#</code>. But the time complexity could be
+very bad.</p>
+<p>Here is a Method by 刘研绎,2015《后缀自动机在字典树上的拓展》</p>
+<p>Steps:</p>
+<ol type="1">
+<li><p>Build a <code>trie</code> tree</p></li>
+<li><p><code>BFS</code> the root of the <code>trie</code> tree and
+record the parent node for each node</p></li>
+<li><p>Build <code>SAM</code> using the <code>BFS</code> order.</p></li>
+</ol>
+<hr />
+<h4 id="code">Code</h4>
+<p>Accepted on Luogu <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">2e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> a[maxn],c[maxn],sz[maxn];</span><br><span class="line"><span class="type">int</span> ans,n;</span><br><span class="line">string s;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SAM</span> &#123;</span><br><span class="line">    <span class="type">int</span> lst, pter;</span><br><span class="line">    <span class="type">int</span> ch[maxn*<span class="number">2</span>][<span class="number">26</span>];</span><br><span class="line">    <span class="type">int</span> fa[maxn*<span class="number">2</span>];</span><br><span class="line">    <span class="type">int</span> l[maxn*<span class="number">2</span>];</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">ins</span> <span class="params">(<span class="type">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> p = lst;<span class="type">int</span> np = ++pter;</span><br><span class="line">        lst = np;l[np] = l[p]+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (p&amp;&amp;!ch[p][c]) &#123;</span><br><span class="line">            ch[p][c] = np;</span><br><span class="line">            p = fa[p];</span><br><span class="line">        &#125;</span><br><span class="line">        sz[np] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (!p) &#123;</span><br><span class="line">            fa[np] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> q = ch[p][c];</span><br><span class="line">        <span class="keyword">if</span> (l[p]+<span class="number">1</span>==l[q]) &#123;</span><br><span class="line">            fa[np] = q;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> nq = ++pter;</span><br><span class="line">        l[nq] = l[p]+<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">memcpy</span>(ch[nq],ch[q],<span class="built_in">sizeof</span>(ch[q]));</span><br><span class="line">        fa[nq] = fa[q];</span><br><span class="line">        fa[q] = fa[np] = nq;</span><br><span class="line">        <span class="keyword">while</span> (ch[p][c]==q) &#123;</span><br><span class="line">            ch[p][c] = nq;</span><br><span class="line">            p = fa[p];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">build</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">        cin&gt;&gt;s;</span><br><span class="line">        <span class="type">int</span> len = s.<span class="built_in">size</span>();</span><br><span class="line">        s = <span class="string">&quot;#&quot;</span>+s;</span><br><span class="line">        lst = pter = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=len;i++) <span class="built_in">ins</span>(s[i]-<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">calc</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=pter;i++) c[l[i]]++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=pter;i++) c[i] += c[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=pter;i++) a[c[l[i]]--] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=pter;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="type">int</span> p = a[i];</span><br><span class="line">            sz[fa[p]] += sz[p];</span><br><span class="line">            <span class="keyword">if</span> (sz[p]&gt;<span class="number">1</span>) ans = <span class="built_in">max</span>(ans,sz[p]*l[p]);</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">SAM sam;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    sam.<span class="built_in">build</span>();</span><br><span class="line">    sam.<span class="built_in">calc</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr />
+<h4 id="reference">Reference</h4>
+<p>https://oi-wiki.org/string/general-sam/</p>
+<p>https://oi-wiki.org/string/sam/</p>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <a class="newer-posts" href="/2023/08/16/%E4%B8%AD%E6%96%87/Slow%20Fourier%20Transform/">
+        Previous post<br>Slow Fourier Transform
+    </a>
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/06/20/%E4%B8%AD%E6%96%87/Analysis%201/">
+        Next post<br>Analysis Revision Chapter 1
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2023 <a href="https://7ue9ueue.github.io">KarL05&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?23805012"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>
