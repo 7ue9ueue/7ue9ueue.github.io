@@ -6,7 +6,7 @@
   <link href="https://7ue9ueue.github.io/atom.xml" rel="self"/>
   
   <link href="https://7ue9ueue.github.io/"/>
-  <updated>2023-11-25T04:03:54.819Z</updated>
+  <updated>2024-12-24T11:49:04.444Z</updated>
   <id>https://7ue9ueue.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Analysis Revision Chapter 1</title>
+    <link href="https://7ue9ueue.github.io/2024/06/20/%E4%B8%AD%E6%96%87/Analysis%201/"/>
+    <id>https://7ue9ueue.github.io/2024/06/20/%E4%B8%AD%E6%96%87/Analysis%201/</id>
+    <published>2024-06-20T03:34:00.000Z</published>
+    <updated>2024-12-24T11:49:04.444Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>I didn't update study notes for awhile because I realized something.I don't what what something is but I realized something. If could be oneof the following</p></blockquote><blockquote><ol type="1"><li>I don't understand what the book is saying</li><li>I don't understand what the book is saying</li><li>I'm sick</li><li>The problems are too hard</li><li>I don't understand what the book is saying</li><li>I want to do olympiad</li><li>I don't want to do olympiad</li><li>I want to play puzzles</li><li>Analysis and Linear Algebra is too hard</li><li>Analysis and Linear Algebra is very hard</li></ol></blockquote><p>Honestly I don't really get what analysis is doing. I hope someonecan tell what analysis is all about. I want to read Complex Analysis butI realize my analysis skills is too weak so lets review someanalysis.</p><p>I think i can solve the problems in the book but I just don't get theidea?</p><p>I like to read Linear Algebra because its quite practical. But Idon't really again understand that Jordan thing and how thats useful. Ireally don't know how these things are useful. That chapter about theJordan thing completely wiped me out so I will do some lighter stufflike analysis which doesn't seems light so maybe do number theory? Orshould I just do my personal statement?</p><p>I think I prefer olympiad questions more. Even if it uses linearalgebra group theory analysis or whatever.</p><p>I don't seem practical uses of each idea... maybe I read the wrongbook?</p><p>I think the plan is to review forier transform and begin readingcomplex analysis. And in the mean time I'll take some rest because thereis no more olympiad for me.</p><h4 id="数学分析中的具体问题与方法-chapter-1">数学分析中的具体问题与方法Chapter 1</h4><h4 id="limits-definition">Limits Definition</h4><p>If <span class="math inline">\(\lim_{n\to \infin} x_n = A\)</span>,then by definition, <span class="math inline">\(\forall \epsilon &gt;0\)</span>, <span class="math inline">\(\exist \delta &gt; 0\)</span>,such that when <span class="math inline">\(n&gt;\delta\)</span>, <spanclass="math inline">\(|x_n-A|&lt;\epsilon\)</span>.</p><h4 id="example">Example</h4><p>Show that</p><p><span class="math display">\[ \lim_{n \to \infin}(n+1)^{1/n}=1\]</span></p><p>By Definition, we need to find some finite <spanclass="math inline">\(n\)</span> such that</p><p><span class="math display">\[|(n+1)^{1/n}-1|&lt;\epsilon\]</span></p><p>Which is hard <span class="math display">\[ a =(n+1)^{1/n}-1\]</span></p><p>So the idea is to enlarge <span class="math inline">\(a\)</span></p><p><span class="math display">\[ (1+n) = (1+a)^n =\sum_{k}\binom{n}{k}a^{k} &lt; \frac{n(n-1)}{2}a^2 \]</span></p><p>Hence <span class="math display">\[ a &lt;\frac{2}{\sqrt{n-1}}\]</span></p><p>So</p><p><span class="math display">\[|(n+1)^{1/n}-1| = |a| &lt;|\frac{2}{\sqrt{n-1}}|&lt;\epsilon \]</span></p><p>So when <span class="math inline">\(n\)</span> is super large, namely<span class="math inline">\(n &gt; \frac{4}{\epsilon^2}+1\)</span>,inequality holds. By definition, let <span class="math inline">\(\delta= \frac{4}{\epsilon^2}+1\)</span> and inequality is proved.</p><hr /><h4 id="cauchys-rule">Cauchy's Rule</h4><blockquote><p>Don't need to know what is the limit.</p></blockquote><p><span class="math inline">\(x_n\)</span> converges iff <spanclass="math inline">\(\forall \epsilon &gt; 0\)</span>, <spanclass="math inline">\(\exist \delta &gt; 0\)</span>, <spanclass="math inline">\(n&gt;N\)</span>,<spanclass="math inline">\(|x_{n+p}-x_n|&lt;\epsilon\)</span>.</p><h4 id="example-1">Example</h4><p><span class="math display">\[x_n = \sum_{i=1}^n \frac{\sini}{2^i}\]</span></p><p><span class="math display">\[|x_{n+p}-x_n|=\sum_{i=n+1}^{n+p}\frac{\sin i}{2^i} \leq \sum_{i=n+1}^{n+p} \frac{1}{2^i}\leq  \frac{1}{2^{n}}&lt;\frac{1}{n}&lt;\epsilon\]</span></p><p>So let</p><p><span class="math display">\[\epsilon &gt; \frac{1}{n}\]</span></p><p><span class="math display">\[N = \frac{1}{\epsilon}\]</span></p><hr /><h4 id="reversed-cauchys-rule">Reversed Cauchy's Rule</h4><p><span class="math inline">\(x_n\)</span> diverges iff <spanclass="math inline">\(\exist \epsilon &gt; 0\)</span>, <spanclass="math inline">\(\forall \delta &gt; 0\)</span>, <spanclass="math inline">\(n&gt;N\)</span>,<spanclass="math inline">\(|x_{n+p}-x_n|&lt;\epsilon\)</span>.</p><hr /><h4 id="simple-taylor-expansion">Simple Taylor Expansion</h4><p><span class="math display">\[ x \sim \sin x \sim \tan x \sim \arcsinx \sim \arctan x\]</span></p><p><span class="math display">\[x \sim \ln(1+x) \sim e^x-1 \sim\frac{a^x-1}{\ln a} \sim \frac{(1+x)^a-1}{a}\]</span></p><p><span class="math display">\[1-\cos x \sim \frac{1}{2}x^2\]</span></p><blockquote><p>Used only in multiplication and division</p></blockquote><hr /><h4 id="important-limits">Important Limits</h4><blockquote><p>if the limit for both functions are suitable for each case. I didn'twrite the condition because i have a stomach ache and i think thecondition is obvious</p></blockquote><p><span class="math display">\[\lim_{x \to a} f(x)^{g(x)} = \lim_{x \toa} f(x)^{\lim_{x \to a}g(x)}\]</span></p><p><span class="math display">\[\lim_{x \to a} (1+f(x))^{g(x)} =\exp{(f(x)g(x))}\]</span></p><hr /><h4 id="lhospitals-rule">L'Hospital's Rule</h4><blockquote><p>same, condition is omitted</p></blockquote><p><spanclass="math display">\[\lim_{x}\frac{f(x)}{g(x)}=\lim_{x}\frac{f&#39;(x)}{g&#39;(x)}\]</span></p><hr /><h4 id="using-integration">Using Integration</h4><blockquote><p>Omitted</p></blockquote><hr /><h4 id="stolz-formula">Stolz Formula</h4><blockquote><p>inf/inf, hope you get what i mean D for difference</p></blockquote><p><span class="math display">\[\lim_{n}\frac{Df_n}{Dg_n}=A \to\lim_{n}\frac{f_n}{g_n}=A\]</span></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;I didn&#39;t update study notes for awhile because I realized something.
+I don&#39;t what what something is but I realized something</summary>
+      
+    
+    
+    
+    <category term="笔记Notes" scheme="https://7ue9ueue.github.io/categories/%E7%AC%94%E8%AE%B0Notes/"/>
+    
+    
+    <category term="数学Math" scheme="https://7ue9ueue.github.io/tags/%E6%95%B0%E5%AD%A6Math/"/>
+    
+  </entry>
   
   <entry>
     <title>Accelerated 01 Knapsack Algorithm and the Quadrangle Inequality</title>
@@ -156,32 +182,6 @@ play Genshin Impact. - Said by me&lt;/p&gt;
     <category term="信竞OI" scheme="https://7ue9ueue.github.io/tags/%E4%BF%A1%E7%AB%9EOI/"/>
     
     <category term="英文English" scheme="https://7ue9ueue.github.io/tags/%E8%8B%B1%E6%96%87English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Analysis Revision Chapter 1</title>
-    <link href="https://7ue9ueue.github.io/2023/06/20/%E4%B8%AD%E6%96%87/Analysis%201/"/>
-    <id>https://7ue9ueue.github.io/2023/06/20/%E4%B8%AD%E6%96%87/Analysis%201/</id>
-    <published>2023-06-20T03:34:00.000Z</published>
-    <updated>2023-06-21T08:06:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>I didn't update study notes for awhile because I realized something.I don't what what something is but I realized something. If could be oneof the following</p></blockquote><blockquote><ol type="1"><li>I don't understand what the book is saying</li><li>I don't understand what the book is saying</li><li>I'm sick</li><li>The problems are too hard</li><li>I don't understand what the book is saying</li><li>I want to do olympiad</li><li>I don't want to do olympiad</li><li>I want to play puzzles</li><li>Analysis and Linear Algebra is too hard</li><li>Analysis and Linear Algebra is very hard</li></ol></blockquote><p>Honestly I don't really get what analysis is doing. I hope someonecan tell what analysis is all about. I want to read Complex Analysis butI realize my analysis skills is too weak so lets review someanalysis.</p><p>I think i can solve the problems in the book but I just don't get theidea?</p><p>I like to read Linear Algebra because its quite practical. But Idon't really again understand that Jordan thing and how thats useful. Ireally don't know how these things are useful. That chapter about theJordan thing completely wiped me out so I will do some lighter stufflike analysis which doesn't seems light so maybe do number theory? Orshould I just do my personal statement?</p><p>I think I prefer olympiad questions more. Even if it uses linearalgebra group theory analysis or whatever.</p><p>I don't seem practical uses of each idea... maybe I read the wrongbook?</p><p>I think the plan is to review forier transform and begin readingcomplex analysis. And in the mean time I'll take some rest because thereis no more olympiad for me.</p><h4 id="数学分析中的具体问题与方法-chapter-1">数学分析中的具体问题与方法Chapter 1</h4><h4 id="limits-definition">Limits Definition</h4><p>If <span class="math inline">\(\lim_{n\to \infin} x_n = A\)</span>,then by definition, <span class="math inline">\(\forall \epsilon &gt;0\)</span>, <span class="math inline">\(\exist \delta &gt; 0\)</span>,such that when <span class="math inline">\(n&gt;\delta\)</span>, <spanclass="math inline">\(|x_n-A|&lt;\epsilon\)</span>.</p><h4 id="example">Example</h4><p>Show that</p><p><span class="math display">\[ \lim_{n \to \infin}(n+1)^{1/n}=1\]</span></p><p>By Definition, we need to find some finite <spanclass="math inline">\(n\)</span> such that</p><p><span class="math display">\[|(n+1)^{1/n}-1|&lt;\epsilon\]</span></p><p>Which is hard <span class="math display">\[ a =(n+1)^{1/n}-1\]</span></p><p>So the idea is to enlarge <span class="math inline">\(a\)</span></p><p><span class="math display">\[ (1+n) = (1+a)^n =\sum_{k}\binom{n}{k}a^{k} &lt; \frac{n(n-1)}{2}a^2 \]</span></p><p>Hence <span class="math display">\[ a &lt;\frac{2}{\sqrt{n-1}}\]</span></p><p>So</p><p><span class="math display">\[|(n+1)^{1/n}-1| = |a| &lt;|\frac{2}{\sqrt{n-1}}|&lt;\epsilon \]</span></p><p>So when <span class="math inline">\(n\)</span> is super large, namely<span class="math inline">\(n &gt; \frac{4}{\epsilon^2}+1\)</span>,inequality holds. By definition, let <span class="math inline">\(\delta= \frac{4}{\epsilon^2}+1\)</span> and inequality is proved.</p><hr /><h4 id="cauchys-rule">Cauchy's Rule</h4><blockquote><p>Don't need to know what is the limit.</p></blockquote><p><span class="math inline">\(x_n\)</span> converges iff <spanclass="math inline">\(\forall \epsilon &gt; 0\)</span>, <spanclass="math inline">\(\exist \delta &gt; 0\)</span>, <spanclass="math inline">\(n&gt;N\)</span>,<spanclass="math inline">\(|x_{n+p}-x_n|&lt;\epsilon\)</span>.</p><h4 id="example-1">Example</h4><p><span class="math display">\[x_n = \sum_{i=1}^n \frac{\sini}{2^i}\]</span></p><p><span class="math display">\[|x_{n+p}-x_n|=\sum_{i=n+1}^{n+p}\frac{\sin i}{2^i} \leq \sum_{i=n+1}^{n+p} \frac{1}{2^i}\leq  \frac{1}{2^{n}}&lt;\frac{1}{n}&lt;\epsilon\]</span></p><p>So let</p><p><span class="math display">\[\epsilon &gt; \frac{1}{n}\]</span></p><p><span class="math display">\[N = \frac{1}{\epsilon}\]</span></p><hr /><h4 id="reversed-cauchys-rule">Reversed Cauchy's Rule</h4><p><span class="math inline">\(x_n\)</span> diverges iff <spanclass="math inline">\(\exist \epsilon &gt; 0\)</span>, <spanclass="math inline">\(\forall \delta &gt; 0\)</span>, <spanclass="math inline">\(n&gt;N\)</span>,<spanclass="math inline">\(|x_{n+p}-x_n|&lt;\epsilon\)</span>.</p><hr /><h4 id="simple-taylor-expansion">Simple Taylor Expansion</h4><p><span class="math display">\[ x \sim \sin x \sim \tan x \sim \arcsinx \sim \arctan x\]</span></p><p><span class="math display">\[x \sim \ln(1+x) \sim e^x-1 \sim\frac{a^x-1}{\ln a} \sim \frac{(1+x)^a-1}{a}\]</span></p><p><span class="math display">\[1-\cos x \sim \frac{1}{2}x^2\]</span></p><blockquote><p>Used only in multiplication and division</p></blockquote><hr /><h4 id="important-limits">Important Limits</h4><blockquote><p>if the limit for both functions are suitable for each case. I didn'twrite the condition because i have a stomach ache and i think thecondition is obvious</p></blockquote><p><span class="math display">\[\lim_{x \to a} f(x)^{g(x)} = \lim_{x \toa} f(x)^{\lim_{x \to a}g(x)}\]</span></p><p><span class="math display">\[\lim_{x \to a} (1+f(x))^{g(x)} =\exp{(f(x)g(x))}\]</span></p><hr /><h4 id="lhospitals-rule">L'Hospital's Rule</h4><blockquote><p>same, condition is omitted</p></blockquote><p><spanclass="math display">\[\lim_{x}\frac{f(x)}{g(x)}=\lim_{x}\frac{f&#39;(x)}{g&#39;(x)}\]</span></p><hr /><h4 id="using-integration">Using Integration</h4><blockquote><p>Omitted</p></blockquote><hr /><h4 id="stolz-formula">Stolz Formula</h4><blockquote><p>inf/inf, hope you get what i mean D for difference</p></blockquote><p><span class="math display">\[\lim_{n}\frac{Df_n}{Dg_n}=A \to\lim_{n}\frac{f_n}{g_n}=A\]</span></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;I didn&#39;t update study notes for awhile because I realized something.
-I don&#39;t what what something is but I realized something</summary>
-      
-    
-    
-    
-    <category term="笔记Notes" scheme="https://7ue9ueue.github.io/categories/%E7%AC%94%E8%AE%B0Notes/"/>
-    
-    
-    <category term="数学Math" scheme="https://7ue9ueue.github.io/tags/%E6%95%B0%E5%AD%A6Math/"/>
     
   </entry>
   
