@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Aiyiyi Algorithmic Problem Set - Aiyiyi&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Shangtong Wu">
+<meta name="description" content="Aiyiyi Algorithmic Problem
+...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?89176866">
+<link rel="stylesheet" href="/css/trending.css?22814798">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Aiyiyi&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Aiyiyi&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Aiyiyi's Blog
+        </div>
+        <div class="nav-subtitle">
+            Shangtong Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Aiyiyi Algorithmic Problem Set
+                    
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#aiyiyi-algorithmic-problem-set"><span class="toc-number">1.</span> <span class="toc-text">Aiyiyi Algorithmic Problem
+Set</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-1.-counting-segments-inside-an-interval"><span class="toc-number">1.1.</span> <span class="toc-text">Problem 1.
+Counting Segments Inside an Interval</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#metadata"><span class="toc-number">1.1.1.</span> <span class="toc-text">Metadata</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#statement"><span class="toc-number">1.1.2.</span> <span class="toc-text">Statement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#constraints"><span class="toc-number">1.1.3.</span> <span class="toc-text">Constraints</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-2.-totient-lcm-sum"><span class="toc-number">1.2.</span> <span class="toc-text">Problem 2. Totient LCM Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#metadata-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">Metadata</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#statement-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">Statement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#constraints-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">Constraints</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#problem-3.-counting-vertex-sets-on-a-common-path"><span class="toc-number">1.3.</span> <span class="toc-text">Problem 3.
+Counting Vertex Sets on a Common Path</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#metadata-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">Metadata</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#statement-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">Statement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#constraints-2"><span class="toc-number">1.3.3.</span> <span class="toc-text">Constraints</span></a></li></ol></li></ol></li></ol>
+                    <h1 id="aiyiyi-algorithmic-problem-set">Aiyiyi Algorithmic Problem
+Set</h1>
+<h2 id="problem-1.-counting-segments-inside-an-interval">Problem 1.
+Counting Segments Inside an Interval</h2>
+<h3 id="metadata">Metadata</h3>
+<ul>
+<li><strong>Author:</strong> Aiyiyi</li>
+<li><strong>Date proposed:</strong> February 25, 2021</li>
+<li><strong>Origin:</strong> Original</li>
+<li><strong>Acknowledgements:</strong> Thanks to Kinesis and LightningUZ
+for their contributions to the problem discussion.</li>
+</ul>
+<h3 id="statement">Statement</h3>
+<p>There are initially <span class="math inline">\(k\)</span> segments
+on the positive integer number line. Each segment is represented by a
+pair of integers <span class="math inline">\((L, R)\)</span>, where
+<span class="math inline">\(L &lt; R\)</span>.</p>
+<p>You need to maintain the set of segments while processing <span
+class="math inline">\(m\)</span> operations. There are two types of
+operations:</p>
+<ul>
+<li><span class="math inline">\(\texttt{add}\ L\ R\)</span>: insert the
+segment <span class="math inline">\((L, R)\)</span>.</li>
+<li><span class="math inline">\(\texttt{query}\ L\ R\)</span>: count how
+many currently stored segments are fully contained in the interval <span
+class="math inline">\([L, R]\)</span>.</li>
+</ul>
+<p>In other words, a segment <span class="math inline">\((L&#39;,
+R&#39;)\)</span> is counted for a query <span class="math inline">\((L,
+R)\)</span> if and only if</p>
+<p><span class="math display">\[
+L \le L&#39; &lt; R&#39; \le R.
+\]</span></p>
+<h3 id="constraints">Constraints</h3>
+<p><span class="math display">\[
+1 \le m,\ k \le 10^{6}, \qquad 1 \le L &lt; R \le 10^{9}.
+\]</span></p>
+<hr />
+<h2 id="problem-2.-totient-lcm-sum">Problem 2. Totient LCM Sum</h2>
+<h3 id="metadata-1">Metadata</h3>
+<ul>
+<li><strong>Author:</strong> Aiyiyi</li>
+<li><strong>Date proposed:</strong> February 25, 2021</li>
+<li><strong>Origin:</strong> Original</li>
+<li><strong>Acknowledgements:</strong> Thanks to Kinesis and LightningUZ
+for their contributions to the problem discussion.</li>
+</ul>
+<h3 id="statement-1">Statement</h3>
+<p>Given a positive integer <span class="math inline">\(n\)</span>,
+compute</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n} \sum_{j=1}^{n} \lambda(i, j),
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\lambda(x, y) = \operatorname{lcm}\bigl(\varphi(x), \varphi(y)\bigr).
+\]</span></p>
+<p>Here <span class="math inline">\(\varphi\)</span> denotes Euler's
+totient function, and <span
+class="math inline">\(\operatorname{lcm}\)</span> denotes the least
+common multiple.</p>
+<p>Output the answer modulo <span
+class="math inline">\(998244353\)</span>.</p>
+<h3 id="constraints-1">Constraints</h3>
+<p><span class="math display">\[
+1 \le n \le 10^{6}.
+\]</span></p>
+<hr />
+<h2 id="problem-3.-counting-vertex-sets-on-a-common-path">Problem 3.
+Counting Vertex Sets on a Common Path</h2>
+<h3 id="metadata-2">Metadata</h3>
+<ul>
+<li><strong>Author:</strong> Aiyiyi</li>
+<li><strong>Date proposed:</strong> February 25, 2021</li>
+<li><strong>Origin:</strong> Independently discovered by Aiyiyi</li>
+<li><strong>Acknowledgements:</strong> Thanks to Yoluko for their
+contribution to the problem discussion.</li>
+<li><strong>Related reference:</strong> <a
+target="_blank" rel="noopener" href="https://judge.yosupo.jp/problem/frequency_table_of_tree_distance">Library
+Checker: Frequency Table of Tree Distance</a></li>
+</ul>
+<h3 id="statement-2">Statement</h3>
+<p>You are given a tree with <span class="math inline">\(n\)</span>
+vertices.</p>
+<p>For every integer <span class="math inline">\(K\)</span> such that
+<span class="math inline">\(1 \le K \le n\)</span>, count the number of
+ways to choose exactly <span class="math inline">\(K\)</span> vertices
+such that all selected vertices lie on a single simple path of the
+tree.</p>
+<p>Output each answer modulo <span
+class="math inline">\(998244353\)</span>.</p>
+<h3 id="constraints-2">Constraints</h3>
+<p><span class="math display">\[
+1 \le n \le 10^{5}.
+\]</span></p>
+
+                </div>
+            </div>
+    
+            
+<p style="opacity: 0.6; padding: 30px 15px" align="center">
+    <small>Comments have been disabled for this content</small>
+</p>
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?80143893"></script>
+
+
+
+</body>
+</html>

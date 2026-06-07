@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Aiyiyi 算法题目集 — 题解 - Aiyiyi&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Shangtong Wu">
+<meta name="description" content="Aiyiyi 算法题目集 — 题解
+
+题解作者：Cla...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?54283064">
+<link rel="stylesheet" href="/css/trending.css?20541411">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Aiyiyi&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Aiyiyi&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Aiyiyi's Blog
+        </div>
+        <div class="nav-subtitle">
+            Shangtong Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Aiyiyi 算法题目集 — 题解
+                    
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#aiyiyi-%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E9%9B%86-%E9%A2%98%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">Aiyiyi 算法题目集 — 题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80%E5%8C%BA%E9%97%B4%E5%86%85%E7%BA%BF%E6%AE%B5%E8%AE%A1%E6%95%B0-cdq-%E5%88%86%E6%B2%BB"><span class="toc-number">1.1.</span> <span class="toc-text">题目一：区间内线段计数 — CDQ
+分治</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96"><span class="toc-number">1.1.1.</span> <span class="toc-text">转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0-lcm-%E6%B1%82%E5%92%8C-%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="toc-number">1.2.</span> <span class="toc-text">题目二：欧拉函数 LCM 求和
+— 莫比乌斯反演</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%8D%E7%BB%B4%E5%88%B0%E6%8C%89%E5%80%BC%E7%BB%9F%E8%AE%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">降维到「按值统计」</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="toc-number">1.2.2.</span> <span class="toc-text">莫比乌斯反演</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E9%87%8F%E7%9A%84%E6%B1%82%E6%B3%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">两个量的求法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E6%80%A7%E9%AA%8C%E8%AF%81"><span class="toc-number">1.2.4.</span> <span class="toc-text">正确性验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%89%E5%85%B1%E9%93%BE%E7%82%B9%E9%9B%86%E8%AE%A1%E6%95%B0-%E7%82%B9%E5%88%86%E6%B2%BB-ntt"><span class="toc-number">1.3.</span> <span class="toc-text">题目三：共链点集计数 — 点分治 +
+NTT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E7%AB%AF%E7%82%B9%E8%AE%A1%E6%95%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">按端点计数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E7%82%B9%E5%88%86%E6%B2%BB-ntt-%E6%B1%82%E8%B7%9D%E7%A6%BB%E5%88%86%E5%B8%83"><span class="toc-number">1.3.2.</span> <span class="toc-text">第一步 —— 点分治 + NTT
+求距离分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E4%B8%80%E6%AC%A1-ntt-%E5%AE%8C%E6%88%90%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%98%E6%8D%A2"><span class="toc-number">1.3.3.</span> <span class="toc-text">第二步 —— 一次 NTT
+完成二项式变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6-2"><span class="toc-number">1.3.4.</span> <span class="toc-text">复杂度</span></a></li></ol></li></ol></li></ol>
+                    <h1 id="aiyiyi-算法题目集-题解">Aiyiyi 算法题目集 — 题解</h1>
+<blockquote>
+<p>题解作者：<strong>Claude Opus 4.8（1M context）</strong>。 配套题面见
+<a
+href="set1_CN.html"><code>set1_CN.md</code></a>。仅作算法分析，不附参考代码。</p>
+</blockquote>
+<hr />
+<h2 id="题目一区间内线段计数-cdq-分治">题目一：区间内线段计数 — CDQ
+分治</h2>
+<h3 id="转化">转化</h3>
+<p>把每条线段 <span class="math inline">\((L&#39;, R&#39;)\)</span>
+看成平面上的一个点 <span class="math inline">\((L&#39;,
+R&#39;)\)</span>。查询 <span class="math inline">\((L, R)\)</span>
+要数的是满足</p>
+<p><span class="math display">\[
+L \le L&#39; \quad\text{且}\quad R&#39; \le R
+\]</span></p>
+<p>的点数，也就是一个二维偏序（dominance）计数。此外，一次查询只能统计在它<strong>之前</strong>加入的线段；初始的
+<span class="math inline">\(k\)</span> 条线段视为发生在时刻 <span
+class="math inline">\(0\)</span> 的 <code>add</code> 操作。</p>
+<p>于是每个事件带三个坐标，整道题是一个
+<strong>三维偏序计数</strong>：</p>
+<table>
+<thead>
+<tr class="header">
+<th>维度</th>
+<th>「查询计入该 add」的条件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>时间 <span class="math inline">\(t\)</span></td>
+<td><span class="math inline">\(t_{\text{add}} &lt;
+t_{\text{query}}\)</span></td>
+</tr>
+<tr class="even">
+<td>左端 <span class="math inline">\(L\)</span></td>
+<td><span class="math inline">\(L_{\text{add}} \ge
+L_{\text{query}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>右端 <span class="math inline">\(R\)</span></td>
+<td><span class="math inline">\(R_{\text{add}} \le
+R_{\text{query}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>这正是 <strong>CDQ 分治</strong> 的标准场景。</p>
+<h3 id="算法">算法</h3>
+<p>CDQ 每一层消掉一维：</p>
+<ol type="1">
+<li><strong>时间维</strong> ——
+事件本身按时间有序。把事件序列对半分，递归处理左右两半，再让
+<em>左半</em> 的 <code>add</code> 贡献给 <em>右半</em> 的
+<code>query</code>。这样时间限制就被分治结构天然消掉。</li>
+<li><strong>左端 <span class="math inline">\(L\)</span></strong> ——
+归并时把两半事件按 <strong><span class="math inline">\(L\)</span>
+降序</strong>扫描。相等时让 <code>add</code> 排在 <code>query</code>
+前面（因为 <span class="math inline">\(L_{\text{add}} =
+L_{\text{query}}\)</span> 仍满足 <span
+class="math inline">\(L_{\text{add}} \ge
+L_{\text{query}}\)</span>）。扫到某个 query 时，前面已处理的所有 add
+都满足 <span class="math inline">\(L_{\text{add}} \ge
+L_{\text{query}}\)</span>。</li>
+<li><strong>右端 <span class="math inline">\(R\)</span></strong> ——
+用一棵以离散化后的 <span class="math inline">\(R\)</span>
+值为下标的<strong>树状数组</strong>：扫到 <code>add</code> 就在位置
+<span class="math inline">\(R&#39;\)</span> 处 <span
+class="math inline">\(+1\)</span>；扫到 <code>query</code> 就查询下标
+<span class="math inline">\(\le R\)</span> 的前缀和。</li>
+</ol>
+<p>把一个按 <span class="math inline">\(L\)</span>
+预排序的全局数组沿递归归并下去（和归并排序一样），就能避免每层重新排序。</p>
+<h3 id="复杂度">复杂度</h3>
+<p>时间 <span class="math inline">\(O(N \log^2 N)\)</span>，空间 <span
+class="math inline">\(O(N)\)</span>，其中 <span class="math inline">\(N
+= k + m \le 2\times10^6\)</span> —— 一个 <span
+class="math inline">\(\log\)</span> 来自分治深度，一个来自树状数组。</p>
+<p><em>备选解：</em>
+按时间顺序在线处理，配合二维树状数组（树状数组套树状数组）或归并树，同为
+<span class="math inline">\(O(N \log^2 N)\)</span>。CDQ
+在常数和内存上更优，是本题的标准解。</p>
+<hr />
+<h2 id="题目二欧拉函数-lcm-求和-莫比乌斯反演">题目二：欧拉函数 LCM 求和
+— 莫比乌斯反演</h2>
+<h3 id="降维到按值统计">降维到「按值统计」</h3>
+<p>令</p>
+<p><span class="math display">\[
+a_v = \#\{\, i \le n : \varphi(i) = v \,\}.
+\]</span></p>
+<p>由于 <span class="math inline">\(\varphi(i) \le i \le
+n\)</span>，所有欧拉函数值都落在 <span class="math inline">\([1,
+n]\)</span>，故取值域 <span class="math inline">\(M =
+n\)</span>。目标和从「对下标的二重循环」化为「对取值的二重循环」：</p>
+<p><span class="math display">\[
+S = \sum_{i,j} \operatorname{lcm}(\varphi(i),\varphi(j))
+  = \sum_{u,v} a_u a_v \operatorname{lcm}(u, v)
+  = \sum_{u,v} a_u a_v \frac{uv}{\gcd(u,v)}.
+\]</span></p>
+<h3 id="莫比乌斯反演">莫比乌斯反演</h3>
+<p>设 <span class="math inline">\(g = \gcd(u, v)\)</span>，<span
+class="math inline">\(u = gx,\ v = gy,\ \gcd(x, y) = 1\)</span>，则
+<span class="math inline">\(\dfrac{uv}{g} = gxy\)</span>：</p>
+<p><span class="math display">\[
+S = \sum_{g} g \sum_{\gcd(x,y) = 1} (a_{gx}\,x)(a_{gy}\,y).
+\]</span></p>
+<p>用 <span class="math inline">\([\gcd(x,y) = 1] = \sum_{d \mid
+\gcd(x,y)} \mu(d)\)</span> 展开互质条件，再令 <span
+class="math inline">\(x = dx&#39;,\ y = dy&#39;\)</span>，按 <span
+class="math inline">\(T = gd\)</span> 重新编号。内层的除数和可化简为</p>
+<p><span class="math display">\[
+\sum_{d \mid T} \mu(d)\, d = \prod_{p \mid T}(1 - p)
+\]</span></p>
+<p>（两边都是积性函数，且在素数幂 <span
+class="math inline">\(p^k\)</span> 处都等于 <span
+class="math inline">\(1 -
+p\)</span>）。于是整体收成一个<strong>单层求和</strong>：</p>
+<p><span class="math display">\[
+\boxed{\,S = \sum_{T=1}^{M} h(T)\, P(T)^2\,},
+\qquad
+h(T) = T \prod_{p \mid T}(1 - p),
+\qquad
+P(T) = \sum_{k \ge 1} a_{kT}\cdot k.
+\]</span></p>
+<h3 id="两个量的求法">两个量的求法</h3>
+<ul>
+<li><span class="math inline">\(h(T)\)</span>
+是<strong>积性函数</strong>，<span class="math inline">\(h(p^k) = p^k (1
+- p)\)</span>，一遍<strong>线性筛</strong>即可求全部 <span
+class="math inline">\(T\)</span>。（维护 <span
+class="math inline">\(r(T) = \prod_{p\mid T}(1-p)\)</span>：扩展 <span
+class="math inline">\(i \to ip\)</span> 时，若 <span
+class="math inline">\(p \mid i\)</span> 则 <span
+class="math inline">\(r(ip) = r(i)\)</span>，否则 <span
+class="math inline">\(r(ip) = r(i)(1-p)\)</span>；最后 <span
+class="math inline">\(h(T) = T \cdot r(T)\)</span>。）</li>
+<li><span class="math inline">\(P(T) = \sum_{k} a_{kT}\, k\)</span>
+通过对每个 <span class="math inline">\(T\)</span>
+<strong>枚举倍数</strong>得到（调和级数循环），复杂度 <span
+class="math inline">\(O(M \log M)\)</span>。注意 <span
+class="math inline">\(P\)</span>
+是货真价实的整数求和，全程<strong>不需要求逆元</strong>。</li>
+</ul>
+<h3 id="正确性验证">正确性验证</h3>
+<p>小多重集即可验证公式： - <span class="math inline">\(\{1,
+2\}\)</span>：直接求和 <span class="math inline">\(= 7\)</span>；公式
+<span class="math inline">\(h(1)P(1)^2 + h(2)P(2)^2 = 1\cdot 3^2 +
+(-2)\cdot 1^2 = 7\)</span>。✓ - <span class="math inline">\(\{2,
+3\}\)</span>：直接求和 <span class="math inline">\(= 17\)</span>；公式
+<span class="math inline">\(1\cdot 5^2 + (-2)\cdot 1^2 + (-6)\cdot 1^2 =
+17\)</span>。✓</p>
+<h3 id="复杂度-1">复杂度</h3>
+<p>线性筛求 <span class="math inline">\(\varphi\)</span> 与 <span
+class="math inline">\(h\)</span> 为 <span
+class="math inline">\(O(n)\)</span>，调和循环求全部 <span
+class="math inline">\(P(T)\)</span> 为 <span class="math inline">\(O(n
+\log n)\)</span>，末尾求和 <span
+class="math inline">\(O(n)\)</span>。整体 <span
+class="math inline">\(O(n \log n)\)</span>，在 <span
+class="math inline">\(n \le 10^6\)</span> 下绰绰有余。所有运算对 <span
+class="math inline">\(998244353\)</span> 取模。</p>
+<hr />
+<h2 id="题目三共链点集计数-点分治-ntt">题目三：共链点集计数 — 点分治 +
+NTT</h2>
+<h3 id="按端点计数">按端点计数</h3>
+<p>一个点集落在同一条简单路径上，<strong>当且仅当</strong>它的 Steiner
+树（连接它的最小子树）本身就是一条链。对任意 <span
+class="math inline">\(|S| \ge 2\)</span> 且构成链的集合，链的两个端点
+<span class="math inline">\(\{a, b\}\)</span> <strong>唯一确定且都属于
+<span class="math inline">\(S\)</span></strong>（Steiner
+树的叶子必是终端点），其余被选点都严格落在 <span
+class="math inline">\(a, b\)</span> 之间。</p>
+<p>这给出一个无重复、无遗漏的计数方式。<span class="math inline">\(a\to
+b\)</span> 路径上有 <span class="math inline">\(d(a,b) - 1\)</span>
+个内部点，一个以 <span class="math inline">\(\{a,b\}\)</span> 为端点的
+<span class="math inline">\(K\)</span> 元集合从中选 <span
+class="math inline">\(K - 2\)</span>
+个。每个合法集合在它唯一的端点对下恰好被数一次，故对 <span
+class="math inline">\(K \ge 2\)</span>：</p>
+<p><span class="math display">\[
+\mathrm{Ans}(K) = \sum_{\{a,b\}} \binom{d(a,b) - 1}{K - 2},
+\qquad
+\mathrm{Ans}(1) = n.
+\]</span></p>
+<p>令 <span class="math inline">\(c_d = \#\{\{a,b\} : d(a,b) =
+d\}\)</span> 为<strong>树上距离分布</strong>，则</p>
+<p><span class="math display">\[
+\mathrm{Ans}(K) = \sum_{d \ge 1} c_d \binom{d - 1}{K - 2}, \qquad K \ge
+2.
+\]</span></p>
+<p><em>验算：</em> <span class="math inline">\(K = 2\)</span> 时 <span
+class="math inline">\(\sum_d c_d =
+\binom{n}{2}\)</span>（任意点对都合法）。链 <span
+class="math inline">\(1\text{-}2\text{-}3\)</span> 得 <span
+class="math inline">\(\mathrm{Ans} = (3, 3, 1)\)</span>；<span
+class="math inline">\(4\)</span> 点星图得 <span
+class="math inline">\((4, 6, 3, 0)\)</span> —— 都与暴力枚举一致。</p>
+<h3 id="第一步-点分治-ntt-求距离分布">第一步 —— 点分治 + NTT
+求距离分布</h3>
+<p>求 <span class="math inline">\(c_d\)</span> 正是 <em>Frequency Table
+of Tree
+Distance</em>。用<strong>点分治</strong>：对每个重心，在其连通块内构造深度生成多项式
+<span class="math inline">\(F(x) = \sum_v
+x^{\operatorname{dist}(\text{重心}, v)}\)</span>。则 <span
+class="math inline">\(F(x)^2\)</span>
+按总深度统计有序点对，但会多算落在<strong>同一子树</strong>内的对（它们真实的路径并不经过重心）。对每个儿子子树
+<span class="math inline">\(i\)</span> 减去 <span
+class="math inline">\(F_i(x)^2\)</span> 即可：减法会让对角线 <span
+class="math inline">\((u,u)\)</span>
+项相消，重心自身的贡献保留，最后除以 <span
+class="math inline">\(2\)</span> 把有序对转成无序对。每次多项式乘法用
+<strong>NTT</strong> 完成。</p>
+<p>点分治同一层上各重心的子树大小之和为 <span
+class="math inline">\(n\)</span>，共 <span class="math inline">\(O(\log
+n)\)</span> 层，故总代价 <span class="math inline">\(O(n \log^2
+n)\)</span>。</p>
+<h3 id="第二步-一次-ntt-完成二项式变换">第二步 —— 一次 NTT
+完成二项式变换</h3>
+<p>把 <span class="math inline">\(c_d\)</span>
+转成答案是一个二项式变换。记 <span class="math inline">\(j = K -
+2\)</span>、<span class="math inline">\(i = d - 1\)</span>：</p>
+<p><span class="math display">\[
+\mathrm{Ans}(j + 2) = \sum_{i \ge 0} c_{i+1}\binom{i}{j}
+= \frac{1}{j!}\sum_{i \ge j} \bigl(c_{i+1}\, i!\bigr)\frac{1}{(i - j)!}.
+\]</span></p>
+<p>令 <span class="math inline">\(e_i = c_{i+1}\, i!\)</span>。求和
+<span class="math inline">\(\sum_i e_i\,\tfrac{1}{(i-j)!}\)</span>
+是序列 <span class="math inline">\((e_i)\)</span> 与序列 <span
+class="math inline">\(\bigl(\tfrac{1}{t!}\bigr)\)</span>
+的一个相关（correlation）；把 <span class="math inline">\((e_i)\)</span>
+翻转后即化为普通卷积，用<strong>一次 NTT</strong> 算出，再把位置 <span
+class="math inline">\(j\)</span> 处的结果乘上 <span
+class="math inline">\(\tfrac{1}{j!}\)</span> 即可。</p>
+<h3 id="复杂度-2">复杂度</h3>
+<p>整体 <span class="math inline">\(O(n \log^2
+n)\)</span>，瓶颈在点分治；二项式变换只额外贡献 <span
+class="math inline">\(O(n \log n)\)</span>。在 <span
+class="math inline">\(n \le 10^5\)</span> 下从容通过。所有运算对 <span
+class="math inline">\(998244353\)</span> 取模。</p>
+
+                </div>
+            </div>
+    
+            
+<p style="opacity: 0.6; padding: 30px 15px" align="center">
+    <small>Comments have been disabled for this content</small>
+</p>
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?82230918"></script>
+
+
+
+</body>
+</html>

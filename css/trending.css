@@ -1,0 +1,99 @@
+.stream-container .post .post-body-wrapper .post-body .trending-chapters {
+  margin: 0 0 2rem;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-chapter-list,
+.stream-container .post .post-body-wrapper .post-body .trending-document-list {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  list-style: none;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-chapter-list {
+  margin: 1rem 0 2rem;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-list {
+  margin: 1rem 0 2.4rem;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card,
+.stream-container .post .post-body-wrapper .post-body .trending-chapter-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid #ddd;
+  border-left: 4px solid #258fb8;
+  border-radius: 6px;
+  background: #fafafa;
+  color: inherit;
+  text-decoration: none;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card {
+  min-height: 8rem;
+  border-left-color: #8b5d93;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card:hover,
+.stream-container .post .post-body-wrapper .post-body .trending-chapter-card:hover {
+  border-color: #258fb8;
+  background: #f6fbfd;
+  text-decoration: none;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card:hover {
+  border-color: #8b5d93;
+  background: #fbf7fc;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card span,
+.stream-container .post .post-body-wrapper .post-body .trending-chapter-card span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #777;
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card strong,
+.stream-container .post .post-body-wrapper .post-body .trending-chapter-card strong {
+  display: block;
+  color: #333;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card em {
+  display: block;
+  margin-top: 0.45rem;
+  color: #666;
+  font-size: 0.94rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-intro {
+  margin: 0.75rem 0 1.5rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #d6a23a;
+  background: #fffaf0;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-note {
+  margin: 0.75rem 0 1.2rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #6f8f4e;
+  background: #f7fbf0;
+}
+
+@media (min-width: 760px) {
+  .stream-container .post .post-body-wrapper .post-body .trending-document-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stream-container .post .post-body-wrapper .post-body .trending-chapter-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
