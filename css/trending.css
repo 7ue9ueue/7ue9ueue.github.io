@@ -31,8 +31,22 @@
 }
 
 .stream-container .post .post-body-wrapper .post-body .trending-document-card {
-  min-height: 8rem;
-  border-left-color: #8b5d93;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  min-height: 5.2rem;
+  border-left-color: #258fb8;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card-statement {
+  border-left-color: #258fb8;
+  background: #f7fbfd;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card-editorial {
+  border-left-color: #b47a2f;
+  background: #fffaf2;
 }
 
 .stream-container .post .post-body-wrapper .post-body .trending-document-card:hover,
@@ -43,8 +57,13 @@
 }
 
 .stream-container .post .post-body-wrapper .post-body .trending-document-card:hover {
-  border-color: #8b5d93;
-  background: #fbf7fc;
+  border-color: #258fb8;
+  background: #f0f8fc;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card-editorial:hover {
+  border-color: #b47a2f;
+  background: #fff4df;
 }
 
 .stream-container .post .post-body-wrapper .post-body .trending-document-card span,
@@ -63,6 +82,38 @@
   color: #333;
   font-size: 1.08rem;
   font-weight: 700;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card span {
+  grid-column: 1;
+  margin-bottom: 0;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card strong {
+  grid-column: 1;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card small {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.4rem;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid #258fb8;
+  border-radius: 999px;
+  color: #258fb8;
+  font-family: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.stream-container .post .post-body-wrapper .post-body .trending-document-card-editorial small {
+  border-color: #b47a2f;
+  color: #8b5c23;
 }
 
 .stream-container .post .post-body-wrapper .post-body .trending-document-card em {
@@ -95,5 +146,18 @@
 
   .stream-container .post .post-body-wrapper .post-body .trending-chapter-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 360px) {
+  .stream-container .post .post-body-wrapper .post-body .trending-document-card {
+    grid-template-columns: 1fr;
+  }
+
+  .stream-container .post .post-body-wrapper .post-body .trending-document-card small {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    min-width: 0;
   }
 }
