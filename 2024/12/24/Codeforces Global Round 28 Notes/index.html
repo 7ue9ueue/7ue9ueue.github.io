@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Codeforces Global Round 28 - Aiyiyi&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Shangtong Wu">
+<meta name="description" content="Codeforces Global Round
+28 ...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer"> 
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?95721320">
+<link rel="stylesheet" href="/css/trending.css?81021482">
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Aiyiyi&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Aiyiyi&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Aiyiyi's Blog
+        </div>
+        <div class="nav-subtitle">
+            Shangtong Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    Codeforces Global Round 28
+                    <div class="post-meta">
+                        <time datetime="2024-12-24T00:00:00.000Z" itemprop="datePublished">
+                            2024-12-24 00:00
+                        </time>&nbsp;
+                        
+                        
+                        <i class="material-icons" style="">folder</i>
+                        
+                        <a href='/categories/笔记Notes/'>笔记Notes</a>
+                        
+                        
+    
+                        
+                        
+                        <i class="material-icons" style="">label</i>
+                        
+                        <a href='/tags/信竞OI/'>信竞OI</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    
+                    <h1 id="codeforces-global-round-28-notes"><a
+target="_blank" rel="noopener" href="https://codeforces.com/contest/2048">Codeforces Global Round
+28</a> Notes</h1>
+<p>A. Kevin and Combination Lock</p>
+<p>Op 1 is more difficult so try to relate Op 1 with Op 2. After Op 1
+the number is still the same mod 11 and mod 3, so Op 1 is just doing Op
+2 multiple times.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC target(<span class="string">&quot;sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/dbg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dbg(...)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n; cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">if</span> (n%<span class="number">33</span> == <span class="number">0</span>) cout &lt;&lt; <span class="string">&quot;YES&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t; cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>B. Kevin and Permutation</p>
+<p>Try to place a "1" that affect the most subarrays. This can be done
+by placing "1" at position <span class="math inline">\(k\)</span>. Then
+do this process recursively, that is, try to place a "2" that affect the
+most subarrays. So "2" should be placed at position <span
+class="math inline">\(2k\)</span>. This process continues.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC target(<span class="string">&quot;sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/dbg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dbg(...)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, k;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="type">int</span> R = n;</span><br><span class="line">    <span class="type">int</span> L = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i%k == <span class="number">0</span>) cout &lt;&lt; L++ &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; R-- &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t; cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>C Kevin and Binary Strings</p>
+<p>It's important to note that <span class="math inline">\(n \leq
+5000\)</span>. <strong>Observe</strong> that the length of <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span> should be long in <span
+class="math inline">\(x \oplus y\)</span> to have the minimum number of
+leading zeros. WLOG, should <span class="math inline">\(x\)</span> just
+be <span class="math inline">\(s\)</span>? Well just let <span
+class="math inline">\(y\)</span> to be the smallest possible string,
+then clearly <span class="math inline">\(x \oplus y\)</span> has the
+same length as <span class="math inline">\(s\)</span>, and this cannot
+be done by choosing any shorter <span class="math inline">\(x\)</span>s,
+so <span class="math inline">\(x = s\)</span>.</p>
+<p>For <span class="math inline">\(y\)</span>, we just have to iterate
+through all the possible substrings, but checking is quite hard and even
+if possible will take time complexity like <span
+class="math inline">\(O(n^3)\)</span>. What I did is that I considered
+<span class="math inline">\(t = s \oplus (2^{\inf}-1)\)</span>. We try
+to find a substring of <span class="math inline">\(s\)</span> that
+matches the suffix of <span class="math inline">\(t\)</span>. When
+clearly its not really possible but we can still match the first few
+characters of the suffix of <span class="math inline">\(t\)</span>.</p>
+<p>So I considered substrings of <span class="math inline">\(s\)</span>
+starting from a specific character. Up to a certain point, the answer
+grows, then the answer decreases. We just have to find this changing
+point, which is just the next different character. A bit more formally
+find the next position in <span class="math inline">\(t\)</span> such
+that its different from the current character. The length of the
+substring is the same as the length of the suffix of <span
+class="math inline">\(t\)</span> from that point, and its optimal
+because its the best match for <span
+class="math inline">\(t\)</span>.</p>
+<p>Then we only have <span class="math inline">\(n\)</span> strings,
+just sort.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC target(<span class="string">&quot;sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/dbg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dbg(...)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">vector&lt;pair&lt;string, P&gt;&gt; v;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    v.<span class="built_in">clear</span>();</span><br><span class="line">    string s; cin &gt;&gt; s;</span><br><span class="line">    <span class="type">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">    s = <span class="string">&quot;#&quot;</span>+s;</span><br><span class="line">    <span class="type">int</span> p0 = <span class="number">-1</span>;</span><br><span class="line">    <span class="type">int</span> p1 = <span class="number">-1</span>;</span><br><span class="line">    string sp = s;</span><br><span class="line">    sp[<span class="number">1</span>] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    v.<span class="built_in">push_back</span>(&#123;sp, &#123;<span class="number">1</span>, <span class="number">1</span>&#125;&#125;);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=n;i&gt;=<span class="number">1</span>;i--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p1 == <span class="number">-1</span>) &#123;</span><br><span class="line">                p0 = i;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            string t = s;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=p1;j&lt;=n;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s[j] == s[j-p1+i]) t[j] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">                <span class="keyword">else</span> t[j] = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            v.<span class="built_in">push_back</span>(&#123;t, &#123;i, n-p1+i&#125;&#125;);</span><br><span class="line">            p0 = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p0 == <span class="number">-1</span>) &#123;</span><br><span class="line">                p1 = i;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            string t = s;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=p0;j&lt;=n;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s[j] == s[j-p0+i]) t[j] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">                <span class="keyword">else</span> t[j] = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            v.<span class="built_in">push_back</span>(&#123;t, &#123;i, n-p0+i&#125;&#125;);</span><br><span class="line">            p1 = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>());</span><br><span class="line">    P ans = v.<span class="built_in">back</span>().second;</span><br><span class="line">    cout &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; n &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; ans.fi &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; ans.se &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t; cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>D Kevin and Competition Memories</p>
+<p>Start with small <span class="math inline">\(k\)</span>s. I find out
+that the <span class="math inline">\(b_i\)</span> that is just larger
+than Kevin is clearly the worst problem. Because almost everyone knows
+how to solve except Kevin. More generally speaking, only the problem
+that is just larger than Kevin's rating matters.</p>
+<p>Consider the case where we give up no problems, that the worst
+problem must be selected and contribute to the final answer. Now, since
+in this problem set only the worst problem matters, just take the next
+few worse problems.</p>
+<p>Now let's go back to the case where we can give up problems, sort the
+problems in ascending rating and give up the problems from the problem
+that is just larger than Kevin's rating. Then group the problems in this
+way: let say group size is <span class="math inline">\(k\)</span>. Sort
+the problem in how bad the problem is (how many people knew to solve
+except Kevin), if Kevin can solve, then = 0. Choose 1...k, k+1 .... 2k
+and etc.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC target(<span class="string">&quot;sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/dbg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dbg(...)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">3e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> a[maxn];</span><br><span class="line"><span class="type">int</span> b[maxn];</span><br><span class="line"><span class="type">int</span> v[maxn];</span><br><span class="line"><span class="type">int</span> kevin;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) cin &gt;&gt; b[i];</span><br><span class="line">    kevin = a[<span class="number">1</span>];</span><br><span class="line">    <span class="built_in">sort</span>(a+<span class="number">1</span>, a+n+<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">sort</span>(b+<span class="number">1</span>, b+m+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">        v[i] = <span class="built_in">lower_bound</span>(a+<span class="number">1</span>, a+n+<span class="number">1</span>, b[i])-a<span class="number">-1</span>;</span><br><span class="line">        v[i] = n-v[i];</span><br><span class="line">        <span class="keyword">if</span> (b[i] &lt;= kevin) v[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dbg</span>(v);</span><br><span class="line">    <span class="type">int</span> pos = <span class="built_in">upper_bound</span>(b+<span class="number">1</span>, b+m+<span class="number">1</span>, kevin)-b;</span><br><span class="line">    <span class="built_in">dbg</span>(b[pos]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> k=<span class="number">1</span>;k&lt;=m;k++) &#123;</span><br><span class="line">        <span class="type">int</span> ans = m/k;</span><br><span class="line">        <span class="type">int</span> x = m-m/k*k;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=pos+x;i&lt;=m;i+=k) &#123;</span><br><span class="line">            ans += v[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t; cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>E Kevin and Bipartite Graph</p>
+<p>Nothing much I can do except for guessing the answer. I guessed <span
+class="math inline">\(n \leq m\)</span>, but doesn't work. I guessed
+<span class="math inline">\(2n \leq m\)</span>, but doesn't work because
+<span class="math inline">\(n = 2\)</span>, <span
+class="math inline">\(m = 4\)</span> is a counter example. So logically
+try <span class="math inline">\(n = 2\)</span> and <span
+class="math inline">\(m = 3\)</span> and yes there is a solution by just
+creating 2 zig zags.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Left side = 1,2,3,4</span><br><span class="line">Right side = 1,2,3</span><br><span class="line">Color 1: R1-&gt;12 R2-&gt;23 R3-&gt;34 </span><br><span class="line">Color 2: R1-&gt;34 R2-&gt;41 R3-&gt;12</span><br></pre></td></tr></table></figure>
+<p>Just follow this construction so basically:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Color 1: 12 23 34 45 56 .....</span><br><span class="line">Color 2: 34 45 56 67 78 .....</span><br><span class="line">Color 3: 45 56 67 78 89 .....</span><br></pre></td></tr></table></figure>
+<p>Clearly each color has no loops. This problem is really
+confusing.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC target(<span class="string">&quot;sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/dbg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dbg(...)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">2005</span>;</span><br><span class="line"><span class="type">int</span> E[maxn][maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">if</span> (m &gt;= n+n) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;YES&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">            <span class="type">int</span> col = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;n+n;j+=<span class="number">2</span>) &#123;</span><br><span class="line">                col++;</span><br><span class="line">                <span class="type">int</span> id1 = (i+j)%(n+n)+<span class="number">1</span>;</span><br><span class="line">                <span class="type">int</span> id2 = (i+j+<span class="number">1</span>)%(n+n)+<span class="number">1</span>;</span><br><span class="line">                E[id1][i] = col;</span><br><span class="line">                E[id2][i] = col;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n+n;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;j++) &#123;</span><br><span class="line">                cout &lt;&lt; E[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t; cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>F Kevin and Math Class</p>
+<p>This is quite a good problem. At first I tried to analyze array <span
+class="math inline">\(a\)</span> but nothing worked. I just
+<strong>observed</strong> that only the maximum value matter. Also, I
+<strong>observed</strong> that the answer is at most <span
+class="math inline">\(70\)</span>. But not very useful. Then I tried to
+analysis the ceiling function at its still doesn't work well because
+even if I change the ceiling function to pure division I still can't
+solve.</p>
+<p>So the only thing left that I can do something on is <span
+class="math inline">\(b\)</span> and I realized that quite lately. I
+think there are some "optimal" ranges that are just better than some
+other ranges. I can't really characterize this, but I think there are
+only <span class="math inline">\(O(n)\)</span> of them instead of <span
+class="math inline">\(O(n^2)\)</span> which is easier to deal with. Then
+I <strong>observe</strong> that the optimal ranges never intersect. This
+reminded me of cartesian tree. Then the problem is just DP on the
+cartesian tree.</p>
+<p>Some important stuff to store during DP: maximum number in the range,
+number of operation, and index. Well maximum number is <span
+class="math inline">\(1e18\)</span> size so cannot be the index, and
+recall that answer is at most <span class="math inline">\(70\)</span>,
+now DP is natural.</p>
+<p>Well I think this problem should be optimized to <span
+class="math inline">\((n\log n)\)</span> by some sort of binary search
+because the min-max convolution clearly only has <span
+class="math inline">\(O(n)\)</span> meaningful operations. But I don't
+really know how to implement so I kept optimizing and eventually made it
+through will some interesting optimizations with two logs.</p>
+<p>Luckily I forgot how to write cartesian tree but I remember segment
+tree so I did that.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC target(<span class="string">&quot;sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/dbg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dbg(...)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxc = <span class="number">64</span>;</span><br><span class="line"><span class="type">int</span> a[maxn];</span><br><span class="line"><span class="type">int</span> b[maxn];</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> L[maxn];</span><br><span class="line"><span class="type">int</span> R[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span> <span class="params">()</span> </span>&#123; </span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span> (c&lt;<span class="string">&#x27;0&#x27;</span>||c&gt;<span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">		c = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">		x = x*<span class="number">10</span>+c-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		c = <span class="built_in">getchar</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">    <span class="type">int</span> l;</span><br><span class="line">    <span class="type">int</span> r;</span><br><span class="line">    P v;</span><br><span class="line">&#125;;</span><br><span class="line">node t[<span class="number">4</span>*maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span> <span class="params">(<span class="type">int</span> p)</span> </span>&#123;</span><br><span class="line">    t[p].v = <span class="built_in">min</span>(t[p+p].v, t[p+p+<span class="number">1</span>].v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span> <span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    t[p].l = l;</span><br><span class="line">    t[p].r = r;</span><br><span class="line">    <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">        t[p].v = &#123;b[l], l&#125;;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> mid = (l+r)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">build</span>(p+p, l, mid);</span><br><span class="line">    <span class="built_in">build</span>(p+p+<span class="number">1</span>, mid+<span class="number">1</span>, r);</span><br><span class="line">    <span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">P <span class="title">query</span> <span class="params">(<span class="type">int</span> p, <span class="type">int</span> ql, <span class="type">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= t[p].l &amp;&amp; t[p].r &lt;= qr) &#123;</span><br><span class="line">        <span class="keyword">return</span> t[p].v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> mid = (t[p].l+t[p].r)/<span class="number">2</span>;</span><br><span class="line">    P ans = &#123;<span class="number">1e18</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= mid) ans = <span class="built_in">min</span>(ans, <span class="built_in">query</span>(p+p, ql, qr));</span><br><span class="line">    <span class="keyword">if</span> (mid &lt; qr) ans = <span class="built_in">min</span>(ans, <span class="built_in">query</span>(p+p+<span class="number">1</span>, ql, qr));</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">catesian</span> <span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> p = <span class="built_in">query</span>(<span class="number">1</span>, l, r).se;</span><br><span class="line">    <span class="keyword">if</span> (l &lt;= p<span class="number">-1</span>) &#123;</span><br><span class="line">        L[p] = <span class="built_in">query</span>(<span class="number">1</span>, l, p<span class="number">-1</span>).se;</span><br><span class="line">        <span class="built_in">catesian</span>(l, p<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (p+<span class="number">1</span> &lt;= r) &#123;</span><br><span class="line">        R[p] = <span class="built_in">query</span>(<span class="number">1</span>, p+<span class="number">1</span>, r).se;</span><br><span class="line">        <span class="built_in">catesian</span>(p+<span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dp[maxn][maxc+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">c</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x/y + (x%y != <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span> <span class="params">(<span class="type">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (L[u]) <span class="built_in">DFS</span>(L[u]);</span><br><span class="line">    <span class="keyword">if</span> (R[u]) <span class="built_in">DFS</span>(R[u]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=maxc;i++) &#123;</span><br><span class="line">        dp[u][i] = <span class="number">1e18</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=maxc;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;i+j&lt;=maxc;j++) &#123;</span><br><span class="line">            dp[u][i+j] = <span class="built_in">min</span>(dp[u][i+j], <span class="built_in">max</span>(&#123;dp[L[u]][i], dp[R[u]][j], a[u]&#125;));</span><br><span class="line">            <span class="keyword">if</span> (!dp[R[u]][j]) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> (dp[R[u]][j] &lt; dp[L[u]][i]) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!dp[L[u]][i]) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=maxc;i++) &#123;</span><br><span class="line">        dp[u][i] = <span class="built_in">min</span>(dp[u][i], <span class="built_in">c</span>(dp[u][i<span class="number">-1</span>], b[u]));</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i] = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        L[i] = R[i] = <span class="number">0</span>;</span><br><span class="line">        b[i] = <span class="built_in">read</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">    <span class="built_in">catesian</span>(<span class="number">1</span>, n);</span><br><span class="line">    <span class="type">int</span> rt = <span class="built_in">query</span>(<span class="number">1</span>, <span class="number">1</span>, n).se;</span><br><span class="line">    <span class="built_in">DFS</span>(rt);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=maxc;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dp[rt][i] == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, i);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> t = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">while</span> (t--) <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>G Kevin and Matrices</p>
+<p>This problem is quite hard. I didn't make much progress initially so
+I start with cases like 1xn, 2x2, 2xn, etc. For the 1xn case, it's
+always true. For the 2xn case, let row 1 be <span
+class="math inline">\(a\)</span> and row 2 be <span
+class="math inline">\(b\)</span>. Equation can be simplified to <span
+class="math inline">\(\min(\max a, \max b)\)</span>. WLOG, let <span
+class="math inline">\(\max a \leq \max b\)</span>.
+<strong>Observe</strong> that RHS <span class="math inline">\(\leq \max
+a\)</span>, because each column is compared against an element of <span
+class="math inline">\(a\)</span> that is at most <span
+class="math inline">\(\max a\)</span>. So we eventually realize that LHS
+<span class="math inline">\(\geq\)</span> RHS. This can be extended to a
+more general case. <strong>Key Observation: LHS = RHS</strong>.</p>
+<p>Now lets fix <span class="math inline">\(A\)</span>, where A = LHS =
+RHS, and fix the position of A (lets say there is only this single A
+that satisfy the equation for simplicity). We have to put [1...A] in the
+row and [A...v] in the column. The other vacant positions can be placed
+arbitrarily.</p>
+<p>Now consider the case with multiple <span
+class="math inline">\(A\)</span>s that is row maximum and col minimum
+(lets call this kind of <span class="math inline">\(A\)</span> a key
+<span class="math inline">\(A\)</span>). Draw out these rows and cols,
+and <strong>observe</strong> that the intersection of these rows and
+cols are also key <span class="math inline">\(A\)</span>s. Basically the
+key <span class="math inline">\(A\)</span>s form a submatrix. Now we can
+see that this is similar to inclusion-exclusion, where we can easily
+find things <span class="math inline">\(\geq\)</span> something and its
+crucial to remove repeats.</p>
+<p>So fix <span class="math inline">\(r\)</span>, rows for this
+sub-matrix, and fix <span class="math inline">\(c\)</span>, cols, and
+fix <span class="math inline">\(A\)</span>. Do some math and apply
+in-ex. The issue is that the in-ex coefficient is hard to decide. <span
+class="math inline">\((-1)^{rc}\)</span> doesn't make sense because for
+example in the 2x2 case matrix (2,2)(2,2) is {1x1}4-{1x2}4+{2x2}1,
+coefficient for {2x2} is 1. So I guessed its <span
+class="math inline">\((-1)^{r+c}\)</span>.</p>
+<p>I thought of it for a while and don't understand why it works. Now I
+think its just doing two in-ex separately on two dimensions, resulting a
+factor of <span class="math inline">\((-1)^{r+1}(-1)^{c+1}\)</span>,
+which is in the desired form.</p>
+<p>And I did some math and I solved it.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;Ofast&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(<span class="string">&quot;unroll-loops&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC target(<span class="string">&quot;sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/dbg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dbg(...)</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, v;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MOD = <span class="number">998244353</span>;</span><br><span class="line"><span class="type">int</span> fac[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qpow</span> <span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (b) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b&amp;<span class="number">1</span>) ans = a*ans%MOD;</span><br><span class="line">        a = a*a%MOD;</span><br><span class="line">        b = b&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%MOD;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">inv</span> <span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qpow</span>(x, MOD<span class="number">-2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m &gt;&gt; v;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> r=<span class="number">1</span>;r&lt;=n;r++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> A=<span class="number">1</span>;A&lt;=v;A++) &#123;</span><br><span class="line">            <span class="type">int</span> c0 = (<span class="built_in">qpow</span>(<span class="number">-1</span>, r)+MOD)%MOD;</span><br><span class="line">            <span class="type">int</span> c1 = (fac[n]*<span class="built_in">inv</span>(fac[r])%MOD)*<span class="built_in">inv</span>(fac[n-r])%MOD;</span><br><span class="line">            <span class="type">int</span> c2 = <span class="built_in">qpow</span>(<span class="built_in">inv</span>(v)*A%MOD, r*m);</span><br><span class="line">            <span class="type">int</span> c3 = <span class="built_in">qpow</span>((v-A+<span class="number">1</span>)*<span class="built_in">inv</span>(v)%MOD, n-r)*<span class="built_in">qpow</span>(<span class="built_in">inv</span>(A), r)%MOD;</span><br><span class="line">            <span class="type">int</span> c4 = (<span class="built_in">qpow</span>(<span class="number">1</span>-c3+MOD, m)<span class="number">-1</span>+MOD)%MOD;</span><br><span class="line">            <span class="type">int</span> prod = <span class="number">1</span>;</span><br><span class="line">            prod *= c0; prod %= MOD;</span><br><span class="line">            prod *= c1; prod %= MOD;</span><br><span class="line">            prod *= c2; prod %= MOD;</span><br><span class="line">            prod *= c4; prod %= MOD;</span><br><span class="line">            ans += prod; ans %= MOD;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans *= <span class="built_in">qpow</span>(v, n*m); ans %= MOD;</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;maxn;i++) fac[i] = fac[i<span class="number">-1</span>]*i%MOD;</span><br><span class="line">    <span class="type">int</span> t; cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                </div>
+            </div>
+    
+            
+<nav class="post-pagination">
+    
+    <span class="page-number"></span>
+    
+    <a class="older-posts" href="/2023/11/23/%E4%B8%AD%E6%96%87/Knapsack/">
+        Next post<br>Accelerated 01 Knapsack Algorithm and the Quadrangle Inequality
+    </a>
+    
+</nav>
+
+
+    
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?16899050"></script>
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>
