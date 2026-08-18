@@ -26,12 +26,13 @@
 
 <!-- modify begin -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<meta name="referrer" content="no-referrer"> 
+<meta name="referrer" content="no-referrer">
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?74530895">
-<link rel="stylesheet" href="/css/trending.css?62865115">
+<link rel="stylesheet" href="/css/journal.css?70331298">
+<link rel="stylesheet" href="/css/trending.css?32489880">
+
 
 
 <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
@@ -193,7 +194,9 @@
             </div>
     
             <div class="post-body-wrapper">
-                <div class="post-body">
+                
+                <div class="post-body"
+                     >
                     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%9B%86-1-%E9%A2%98%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">题目集 1 — 题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80%E5%8C%BA%E9%97%B4%E5%86%85%E7%BA%BF%E6%AE%B5%E8%AE%A1%E6%95%B0-cdq-%E5%88%86%E6%B2%BB"><span class="toc-number">1.1.</span> <span class="toc-text">题目一：区间内线段计数 — CDQ
 分治</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96"><span class="toc-number">1.1.1.</span> <span class="toc-text">转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.1.3.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0-lcm-%E6%B1%82%E5%92%8C-%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="toc-number">1.2.</span> <span class="toc-text">题目二：欧拉函数 LCM 求和
 — 莫比乌斯反演</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%8D%E7%BB%B4%E5%88%B0%E6%8C%89%E5%80%BC%E7%BB%9F%E8%AE%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">降维到「按值统计」</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="toc-number">1.2.2.</span> <span class="toc-text">莫比乌斯反演</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E9%87%8F%E7%9A%84%E6%B1%82%E6%B3%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">两个量的求法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E6%80%A7%E9%AA%8C%E8%AF%81"><span class="toc-number">1.2.4.</span> <span class="toc-text">正确性验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%89%E5%85%B1%E9%93%BE%E7%82%B9%E9%9B%86%E8%AE%A1%E6%95%B0-%E7%82%B9%E5%88%86%E6%B2%BB-ntt"><span class="toc-number">1.3.</span> <span class="toc-text">题目三：共链点集计数 — 点分治 +
@@ -440,17 +443,13 @@ class="math inline">\(O(n \log n)\)</span>。在 <span
 class="math inline">\(n \le 10^5\)</span> 下从容通过。所有运算对 <span
 class="math inline">\(998244353\)</span> 取模。</p>
 
+                    
                 </div>
             </div>
 
             
     
             
-<p style="opacity: 0.6; padding: 30px 15px" align="center">
-    <small>Comments have been disabled for this content</small>
-</p>
-
-
         </div>
     </div>
     <div class="single-column-footer">
@@ -470,7 +469,8 @@ class="math inline">\(998244353\)</span> 取模。</p>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?4735971"></script>
+<script src="/js/journal.min.js?8643054"></script>
+
 
 
 

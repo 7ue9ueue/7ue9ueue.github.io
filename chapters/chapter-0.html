@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>第零章｜「魔法列车」与「世界冠军」 - Aiyiyi&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="Shangtong Wu">
+<meta name="description" content="
+？？？｜「醒醒——不对，先别管醒没醒了，睁眼！」
+
+...">
+<meta name="keywords" content="Blog">
+
+<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml">
+
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
+<!-- modify begin -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<meta name="referrer" content="no-referrer">
+<!-- modify end -->
+
+<link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/journal.css?42241069">
+<link rel="stylesheet" href="/css/trending.css?75543252">
+
+<link rel="stylesheet" href="/css/story.css?64515793">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/11.2.0/styles/github.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+<div id="top"></div>
+
+<div id="app">
+<div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            <a class="a-block drawer-menu-item false" href="https://7ue9ueue.github.io">
+                Home
+            </a>
+
+            
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/archives">
+                        Archive
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Trending.html">
+                        Trending
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/tags">
+                        Tags
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/categories">
+                        Category
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/Links.html">
+                        Friends
+                    </a>
+                
+                    <a class="a-block drawer-menu-item false"
+                       href="/About.html">
+                        About Me
+                    </a>
+                
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="/">
+            Aiyiyi&#39;s Blog
+        </a>
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="/">
+        <div class="single-column-header-title">Aiyiyi&#39;s Blog</div>
+        <div class="single-column-header-subtitle"></div>
+    </a>
+</div>
+
+<div ref="sideContainer" class="side-container">
+    <a class="a-block nav-head false" href="/">
+        <div class="nav-title">
+            Aiyiyi's Blog
+        </div>
+        <div class="nav-subtitle">
+            Shangtong Wu
+        </div>
+    </a>
+
+    <div class="nav-link-list">
+        
+            
+                <a class="a-block nav-link-item false"
+                   href="/archives">
+                    Archive
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Trending.html">
+                    Trending
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/tags">
+                    Tags
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/categories">
+                    Category
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/Links.html">
+                    Friends
+                </a>
+            
+                <a class="a-block nav-link-item false"
+                   href="/About.html">
+                    About Me
+                </a>
+            
+        
+    </div>
+
+    
+    <div class="nav-footer">
+        Proudly published with Hexo<br>
+        
+        Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+        
+        &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+    </div>
+</div>
+
+<div ref="extraContainer" class="extra-container">
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+
+        
+    </div>
+</div>
+
+
+
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post story-shell story-chapter-page">
+            <div class="post-head-wrapper-text-only"
+                 style="background-image: url('')">
+                <div class="post-title">
+                    第零章｜「魔法列车」与「世界冠军」
+                    
+                </div>
+            </div>
+    
+            <div class="post-body-wrapper">
+                
+                <div class="story-reading-bar" aria-label="阅读信息">
+                    <span class="story-reading-index">第 0 / 1 章</span>
+                    <span class="story-reading-rule" aria-hidden="true"></span>
+                    <span class="story-reader-identity">正在以 <strong data-story-current-name>主角</strong> 的身份阅读</span>
+                    <a class="story-rename-link" href="/chapters/?next=/chapters/chapter-0.html">更改姓名</a>
+                </div>
+                
+                <div class="post-body story-chapter"
+                     data-story-chapter data-chapter-index="0">
+                    
+                    <blockquote>
+<p>？？？｜「醒醒——不对，先别管醒没醒了，睁眼！」</p>
+</blockquote>
+<blockquote>
+<p>？？？｜「快睁眼！你一闭眼我这里连一丁点光都抓不到！」</p>
+</blockquote>
+<p>我睁开眼。</p>
+<p>老式魔力列车摇摇晃晃地碾过铁轨，车厢里弥漫着一股潮湿雨汽与陈旧绒布混合的味道。</p>
+<p>头顶的黄铜吊灯像个懒散的钟摆，把昏黄的光弧一下下泼在深绿色的座椅靠背上。</p>
+<p>对面靠窗的位置，缩着一个把脸埋在宽大防风外套里的女生。</p>
+<p>她一手死死按着一本厚得几乎失去「笔记」资格、正朝着建筑用砖块一路狂奔的手写本，一手握笔，笔尖悬在写到一半的羊皮纸上方，正警惕地瞪着我。</p>
+<p>我｜「……刚才，你在叫我？」</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>……哈？我正想问你呢。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>哪有人一睁开眼就直勾勾盯着对面的女生看，嘴里还神神叨叨着什么..........<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>我说，你该不会是在梦游吧？<span
+style="color:#B6540F">」</span></p>
+<p>我｜「看来不是你。」</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>什么叫『不是我』啊？你这结论下得也太随便了吧。<span
+style="color:#B6540F">」</span></p>
+<p>我｜「刚才在我耳边——有大呼小叫的声音。我只是按照排除法，先确认一下最显眼的可疑声源。」</p>
+<p><span
+style="color:#B6540F">陌生女子</span>怀疑地看了看左边的过道，又伸长脖子看了看右边的行李架，最后甚至谨慎地低头往座位底下的空隙瞄了一眼。</p>
+<blockquote>
+<p>？？？｜「喂，不是她，是我！本尊在你脑子里。」</p>
+</blockquote>
+<blockquote>
+<p>？？？｜「还有，你能不能先不要急着跟陌生人公开讨论我的存在啊？」</p>
+</blockquote>
+<blockquote>
+<p>？？？｜「比起那个——窗外是不是在下雨？我听见噼里啪啦的水声了。快点快点，把脸转过去让我看一眼！」</p>
+</blockquote>
+<p>声音既不在过道，也不在行李架，更不在清白的座位底下。</p>
+<p>它直接回荡在我的视神经和脑回路正中央，清晰得像有人拿小银勺在轻轻敲我的颅骨。</p>
+<p>为了验证这套突如其来的脑内通讯系统，我当着对面女生的面，非常干脆地把眼睛重新闭上了。</p>
+<blockquote>
+<p>？？？｜「——？？？？」</p>
+</blockquote>
+<blockquote>
+<p>？？？｜「喂！！你、你又把眼睛闭回去干什么啊？！」</p>
+</blockquote>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>你怎么又闭上了啊？<span
+style="color:#B6540F">」</span></p>
+<p>我｜「稍微测试一下。」</p>
+<p>我闭着眼睛，心平气和地向两边解释：</p>
+<p>我｜「第一，确认闭上眼你是不是真的看不见。」</p>
+<p>我｜「第二，顺便确认一下你突然失去视野之后，到底会在几秒钟之内开始抓狂。」</p>
+<blockquote>
+<p>？？？｜「这算哪门子的测试啊！快给我睁开——视野！把本冠军的视野还给我！」</p>
+</blockquote>
+<p>我｜「很好，两项假说均得到了现场数据支持。」</p>
+<p>对面的女生彻底陷入了沉默。</p>
+<p>那种「本来以为只是个略带怪癖的普通转学生，结果发现对方的精神状态可能随时需要列车警备队介入」的窒息死寂。</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>那个...我说，你到底在跟哪位空气吵架啊？<span
+style="color:#B6540F">」</span></p>
+<p>我｜「脑子里有个声音。」我重新睁开眼睛，「她说她急着想看外面的雨。」</p>
+<p><strong>"啪。"</strong></p>
+<p>笔尖一收，笔记猛地合拢。她整个人像触电一样从座位上弹起了半截，单肩包的带子已经被她死死攥在手心里，脚尖甚至已经悄悄朝向了过道。</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>你、你先坐在原位不要动。千万不要站起来。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>双手放在膝盖上，深呼吸……<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>我现在就去前面的车厢找巡查骑士和列车员。<span
+style="color:#B6540F">」</span></p>
+<p>为了阻止她把整个车厢的乘警都摇过来，我顺手把视线从她紧张的脸上移开，偏向了身侧的车窗。</p>
+<p>窗外正倾泻着密集的暴雨。雨丝斜斜地砸在厚重的双层魔导玻璃上，刚聚成几道蜿蜒的水流。</p>
+<p>远处的旷野在雨雾中连成一片苍茫的墨绿，一排冷白色的魔法航标灯飞速掠过，在玻璃表面擦出短促的光斑，随即被列车的隆隆声抛在车尾。</p>
+<blockquote>
+<p>？？？｜「唔......稍微往左偏一点点......对对，视线再压低半寸。」</p>
+</blockquote>
+<blockquote>
+<p>？？？｜「别动哦，保持住......很好♪」</p>
+</blockquote>
+<p>刚才还在我颅骨里疯狂抗议的声音，在看到雨水滑开的那一瞬，像是被温水浸透了一样，不可思议地安静了下来。</p>
+<p>过了好久，脑海深处才传来一声极轻极轻的嘟囔：</p>
+<blockquote>
+<p>？？？｜「原来……现在的列车车窗，已经会自己把雨水扫掉了啊。」</p>
+</blockquote>
+<p>我在心里试着问了一句：</p>
+<blockquote>
+<p>我｜「你以前没见过这种车窗？」</p>
+</blockquote>
+<blockquote>
+<p>？？？｜「……哼，本尊凭什么要回答你。」</p>
+</blockquote>
+<blockquote>
+<p>我｜「行吧。那换个基础问题——你叫什么名字？」</p>
+</blockquote>
+<blockquote>
+<p>？？？｜「听好了！本尊的正式，专属，编号是，零零三三！」</p>
+</blockquote>
+<blockquote>
+<p>零零三三｜「记住了没有？不许随便记错。」</p>
+</blockquote>
+<blockquote>
+<p>我｜「四个字太拗口了。从今天起叫你三三。」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「喂！谁允许你擅自删减本尊神圣的编号了？」</p>
+</blockquote>
+<p>对面的<span
+style="color:#B6540F">陌生女子</span>见我只是对着车窗安安静静地发呆，神情既没有抽搐也没有狂躁，悬在半空的身子终于带着一丝狐疑慢慢落了回去。</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>那个……刚才你说的那个声音……它难道还有自己的名字吗？<span
+style="color:#B6540F">」</span></p>
+<blockquote>
+<p>三三｜「不许告诉她！编号是最高保密级别，属于核心机密。」</p>
+</blockquote>
+<p>我｜「没有。」我转过头对她说，「她嫌名字太长，而且目前正在单方面抗议我给她取的简称。」</p>
+<p><span
+style="color:#B6540F">陌生女子</span>半信半疑地盯着我，视线扫过我领口和外套口袋，忽然停在了露出来的一角硬质羊皮纸上。</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>等等......你口袋里装的那个，该不会是转学报到通知书吧？<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>能......能借我确认一下吗？<span
+style="color:#B6540F">」</span></p>
+<p>我把通知书掏出来递了过去。</p>
+<p>纸张右下角那一圈代表安大师附中的银质魔法印章，在湿冷的空气中泛起一层微温的淡蓝光晕。</p>
+<p><span
+style="color:#B6540F">陌生女子</span>长长地舒了一口气，整个人像是卸下了千斤重担，终于彻底瘫回了软椅靠背上。</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>呼......吓死我了。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>原来是安大师附中的转学生啊......所以你也是这一届的新生？<span
+style="color:#B6540F">」</span></p>
+<p>我｜「听你这句『也是』的意思，我们以后算同校了？」</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>虽然很不情愿，但是好像答案只能是『是的』了。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>既然是同校的，下车以后顺路带你去校门报到倒不是不行。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>不过......我得先赶去社团活动大厅参加选拔。<span
+style="color:#B6540F">」</span></p>
+<p>她把膝盖上那本贴满便签纸、像块大青砖一样沉甸甸的手写笔记往怀里紧了紧，眉宇间带着一丝熬夜后的倦意，却又藏不住眼底的骄傲。</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>为了今天这场信息学选拔，我整个暑假都没睡好，把过去五年的题型全过了一遍。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>不过信息学选拔报名在昨天下午五点就正式截止了。<span
+style="color:#B6540F">」</span></p>
+<p>我｜「那我肯定没报名。」</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>那你就只能搬个小板凳在考场门外等我考完咯。不过说真的，今年信息学的选拔跟往年完全不一样——<span
+style="color:#B6540F">」</span></p>
+<p>说到这里，她像是怕声音太大惊动了车顶的黄铜吊灯似的，小心翼翼地把脑袋往前凑了凑，语气神神秘秘地压低，眼里却倏地亮起了一簇近乎狂热的光彩：</p>
+<p><span
+style="color:#B6540F">陌生女子｜「</span>听说……今年的信息学选拔题目和现场审查，全都是由<span
+style="color:#2375CC">『节制』</span><span
+style="color:#2375CC">艾一一</span>亲自负责的哦。<span
+style="color:#B6540F">」</span></p>
+<p>她说完那个名字，便把整张脸往转学通知后面缩了缩，仿佛「<span
+style="color:#2375CC">艾一一</span>」三个字带有某种需要避光的魔力。</p>
+<p>所以，我决定先叫她<span style="color:#B6540F">普通少女</span>。</p>
+<p>这个称呼有些敷衍。</p>
+<p>可她看起来确实普通。没有盔甲，没有尖耳朵，没有法杖，只有装得过满的书包、藏住半张脸的通知，以及一本靠透明胶和意志力共同维持形状的笔记。</p>
+<p>来到这列连车窗都会自行清雨的列车后，我遇见的第一个本地人，不是骑士，不是精灵，也不是高阶魔法师。</p>
+<p>而是一名赶着参加考试、警惕着陌生人精神状态、还会因为听到某个名字就把自己藏进通知单后面的<span
+style="color:#B6540F">普通少女</span>。</p>
+<p>这大概不能说明她普通。</p>
+<p>只能说明我确实没见过世面。</p>
+<blockquote>
+<p>三三｜「哈？<span
+style="color:#2375CC">『节制』</span>？以为自己是主牌就很厉害了吗？」</p>
+</blockquote>
+<p>三三的声音在脑海里毫无预兆地响了起来，语气里充满了那种极度好胜的小孩子般的不服气。</p>
+<blockquote>
+<p>三三｜「喂！你快告诉她！」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「区区一个塔罗主牌的名号而已，尾巴翘那么高干什么？」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「本尊当年在信息学世界比赛拿冠军的时候，她指不定还在哪摆着手指头算十以内的加减法呢！」</p>
+</blockquote>
+<p>我看了看对面的<span
+style="color:#B6540F">普通少女</span>，斟酌了一下措辞，决定采取一种最人畜无害的降级转述法：</p>
+<p>我｜「我脑子里这位说，<span
+style="color:#2375CC">『节制』</span>听起来也没什么了不起的，她以前好像也顺手接触过一点点信息学。」</p>
+<blockquote>
+<p>三三｜「等等等等等一下！！谁跟你说『没什么了不起』的？！谁跟你说『顺手接触过一点点』啊？！」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「你这是恶意篡改本冠军的原话！」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「把原句给我原封不动吐出来！本冠军当年拿的可是——」</p>
+</blockquote>
+<p><span
+style="color:#B6540F">普通少女｜「</span>我说......你脑子里那位口气未免也太大了吧？<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>那她到底拿过什么级别的奖项啊？哪一届哪一年的比赛？<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>是个人比赛还是团队比赛？代表的是哪个学区、哪所学校？<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>参赛选手编号是多少？<span
+style="color:#B6540F">」</span></p>
+<p>我顺势在脑内复述：</p>
+<blockquote>
+<p>我｜「哪一年的比赛？个人还是团队？代表哪个学校？」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「.........」</p>
+</blockquote>
+<blockquote>
+<p>我｜「怎么不说话了？参赛编号呢？学校名字？」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「.........都不能说。保密。」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「全部都是特级保密协议，一个字都不能往外漏。」</p>
+</blockquote>
+<p>我｜「她说全都是特级机密，一个字都不能说。」我如实对<span
+style="color:#B6540F">普通少女</span>转达。</p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>那这就没办法了嘛。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>在信息学社的审核标准里，拿不出任何有效参赛凭证和官方档案的，一律按『无依据自述』处理。<span
+style="color:#B6540F">」</span></p>
+<p><span style="color:#B6540F">普通少女｜「</span>也就是口嗨。<span
+style="color:#B6540F">」</span></p>
+<p>我｜「我也完全赞同这个评定。」</p>
+<p>我在脑子里对三三说：</p>
+<blockquote>
+<p>我｜「从实证主义的角度来看，目前唯一能被确认的事实，只有你确实寄宿在我脑子里，并且脾气不太好。」</p>
+</blockquote>
+<blockquote>
+<p>我｜「至于『冠军』这个头衔，水分大概跟外面的暴雨差不多大。」</p>
+</blockquote>
+<p>三三彻底不吭声了。</p>
+<p>刚才满嘴「本冠军」、不可一世的骄傲声线，像是被外面冰凉的雨水当头泼了一盆冷水，所有的修饰词、大话和感叹号全都在一瞬间蒸发得干干净净。</p>
+<p>车厢里只剩下铁轨规律的撞击声。窗外的暴雨在玻璃上划出一道道扭曲的淡蓝光弧。</p>
+<p>过了好久，那道声音才重新在脑海里响了起来。没有了傲娇的尾音，也没有了夸张的语气。</p>
+<blockquote>
+<p>三三｜「去考场。」</p>
+</blockquote>
+<p>我｜「如果去考场现场做题呢？」</p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>我说......就算去考场，她也最多只能证明她现在会做题。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>根本证明不了她过去到底是不是冠军呀。<span
+style="color:#B6540F">」</span></p>
+<blockquote>
+<p>三三｜「等会儿到了现场，你替我坐进考位，我在脑子里一步一步实时教你怎么解题！」</p>
+</blockquote>
+<p>我沉思了两秒，试探着问对面的<span
+style="color:#B6540F">普通少女</span>：</p>
+<p>我｜「如果有人在考试的时候，通过脑内通讯实时教我做题，按你们这里的规矩算什么？」</p>
+<p><span style="color:#B6540F">普通少女｜「</span>喂喂喂，等一下！<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>开考以后在脑子里远程指挥......<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>按照考场纪律条例，这在法理上百分之百叫作弊吧？！<span
+style="color:#B6540F">」</span></p>
+<blockquote>
+<p>三三｜「思路是我教的，但是最后理解逻辑、推导公式、亲手把符文刻进答题板的不全是你自己吗？」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「告诉她，这叫高强度现场交互式教学！」</p>
+</blockquote>
+<p>我｜「脑子里那位说，最后动手的是我，这属于高强度现场交互式教学。」我原话转达。</p>
+<p><span
+style="color:#B6540F">普通少女</span>深深吸了一口气，看我的眼神像是在看两个法盲。</p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>就算我们把作弊这茬先放在一边不谈……你根本连名都没报上啊。<span
+style="color:#B6540F">」</span></p>
+<p>我｜「既然这样，直接去现场找那位负责出题和审查的<span
+style="color:#2375CC">艾一一</span>问清楚不就好了。」</p>
+<p><span
+style="color:#B6540F">普通少女</span>看着我，深深地叹了一大口气，伸手按了按突突直跳的太阳穴，像是在极力忍耐某种想要翻白眼的冲动。</p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>行吧行吧……反正同路，我可以顺道领你过去。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>但我把丑话说在最前面哦——我绝对不保证你能混进大厅。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>等会儿要是被巡检的学长学姐架着胳膊扔出来，你可千万别跟人说是我领你来的啊。<span
+style="color:#B6540F">」</span></p>
+<p><strong>"呜——！"</strong></p>
+<p>【学院城 - 中央北站】</p>
+<p><span
+style="color:#B6540F">普通少女</span>抱起文具袋就急匆匆往车门挤。</p>
+<blockquote>
+<p>三三｜「喂！她的那个笔记掉在窗台底下了啊！」</p>
+</blockquote>
+<p>我一步跨回座位抓起笔记，顺势把自己身后那个金属拉杆行李箱往快要彻底咬合的车门缝隙里狠狠一塞——</p>
+<p><strong>"咔啦——！"</strong></p>
+<p>列车防夹法阵的幽蓝警示光应声暴涨，强行把合拢的金属门板反弹开半尺。</p>
+<p>沉重的大门狠狠夹了箱体一下，底部的其中一只万向轮当场发出一声凄惨的脆响，零件崩飞。</p>
+<p>我抓紧车门防夹机制触发的短短半秒空隙，拖着那只当场折了一条腿的行李箱和厚重笔记，在车门彻底锁死的最后一瞬险之又险地跌上了站台。</p>
+<p>我｜「物归原主。」我走上前，把那本沉甸甸、贴满便签的手写笔记递到了她的眼前。</p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>呜哇啊啊......我的天！我刚才以为我把整整两个月的人生都丢在车上了......<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>等等！你刚才……是用箱子硬卡了车门吗？！<span
+style="color:#B6540F">」</span></p>
+<p>她的目光落在我身后那只少了一只轮子、正委屈巴巴斜歪在地面上的金属行李箱上，眼神瞬间被巨大的愧疚与后怕填满了。</p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>对、对不起对不起！真的太对不起了...<span
+style="color:#B6540F">」</span></p>
+<p><span style="color:#B6540F">普通少女｜「</span>这箱子坏成这样...<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>要是这本笔记真丢了，我今天大概连走进考场的力气都没有了。<span
+style="color:#B6540F">」</span></p>
+<p><span style="color:#B6540F">普通少女｜「</span>真的太谢谢你了！<span
+style="color:#B6540F">」</span></p>
+<p>我｜「道谢的话，你感谢的坐标稍微有点偏。」我抬起右手，指了指自己左耳边空荡荡的空气，「是这位在座位底下先扫到的。」</p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>真的非常感谢你.....<span
+style="color:#B6540F">」</span></p>
+<blockquote>
+<p>三三｜「本冠军只是视力太好随便扫了一眼而已，才……才没有特意想要帮她呢。」</p>
+</blockquote>
+<blockquote>
+<p>三三｜「真是的，快点让她把头抬起来啦，怪不好意思的……」</p>
+</blockquote>
+<p>那声音越说越小，最后彻底变成了掩饰不住的得意与微弱的哼哼声。</p>
+<p><strong>"啪嗒。"</strong></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>走吧！离正式开考只剩不到二十分钟了。<span
+style="color:#B6540F">」</span></p>
+<p><span
+style="color:#B6540F">普通少女｜「</span>不过我最后再重申一次哦——到了考场现场，我可绝对不会替你向<span
+style="color:#2375CC">艾一一</span>学姐说好话的。<span
+style="color:#B6540F">」</span></p>
+<blockquote>
+<p>三三｜「跟她说，真正的超级天才从来不需要凡人求情♪～」</p>
+</blockquote>
+<p>我｜「行，明白了。先过去看看出什么题吧。」</p>
+<p>三个人挤在同一把避雨伞下，迎着漫天飘洒的雨雾，朝着前方那座高耸入云的学院钟塔快步走去。</p>
+
+                    
+                </div>
+            </div>
+
+            
+            <nav class="story-chapter-navigation" aria-label="章节导航">
+                <div class="story-chapter-navigation-meta">
+                    <span>CHAPTER NAVIGATION</span>
+                    <span>第 0 / 1 章</span>
+                </div>
+                <div class="story-chapter-navigation-grid">
+                    <a class="story-chapter-nav-card story-chapter-nav-card-prev" href="/chapters/">
+                        <span class="story-chapter-nav-direction"><i aria-hidden="true">←</i> 返回设置</span>
+                        <strong>更改姓名与性别</strong>
+                    </a>
+                    <a class="story-chapter-nav-card story-chapter-nav-card-next" href="/Trending.html">
+                        <span class="story-chapter-nav-direction">未完待续 <i aria-hidden="true">→</i></span>
+                        <strong>返回故事目录</strong>
+                    </a>
+                </div>
+            </nav>
+            
+    
+            
+            
+
+<div class="post-comment-wrapper-giscus">
+    <div class="giscus"></div>
+</div>
+
+
+
+            
+        </div>
+    </div>
+    <div class="single-column-footer">
+    Proudly published with Hexo<br>
+    
+    Theme <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> by <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a><br>
+    
+    &copy; 2026 <a href="https://7ue9ueue.github.io">Aiyiyi&#39;s Blog</a>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/popper.js/1.14.4/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
+<script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
+<script src="/js/journal.min.js?2462392"></script>
+
+<script src="/js/story.js?41326317"></script>
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        
+        data-repo="7ue9ueue/7ue9ueue.github.io"
+        
+        data-repo-id="R_kgDOJqovWQ"
+        
+        data-category="Announcements"
+        
+        data-category-id="DIC_kwDOJqovWc4CXE4u"
+        
+        data-mapping="pathname"
+        
+        data-reactions-enabled="1"
+        
+        data-emit-metadata="0"
+        
+        data-theme="light_high_contrast"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+</body>
+</html>
