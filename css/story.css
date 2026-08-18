@@ -506,28 +506,6 @@
   line-height: 1.55;
 }
 
-.story-index-action {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-top: auto;
-  padding-top: 1.15rem;
-  color: var(--story-brown);
-  font-family: "Montserrat", "Roboto", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-}
-
-.story-index-action i {
-  font-family: sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-}
-
 .story-index-card:hover,
 .story-index-card:focus-visible {
   border-color: rgba(122, 66, 44, 0.55);
