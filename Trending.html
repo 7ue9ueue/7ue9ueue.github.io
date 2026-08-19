@@ -31,8 +31,10 @@ These are the...">
 <!-- modify end -->
 
 <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/journal.css?31905933">
-<link rel="stylesheet" href="/css/trending.css?12421831">
+<link rel="stylesheet" href="/css/journal.css?28440507">
+<link rel="stylesheet" href="/css/trending.css?4375708">
+
+<link rel="stylesheet" href="/css/story.css?52937850">
 
 
 
@@ -183,9 +185,47 @@ These are the...">
 
 
 
+
+<div class="story-magic-backdrop" data-story-magic aria-hidden="true">
+    <span class="story-magic-aurora story-magic-aurora-violet"></span>
+    <span class="story-magic-aurora story-magic-aurora-blue"></span>
+    <span class="story-magic-aurora story-magic-aurora-gold"></span>
+
+    <div class="story-magic-circle story-magic-circle-large">
+        <span class="story-magic-ring story-magic-ring-outer"></span>
+        <span class="story-magic-ring story-magic-ring-middle"></span>
+        <span class="story-magic-ring story-magic-ring-inner"></span>
+        <span class="story-magic-axis story-magic-axis-a"></span>
+        <span class="story-magic-axis story-magic-axis-b"></span>
+        <i class="story-magic-glyph story-magic-glyph-north">✦</i>
+        <i class="story-magic-glyph story-magic-glyph-east">◇</i>
+        <i class="story-magic-glyph story-magic-glyph-south">✧</i>
+        <i class="story-magic-glyph story-magic-glyph-west">◇</i>
+        <i class="story-magic-core">✦</i>
+    </div>
+
+    <div class="story-magic-circle story-magic-circle-small">
+        <span class="story-magic-ring story-magic-ring-outer"></span>
+        <span class="story-magic-ring story-magic-ring-middle"></span>
+        <span class="story-magic-ring story-magic-ring-inner"></span>
+        <span class="story-magic-axis story-magic-axis-a"></span>
+        <span class="story-magic-axis story-magic-axis-b"></span>
+        <i class="story-magic-core">✧</i>
+    </div>
+
+    <div class="story-magic-motes" data-story-motes></div>
+    <span class="story-magic-vignette"></span>
+</div>
+
+<div class="story-magic-cursor-layer" data-story-magic-cursor aria-hidden="true">
+    <span class="story-magic-cursor-ring"></span>
+    <span class="story-magic-cursor-core">✦</span>
+</div>
+
+
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        <div class="post">
+        <div class="post story-shell story-ambient-page">
             <div class="post-head-wrapper-text-only"
                  style="background-image: url('')">
                 <div class="post-title">
@@ -194,8 +234,73 @@ These are the...">
                 </div>
             </div>
     
-            <div class="post-body-wrapper">
-                
+			<div class="post-body-wrapper">
+				
+				<div class="story-paper-dreamscape" aria-hidden="true">
+					<span class="story-paper-scene-wash story-paper-scene-wash-violet"></span>
+					<span class="story-paper-scene-wash story-paper-scene-wash-blue"></span>
+					<span class="story-paper-scene-wash story-paper-scene-wash-gold"></span>
+
+					<svg class="story-paper-scene-lines" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" focusable="false">
+						<path class="story-paper-scene-flow story-paper-scene-flow-a" d="M-120 208 C 88 12, 238 36, 362 172 S 608 364, 770 194 S 1052 26, 1320 126"></path>
+						<path class="story-paper-scene-flow story-paper-scene-flow-b" d="M-92 620 C 148 448, 300 716, 520 548 S 870 308, 1290 520"></path>
+						<path class="story-paper-scene-flow story-paper-scene-flow-c" d="M150 812 C 254 560, 448 476, 650 596 S 970 756, 1114 454"></path>
+
+						<g class="story-paper-scene-constellation story-paper-scene-constellation-left">
+							<path d="M72 414 L154 356 L224 398 L286 318 L342 376"></path>
+							<circle cx="72" cy="414" r="4"></circle>
+							<circle cx="154" cy="356" r="3"></circle>
+							<circle cx="224" cy="398" r="5"></circle>
+							<circle cx="286" cy="318" r="3.5"></circle>
+							<circle cx="342" cy="376" r="4"></circle>
+						</g>
+
+						<g class="story-paper-scene-constellation story-paper-scene-constellation-right">
+							<path d="M872 152 L936 94 L1002 164 L1084 116 L1150 186"></path>
+							<circle cx="872" cy="152" r="3.5"></circle>
+							<circle cx="936" cy="94" r="4.5"></circle>
+							<circle cx="1002" cy="164" r="3"></circle>
+							<circle cx="1084" cy="116" r="5"></circle>
+							<circle cx="1150" cy="186" r="3.5"></circle>
+						</g>
+					</svg>
+
+					<span class="story-paper-scene-mote" style="--story-scene-x: 9%; --story-scene-y: 18%; --story-scene-delay: -1s; --story-scene-travel: 18px;">✦</span>
+					<span class="story-paper-scene-mote" style="--story-scene-x: 27%; --story-scene-y: 52%; --story-scene-delay: -5s; --story-scene-travel: -14px;">·</span>
+					<span class="story-paper-scene-mote" style="--story-scene-x: 43%; --story-scene-y: 12%; --story-scene-delay: -8s; --story-scene-travel: 12px;">◇</span>
+					<span class="story-paper-scene-mote" style="--story-scene-x: 61%; --story-scene-y: 68%; --story-scene-delay: -3s; --story-scene-travel: -18px;">✧</span>
+					<span class="story-paper-scene-mote" style="--story-scene-x: 76%; --story-scene-y: 36%; --story-scene-delay: -7s; --story-scene-travel: 15px;">·</span>
+					<span class="story-paper-scene-mote" style="--story-scene-x: 91%; --story-scene-y: 61%; --story-scene-delay: -10s; --story-scene-travel: -12px;">✦</span>
+				</div>
+
+				<div class="story-paper-sigil story-paper-sigil-cool" aria-hidden="true">
+					<span class="story-paper-sigil-dial"></span>
+					<span class="story-paper-sigil-orbit story-paper-sigil-orbit-outer">
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-north">✦</i>
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-east">◇</i>
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-south">✧</i>
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-west">◇</i>
+					</span>
+					<span class="story-paper-sigil-orbit story-paper-sigil-orbit-inner"></span>
+					<span class="story-paper-sigil-geometry"></span>
+					<i class="story-paper-sigil-core">✦</i>
+				</div>
+
+				<div class="story-paper-sigil story-paper-sigil-warm" aria-hidden="true">
+					<span class="story-paper-sigil-dial"></span>
+					<span class="story-paper-sigil-orbit story-paper-sigil-orbit-outer">
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-north">✧</i>
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-east">◇</i>
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-south">✦</i>
+						<i class="story-paper-sigil-glyph story-paper-sigil-glyph-west">◇</i>
+					</span>
+					<span class="story-paper-sigil-orbit story-paper-sigil-orbit-inner"></span>
+					<span class="story-paper-sigil-geometry"></span>
+					<i class="story-paper-sigil-core">✧</i>
+				</div>
+				
+
+				
                 <div class="post-body"
                      >
                     
@@ -274,7 +379,9 @@ Character Submission Guidelines</a></li>
 <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/vue/2.5.17/vue.min.js" crossorigin="anonymous"></script>
 <script src="https://lib.baomitu.com/smooth-scroll/14.2.1/smooth-scroll.min.js" crossorigin="anonymous"></script>
-<script src="/js/journal.min.js?7387750"></script>
+<script src="/js/journal.min.js?48499023"></script>
+
+<script src="/js/story.js?64161901"></script>
 
 
 
